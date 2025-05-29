@@ -1,0 +1,222 @@
+2025-05-28 20:38:25,147 - reference_manager - INFO - 参考管理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-05-28 20:38:25,147 - reference_manager - INFO - 已加载 33 个现有论文映射
+2025-05-28 20:38:25,148 - reference_manager - INFO - 在 ./cache/references 目录中找到 15 个参考文件
+2025-05-28 20:38:25,253 - reference_manager - INFO - 处理论文 'Sei Giga' (ID: 59140e29-cc1d-4ef5-ba9b-6534762e5f2c) 的参考关系，共 3 个参考
+2025-05-28 20:38:25,255 - reference_manager - WARNING - 未找到匹配的论文: Autobahn: Seamless high speed BFT
+2025-05-28 20:38:25,261 - reference_manager - WARNING - 未找到匹配的论文: Block-STM: Scaling Blockchain Execution by Turning Ordering Curse to a Performance Blessing
+2025-05-28 20:38:25,264 - reference_manager - WARNING - 未找到匹配的论文: HotStuff: BFT Consensus in the Lens of Blockchain
+2025-05-28 20:38:25,265 - reference_manager - INFO - 处理论文 'LLM-BSCVM: An LLM-Based Blockchain Smart Contract Vulnerability Management Framework' (ID: c740c281-fa9e-4460-98f6-4c09fddaae99) 的参考关系，共 7 个参考
+2025-05-28 20:38:25,265 - reference_manager - INFO - 论文参考处理完成: processed=3, success=0, failed=0, skipped=3
+2025-05-28 20:38:25,272 - reference_manager - WARNING - 未找到匹配的论文: LLM4Vuln: A Unified Evaluation Framework for Decoupling and Enhancing LLMs' Vulnerability Reasoning
+2025-05-28 20:38:25,278 - reference_manager - WARNING - 未找到匹配的论文: Combining Fine-Tuning and LLM-based Agents for Intuitive Smart Contract Auditing with Justifications
+2025-05-28 20:38:25,284 - reference_manager - WARNING - 未找到匹配的论文: AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors
+2025-05-28 20:38:25,284 - reference_manager - INFO - 处理论文 'Trustworthy Reputation Games and Applications to Proof-of-Reputation Blockchains' (ID: 0a9758d8-5408-4f92-9ba5-fd003e5b57f3) 的参考关系，共 2 个参考
+2025-05-28 20:38:25,287 - reference_manager - WARNING - 未找到匹配的论文: LLaMA: Open and Efficient Foundation Language Models
+2025-05-28 20:38:25,296 - reference_manager - WARNING - 未找到匹配的论文: Code Llama: Open Foundation Models for Code
+2025-05-28 20:38:25,297 - reference_manager - WARNING - 未找到匹配的论文: Empirical Bayes approaches to PageRank type algorithms for rating scientific journals
+2025-05-28 20:38:25,297 - reference_manager - INFO - 处理论文 'VoteMate: A Decentralized Application for Scalable Electronic Voting on EVM-Based Blockchain' (ID: 0bd80f30-243f-4b1d-bddc-1de882c96cc5) 的参考关系，共 1 个参考
+2025-05-28 20:38:25,305 - reference_manager - WARNING - 未找到匹配的论文: CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation
+2025-05-28 20:38:25,311 - reference_manager - WARNING - 未找到匹配的论文: When the Web meets the cell: using personalized PageRank for analyzing protein interaction networks
+2025-05-28 20:38:25,315 - reference_manager - WARNING - 未找到匹配的论文: SBvote: Scalable Self-Tallying Blockchain-Based Voting
+2025-05-28 20:38:25,316 - reference_manager - INFO - 处理论文 'Model Checking the Security of the Lightning Network' (ID: c72ab51e-387e-42b5-a826-a2c558b334b8) 的参考关系，共 4 个参考
+2025-05-28 20:38:25,321 - reference_manager - WARNING - 未找到匹配的论文: CodeBERT: A Pre-Trained Model for Programming and Natural Languages
+2025-05-28 20:38:25,321 - reference_manager - INFO - 论文参考处理完成: processed=2, success=0, failed=0, skipped=2
+2025-05-28 20:38:25,321 - reference_manager - INFO - 论文参考处理完成: processed=1, success=0, failed=0, skipped=1
+2025-05-28 20:38:25,326 - reference_manager - WARNING - 未找到匹配的论文: Smart Casual Verification of the Confidential Consortium Framework
+2025-05-28 20:38:25,326 - reference_manager - INFO - 论文参考处理完成: processed=7, success=0, failed=0, skipped=7
+2025-05-28 20:38:25,331 - reference_manager - WARNING - 未找到匹配的论文: The Security Protocol Verifier ProVerif and its Horn Clause Resolution Algorithm
+2025-05-28 20:38:25,335 - reference_manager - WARNING - 未找到匹配的论文: Time-Dilation Attacks on the Lightning Network
+2025-05-28 20:38:25,337 - reference_manager - WARNING - 未找到匹配的论文: Modelling Bitcoin in Agda
+2025-05-28 20:38:25,337 - reference_manager - INFO - 论文参考处理完成: processed=4, success=0, failed=0, skipped=4
+2025-05-28 20:38:25,337 - reference_manager - INFO - 处理论文 'Blockchain-Enabled Decentralized Privacy-Preserving Group Purchasing for Energy Plans' (ID: ff57215f-97ca-42fb-b3d5-75b3b6bb59af) 的参考关系，共 4 个参考
+2025-05-28 20:38:25,344 - reference_manager - WARNING - 未找到匹配的论文: Approximately Socially-Optimal Decentralized Coalition Formation with Application to P2P Energy Sharing
+2025-05-28 20:38:25,349 - reference_manager - WARNING - 未找到匹配的论文: Designing microgrid energy markets. A case study: The Brooklyn Microgrid
+2025-05-28 20:38:25,349 - reference_manager - INFO - 处理论文 'Evaluating Voting Design Vulnerabilities for Retroactive Funding' (ID: fa2a7386-270b-46ec-9962-0a87ff3e32d6) 的参考关系，共 3 个参考
+2025-05-28 20:38:25,354 - reference_manager - WARNING - 未找到匹配的论文: Quantifying Inefficiency of Fair Cost-Sharing Mechanisms for Sharing Economy
+2025-05-28 20:38:25,358 - reference_manager - WARNING - 未找到匹配的论文: DAO Decentralization: Voting-Bloc Entropy, Bribery, and Dark DAOs
+2025-05-28 20:38:25,361 - reference_manager - WARNING - 未找到匹配的论文: Efficient Secure Two-Party Protocols
+2025-05-28 20:38:25,361 - reference_manager - INFO - 处理论文 'Towards Verifiability of Total Value Locked (TVL) in Decentralized Finance' (ID: 06bb03af-934d-4d83-ab66-fa1dca04d0fb) 的参考关系，共 5 个参考
+2025-05-28 20:38:25,366 - reference_manager - WARNING - 未找到匹配的论文: Unpacking How Decentralized Autonomous Organizations (DAOs) Work in Practice
+2025-05-28 20:38:25,366 - reference_manager - INFO - 论文参考处理完成: processed=4, success=0, failed=0, skipped=4
+2025-05-28 20:38:25,366 - reference_manager - INFO - 处理论文 'An Empirical Analysis of Vulnerability Detection Tools for Solidity Smart Contracts Using Line Level Manually Annotated Vulnerabilities' (ID: f9ad8160-2662-4b55-b7ab-64f7278180a7) 的参考关系，共 6 个参考
+2025-05-28 20:38:25,371 - reference_manager - WARNING - 未找到匹配的论文: Leverage Staking with Liquid Staking Derivatives (LSDs): Opportunities and Risks
+2025-05-28 20:38:25,372 - reference_manager - WARNING - 未找到匹配的论文: Vox Populi
+2025-05-28 20:38:25,376 - reference_manager - WARNING - 未找到匹配的论文: Logic Meets Magic: LLMs Cracking Smart Contract Vulnerabilities
+2025-05-28 20:38:25,378 - reference_manager - WARNING - 未找到匹配的论文: The return of (I)DeFiX
+2025-05-28 20:38:25,378 - reference_manager - INFO - 处理论文 'Quantum Feature Optimization for Enhanced Clustering of Blockchain Transaction Data' (ID: eb46314c-bd1e-4fb6-9187-371d90eabf3e) 的参考关系，共 15 个参考
+2025-05-28 20:38:25,378 - reference_manager - INFO - 论文参考处理完成: processed=3, success=0, failed=0, skipped=3
+2025-05-28 20:38:25,385 - reference_manager - WARNING - 未找到匹配的论文: Fixing Smart Contract Vulnerabilities: A Comparative Analysis of Literature and Developer's Practices
+2025-05-28 20:38:25,388 - reference_manager - WARNING - 未找到匹配的论文: Behavior of Liquidity Providers in Decentralized Exchanges
+2025-05-28 20:38:25,392 - reference_manager - WARNING - 未找到匹配的论文: Federated Quantum-Train with Batched Parameter Generation
+2025-05-28 20:38:25,392 - reference_manager - INFO - 处理论文 'hChain 4.0: A Secure and Scalable Permissioned Blockchain for EHR Management in Smart Healthcare' (ID: 22fccd02-59d7-4dd5-9518-b9ca698443ae) 的参考关系，共 1 个参考
+2025-05-28 20:38:25,398 - reference_manager - WARNING - 未找到匹配的论文: Generating Java Methods: An Empirical Assessment of Four AI-Based Code Assistants
+2025-05-28 20:38:25,401 - reference_manager - WARNING - 未找到匹配的论文: Power-Law Distributions in Empirical Data
+2025-05-28 20:38:25,407 - reference_manager - WARNING - 未找到匹配的论文: A Quantum Circuit-Based Compression Perspective for Parameter-Efficient Learning
+2025-05-28 20:38:25,414 - reference_manager - WARNING - 未找到匹配的论文: Implementation of a smart energy meter using blockchain and Internet of Things: A step toward energy conservation
+2025-05-28 20:38:25,420 - reference_manager - WARNING - 未找到匹配的论文: SmartBugs 2.0: An Execution Framework for Weakness Detection in Ethereum Smart Contracts
+2025-05-28 20:38:25,423 - reference_manager - WARNING - 未找到匹配的论文: Solid state lasers for particle accelerator applications
+2025-05-28 20:38:25,423 - reference_manager - INFO - 处理论文 'Proof-of-Social-Capital: Privacy-Preserving Consensus Protocol Replacing Stake for Social Capital' (ID: 8b002b8d-bcb7-4ddc-a9b4-5af0408b2cb7) 的参考关系，共 2 个参考
+2025-05-28 20:38:25,428 - reference_manager - WARNING - 未找到匹配的论文: Quantum-Train Long Short-Term Memory: Application on Flood Prediction Problem
+2025-05-28 20:38:25,428 - reference_manager - INFO - 论文参考处理完成: processed=1, success=0, failed=0, skipped=1
+2025-05-28 20:38:25,433 - reference_manager - WARNING - 未找到匹配的论文: When ChatGPT Meets Smart Contract Vulnerability Detection: How Far Are We?
+2025-05-28 20:38:25,434 - reference_manager - INFO - 论文参考处理完成: processed=5, success=0, failed=0, skipped=5
+2025-05-28 20:38:25,440 - reference_manager - WARNING - 未找到匹配的论文: Deconstructing Blockchains: A Comprehensive Survey on Consensus, Membership and Structure
+2025-05-28 20:38:25,444 - reference_manager - WARNING - 未找到匹配的论文: Quantum-Train-Based Distributed Multi-Agent Reinforcement Learning
+2025-05-28 20:38:25,444 - reference_manager - INFO - 处理论文 'An Empirical Analysis of EOS Blockchain: Architecture, Contract, and Security' (ID: e79c1297-412d-4cf6-b3fe-1861d680b958) 的参考关系，共 11 个参考
+2025-05-28 20:38:25,449 - reference_manager - WARNING - 未找到匹配的论文: Smart Contract Vulnerability Detection Model Based on Multi-Task Learning
+2025-05-28 20:38:25,452 - reference_manager - WARNING - 未找到匹配的论文: Casper the Friendly Finality Gadget
+2025-05-28 20:38:25,456 - reference_manager - WARNING - 未找到匹配的论文: Programming Variational Quantum Circuits with Quantum-Train Agent
+2025-05-28 20:38:25,460 - reference_manager - WARNING - 未找到匹配的论文: Malicious Code Detection in Smart Contracts via Opcode Vectorization
+2025-05-28 20:38:25,460 - reference_manager - INFO - 处理论文 'Integrating Robotic Navigation with Blockchain: A Novel PoS-Based Approach for Heterogeneous Robotic Teams' (ID: 3543fc59-f86b-4e49-ac8e-b21713b4db3d) 的参考关系，共 2 个参考
+2025-05-28 20:38:25,460 - reference_manager - INFO - 论文参考处理完成: processed=6, success=0, failed=0, skipped=6
+2025-05-28 20:38:25,460 - reference_manager - INFO - 论文参考处理完成: processed=2, success=0, failed=0, skipped=2
+2025-05-28 20:38:25,466 - reference_manager - WARNING - 未找到匹配的论文: Quantum-Train with Tensor Network Mapping Model and Distributed Circuit Ansatz
+2025-05-28 20:38:25,470 - reference_manager - WARNING - 未找到匹配的论文: SmartBugBert: BERT-Enhanced Vulnerability Detection for Smart Contract Bytecode
+2025-05-28 20:38:25,474 - reference_manager - WARNING - 未找到匹配的论文: Visual homing for robot teams: do you see what I see?
+2025-05-28 20:38:25,474 - reference_manager - INFO - 处理论文 'Multiple Proposer Transaction Fee Mechanism Design: Robust Incentives Against Censorship and Bribery' (ID: 1eaaf5c0-a466-47f0-9fe9-7d90bb5ab81b) 的参考关系，共 6 个参考
+2025-05-28 20:38:25,479 - reference_manager - WARNING - 未找到匹配的论文: Quantum-Trained Convolutional Neural Network for Deepfake Audio Detection
+2025-05-28 20:38:25,484 - reference_manager - WARNING - 未找到匹配的论文: Enhancing Smart Contract Vulnerability Detection in DApps Leveraging Fine-Tuned LLM
+2025-05-28 20:38:25,489 - reference_manager - WARNING - 未找到匹配的论文: Blockchain And The Future of the Internet: A Comprehensive Review
+2025-05-28 20:38:25,491 - reference_manager - WARNING - 未找到匹配的论文: Economic Censorship Games in Fraud Proofs
+2025-05-28 20:38:25,502 - reference_manager - WARNING - 未找到匹配的论文: SCALM: Detecting Bad Practices in Smart Contracts Through LLMs
+2025-05-28 20:38:25,502 - reference_manager - WARNING - 未找到匹配的论文: Quantum-Train: Rethinking Hybrid Quantum-Classical Machine Learning in the Model Compression Perspective
+2025-05-28 20:38:25,502 - reference_manager - INFO - 论文参考处理完成: processed=2, success=0, failed=0, skipped=2
+2025-05-28 20:38:25,503 - reference_manager - WARNING - 未找到匹配的论文: Blockchain Censorship
+2025-05-28 20:38:25,508 - reference_manager - WARNING - 未找到匹配的论文: QTRL: Toward Practical Quantum Reinforcement Learning via Quantum-Train
+2025-05-28 20:38:25,511 - reference_manager - WARNING - 未找到匹配的论文: SoK: Security Analysis of Blockchain-based Cryptocurrency
+2025-05-28 20:38:25,514 - reference_manager - WARNING - 未找到匹配的论文: Censorship Resistance in On-Chain Auctions
+2025-05-28 20:38:25,516 - reference_manager - WARNING - 未找到匹配的论文: Variational quantum algorithms
+2025-05-28 20:38:25,525 - reference_manager - WARNING - 未找到匹配的论文: Transaction Fee Mechanism Design
+2025-05-28 20:38:25,523 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attacks Detection and Traceability Mechanism Based on Beacon Packets in Connected Automobile Vehicles
+2025-05-28 20:38:25,530 - reference_manager - WARNING - 未找到匹配的论文: Unsupervised Learning of Visual Features by Contrasting Cluster Assignments
+2025-05-28 20:38:25,648 - reference_manager - WARNING - 未找到匹配的论文: Foundations of Transaction Fee Mechanism Design
+2025-05-28 20:38:25,649 - reference_manager - WARNING - 未找到匹配的论文: Supervised learning with quantum-enhanced feature spaces
+2025-05-28 20:38:25,651 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts in the Real World: A Statistical Exploration of External Data Dependencies
+2025-05-28 20:38:25,658 - reference_manager - WARNING - 未找到匹配的论文: Flash Boys 2.0: Frontrunning, Transaction Reordering, and Consensus Instability in Decentralized Exchanges
+2025-05-28 20:38:25,668 - reference_manager - INFO - 论文参考处理完成: processed=6, success=0, failed=0, skipped=6
+2025-05-28 20:38:25,660 - reference_manager - WARNING - 未找到匹配的论文: Quantum circuit learning
+2025-05-28 20:38:25,673 - reference_manager - WARNING - 未找到匹配的论文: Quantum machine learning
+2025-05-28 20:38:25,677 - reference_manager - WARNING - 未找到匹配的论文: An introduction to quantum machine learning
+2025-05-28 20:38:25,681 - reference_manager - WARNING - 未找到匹配的论文: SCLA: Automated Smart Contract Summarization via LLMs and Control Flow Prompt
+2025-05-28 20:38:25,681 - reference_manager - INFO - 论文参考处理完成: processed=15, success=0, failed=0, skipped=15
+2025-05-28 20:38:25,687 - reference_manager - WARNING - 未找到匹配的论文: Understanding the Decentralization of DPoS: Perspectives From Data-Driven Analysis on EOSIO
+2025-05-28 20:38:25,690 - reference_manager - WARNING - 未找到匹配的论文: Security Analysis of EOSIO Smart Contracts
+2025-05-28 20:38:25,696 - reference_manager - WARNING - 未找到匹配的论文: WANA: Symbolic Execution of Wasm Bytecode for Cross-Platform Smart Contract Vulnerability Detection
+2025-05-28 20:38:25,697 - reference_manager - INFO - 论文参考处理完成: processed=11, success=0, failed=0, skipped=11
+2025-05-28 20:38:25,697 - reference_manager - INFO - 参考处理完成: processed=72, success=0, failed=0, skipped=72
+2025-05-28 20:38:25,697 - reference_manager - INFO - 参考处理摘要:
+2025-05-28 20:38:25,697 - reference_manager - INFO - - 总处理参考: 72
+2025-05-28 20:38:25,697 - reference_manager - INFO - - 成功创建: 0
+2025-05-28 20:38:25,697 - reference_manager - INFO - - 创建失败: 0
+2025-05-28 20:38:25,697 - reference_manager - INFO - - 跳过: 72
+2025-05-28 20:40:57,113 - reference_manager - INFO - 参考管理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-05-28 20:40:57,113 - reference_manager - INFO - 已加载 33 个现有论文映射
+2025-05-28 20:40:57,114 - reference_manager - INFO - 在 ./cache/references 目录中找到 15 个参考文件
+2025-05-28 20:40:57,129 - reference_manager - INFO - 处理论文 'Sei Giga' (ID: 59140e29-cc1d-4ef5-ba9b-6534762e5f2c) 的参考关系，共 3 个参考
+2025-05-28 20:40:57,132 - reference_manager - WARNING - 未找到匹配的论文: Autobahn: Seamless high speed BFT
+2025-05-28 20:40:57,137 - reference_manager - WARNING - 未找到匹配的论文: Block-STM: Scaling Blockchain Execution by Turning Ordering Curse to a Performance Blessing
+2025-05-28 20:40:57,141 - reference_manager - WARNING - 未找到匹配的论文: HotStuff: BFT Consensus in the Lens of Blockchain
+2025-05-28 20:40:57,141 - reference_manager - INFO - 处理论文 'LLM-BSCVM: An LLM-Based Blockchain Smart Contract Vulnerability Management Framework' (ID: c740c281-fa9e-4460-98f6-4c09fddaae99) 的参考关系，共 7 个参考
+2025-05-28 20:40:57,141 - reference_manager - INFO - 论文参考处理完成: processed=3, success=0, failed=0, skipped=3
+2025-05-28 20:40:57,147 - reference_manager - WARNING - 未找到匹配的论文: LLM4Vuln: A Unified Evaluation Framework for Decoupling and Enhancing LLMs' Vulnerability Reasoning
+2025-05-28 20:40:57,147 - reference_manager - INFO - 处理论文 'Trustworthy Reputation Games and Applications to Proof-of-Reputation Blockchains' (ID: 0a9758d8-5408-4f92-9ba5-fd003e5b57f3) 的参考关系，共 2 个参考
+2025-05-28 20:40:57,154 - reference_manager - WARNING - 未找到匹配的论文: Combining Fine-Tuning and LLM-based Agents for Intuitive Smart Contract Auditing with Justifications
+2025-05-28 20:40:57,160 - reference_manager - WARNING - 未找到匹配的论文: Empirical Bayes approaches to PageRank type algorithms for rating scientific journals
+2025-05-28 20:40:57,160 - reference_manager - INFO - 处理论文 'VoteMate: A Decentralized Application for Scalable Electronic Voting on EVM-Based Blockchain' (ID: 0bd80f30-243f-4b1d-bddc-1de882c96cc5) 的参考关系，共 1 个参考
+2025-05-28 20:40:57,165 - reference_manager - WARNING - 未找到匹配的论文: AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors
+2025-05-28 20:40:57,171 - reference_manager - WARNING - 未找到匹配的论文: When the Web meets the cell: using personalized PageRank for analyzing protein interaction networks
+2025-05-28 20:40:57,175 - reference_manager - WARNING - 未找到匹配的论文: SBvote: Scalable Self-Tallying Blockchain-Based Voting
+2025-05-28 20:40:57,178 - reference_manager - WARNING - 未找到匹配的论文: LLaMA: Open and Efficient Foundation Language Models
+2025-05-28 20:40:57,178 - reference_manager - INFO - 处理论文 'Model Checking the Security of the Lightning Network' (ID: c72ab51e-387e-42b5-a826-a2c558b334b8) 的参考关系，共 4 个参考
+2025-05-28 20:40:57,178 - reference_manager - INFO - 论文参考处理完成: processed=2, success=0, failed=0, skipped=2
+2025-05-28 20:40:57,178 - reference_manager - INFO - 论文参考处理完成: processed=1, success=0, failed=0, skipped=1
+2025-05-28 20:40:57,181 - reference_manager - WARNING - 未找到匹配的论文: Code Llama: Open Foundation Models for Code
+2025-05-28 20:40:57,186 - reference_manager - WARNING - 未找到匹配的论文: Smart Casual Verification of the Confidential Consortium Framework
+2025-05-28 20:40:57,186 - reference_manager - INFO - 处理论文 'Blockchain-Enabled Decentralized Privacy-Preserving Group Purchasing for Energy Plans' (ID: ff57215f-97ca-42fb-b3d5-75b3b6bb59af) 的参考关系，共 4 个参考
+2025-05-28 20:40:57,198 - reference_manager - WARNING - 未找到匹配的论文: The Security Protocol Verifier ProVerif and its Horn Clause Resolution Algorithm
+2025-05-28 20:40:57,199 - reference_manager - WARNING - 未找到匹配的论文: CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation
+2025-05-28 20:40:57,199 - reference_manager - INFO - 处理论文 'Evaluating Voting Design Vulnerabilities for Retroactive Funding' (ID: fa2a7386-270b-46ec-9962-0a87ff3e32d6) 的参考关系，共 3 个参考
+2025-05-28 20:40:57,205 - reference_manager - WARNING - 未找到匹配的论文: Approximately Socially-Optimal Decentralized Coalition Formation with Application to P2P Energy Sharing
+2025-05-28 20:40:57,208 - reference_manager - WARNING - 未找到匹配的论文: Time-Dilation Attacks on the Lightning Network
+2025-05-28 20:40:57,213 - reference_manager - WARNING - 未找到匹配的论文: CodeBERT: A Pre-Trained Model for Programming and Natural Languages
+2025-05-28 20:40:57,213 - reference_manager - INFO - 处理论文 'Towards Verifiability of Total Value Locked (TVL) in Decentralized Finance' (ID: 06bb03af-934d-4d83-ab66-fa1dca04d0fb) 的参考关系，共 5 个参考
+2025-05-28 20:40:57,217 - reference_manager - WARNING - 未找到匹配的论文: DAO Decentralization: Voting-Bloc Entropy, Bribery, and Dark DAOs
+2025-05-28 20:40:57,222 - reference_manager - WARNING - 未找到匹配的论文: Designing microgrid energy markets. A case study: The Brooklyn Microgrid
+2025-05-28 20:40:57,224 - reference_manager - WARNING - 未找到匹配的论文: Modelling Bitcoin in Agda
+2025-05-28 20:40:57,224 - reference_manager - INFO - 论文参考处理完成: processed=7, success=0, failed=0, skipped=7
+2025-05-28 20:40:57,229 - reference_manager - WARNING - 未找到匹配的论文: Leverage Staking with Liquid Staking Derivatives (LSDs): Opportunities and Risks
+2025-05-28 20:40:57,234 - reference_manager - WARNING - 未找到匹配的论文: Unpacking How Decentralized Autonomous Organizations (DAOs) Work in Practice
+2025-05-28 20:40:57,238 - reference_manager - WARNING - 未找到匹配的论文: Quantifying Inefficiency of Fair Cost-Sharing Mechanisms for Sharing Economy
+2025-05-28 20:40:57,239 - reference_manager - INFO - 论文参考处理完成: processed=4, success=0, failed=0, skipped=4
+2025-05-28 20:40:57,239 - reference_manager - INFO - 处理论文 'An Empirical Analysis of Vulnerability Detection Tools for Solidity Smart Contracts Using Line Level Manually Annotated Vulnerabilities' (ID: f9ad8160-2662-4b55-b7ab-64f7278180a7) 的参考关系，共 6 个参考
+2025-05-28 20:40:57,241 - reference_manager - WARNING - 未找到匹配的论文: The return of (I)DeFiX
+2025-05-28 20:40:57,242 - reference_manager - WARNING - 未找到匹配的论文: Vox Populi
+2025-05-28 20:40:57,244 - reference_manager - WARNING - 未找到匹配的论文: Efficient Secure Two-Party Protocols
+2025-05-28 20:40:57,244 - reference_manager - INFO - 处理论文 'Quantum Feature Optimization for Enhanced Clustering of Blockchain Transaction Data' (ID: eb46314c-bd1e-4fb6-9187-371d90eabf3e) 的参考关系，共 15 个参考
+2025-05-28 20:40:57,248 - reference_manager - WARNING - 未找到匹配的论文: Logic Meets Magic: LLMs Cracking Smart Contract Vulnerabilities
+2025-05-28 20:40:57,252 - reference_manager - WARNING - 未找到匹配的论文: Behavior of Liquidity Providers in Decentralized Exchanges
+2025-05-28 20:40:57,252 - reference_manager - INFO - 论文参考处理完成: processed=3, success=0, failed=0, skipped=3
+2025-05-28 20:40:57,252 - reference_manager - INFO - 论文参考处理完成: processed=4, success=0, failed=0, skipped=4
+2025-05-28 20:40:57,265 - reference_manager - INFO - 处理论文 'Proof-of-Social-Capital: Privacy-Preserving Consensus Protocol Replacing Stake for Social Capital' (ID: 8b002b8d-bcb7-4ddc-a9b4-5af0408b2cb7) 的参考关系，共 2 个参考
+2025-05-28 20:40:57,265 - reference_manager - WARNING - 未找到匹配的论文: Power-Law Distributions in Empirical Data
+2025-05-28 20:40:57,265 - reference_manager - WARNING - 未找到匹配的论文: Fixing Smart Contract Vulnerabilities: A Comparative Analysis of Literature and Developer's Practices
+2025-05-28 20:40:57,265 - reference_manager - INFO - 处理论文 'hChain 4.0: A Secure and Scalable Permissioned Blockchain for EHR Management in Smart Healthcare' (ID: 22fccd02-59d7-4dd5-9518-b9ca698443ae) 的参考关系，共 1 个参考
+2025-05-28 20:40:57,256 - reference_manager - WARNING - 未找到匹配的论文: Federated Quantum-Train with Batched Parameter Generation
+2025-05-28 20:40:57,271 - reference_manager - WARNING - 未找到匹配的论文: Deconstructing Blockchains: A Comprehensive Survey on Consensus, Membership and Structure
+2025-05-28 20:40:57,275 - reference_manager - WARNING - 未找到匹配的论文: Solid state lasers for particle accelerator applications
+2025-05-28 20:40:57,280 - reference_manager - WARNING - 未找到匹配的论文: Generating Java Methods: An Empirical Assessment of Four AI-Based Code Assistants
+2025-05-28 20:40:57,292 - reference_manager - WARNING - 未找到匹配的论文: A Quantum Circuit-Based Compression Perspective for Parameter-Efficient Learning
+2025-05-28 20:40:57,293 - reference_manager - WARNING - 未找到匹配的论文: Implementation of a smart energy meter using blockchain and Internet of Things: A step toward energy conservation
+2025-05-28 20:40:57,295 - reference_manager - WARNING - 未找到匹配的论文: Casper the Friendly Finality Gadget
+2025-05-28 20:40:57,296 - reference_manager - INFO - 论文参考处理完成: processed=5, success=0, failed=0, skipped=5
+2025-05-28 20:40:57,301 - reference_manager - WARNING - 未找到匹配的论文: SmartBugs 2.0: An Execution Framework for Weakness Detection in Ethereum Smart Contracts
+2025-05-28 20:40:57,306 - reference_manager - WARNING - 未找到匹配的论文: Quantum-Train Long Short-Term Memory: Application on Flood Prediction Problem
+2025-05-28 20:40:57,307 - reference_manager - INFO - 论文参考处理完成: processed=1, success=0, failed=0, skipped=1
+2025-05-28 20:40:57,307 - reference_manager - INFO - 论文参考处理完成: processed=2, success=0, failed=0, skipped=2
+2025-05-28 20:40:57,307 - reference_manager - INFO - 处理论文 'An Empirical Analysis of EOS Blockchain: Architecture, Contract, and Security' (ID: e79c1297-412d-4cf6-b3fe-1861d680b958) 的参考关系，共 11 个参考
+2025-05-28 20:40:57,312 - reference_manager - WARNING - 未找到匹配的论文: When ChatGPT Meets Smart Contract Vulnerability Detection: How Far Are We?
+2025-05-28 20:40:57,316 - reference_manager - WARNING - 未找到匹配的论文: Quantum-Train-Based Distributed Multi-Agent Reinforcement Learning
+2025-05-28 20:40:57,316 - reference_manager - INFO - 处理论文 'Integrating Robotic Navigation with Blockchain: A Novel PoS-Based Approach for Heterogeneous Robotic Teams' (ID: 3543fc59-f86b-4e49-ac8e-b21713b4db3d) 的参考关系，共 2 个参考
+2025-05-28 20:40:57,316 - reference_manager - INFO - 处理论文 'Multiple Proposer Transaction Fee Mechanism Design: Robust Incentives Against Censorship and Bribery' (ID: 1eaaf5c0-a466-47f0-9fe9-7d90bb5ab81b) 的参考关系，共 6 个参考
+2025-05-28 20:40:57,321 - reference_manager - WARNING - 未找到匹配的论文: Malicious Code Detection in Smart Contracts via Opcode Vectorization
+2025-05-28 20:40:57,325 - reference_manager - WARNING - 未找到匹配的论文: Smart Contract Vulnerability Detection Model Based on Multi-Task Learning
+2025-05-28 20:40:57,329 - reference_manager - WARNING - 未找到匹配的论文: Programming Variational Quantum Circuits with Quantum-Train Agent
+2025-05-28 20:40:57,333 - reference_manager - WARNING - 未找到匹配的论文: Visual homing for robot teams: do you see what I see?
+2025-05-28 20:40:57,336 - reference_manager - WARNING - 未找到匹配的论文: Economic Censorship Games in Fraud Proofs
+2025-05-28 20:40:57,341 - reference_manager - WARNING - 未找到匹配的论文: SmartBugBert: BERT-Enhanced Vulnerability Detection for Smart Contract Bytecode
+2025-05-28 20:40:57,341 - reference_manager - INFO - 论文参考处理完成: processed=6, success=0, failed=0, skipped=6
+2025-05-28 20:40:57,346 - reference_manager - WARNING - 未找到匹配的论文: Quantum-Train with Tensor Network Mapping Model and Distributed Circuit Ansatz
+2025-05-28 20:40:57,350 - reference_manager - WARNING - 未找到匹配的论文: Blockchain And The Future of the Internet: A Comprehensive Review
+2025-05-28 20:40:57,352 - reference_manager - WARNING - 未找到匹配的论文: Blockchain Censorship
+2025-05-28 20:40:57,356 - reference_manager - WARNING - 未找到匹配的论文: Enhancing Smart Contract Vulnerability Detection in DApps Leveraging Fine-Tuned LLM
+2025-05-28 20:40:57,361 - reference_manager - WARNING - 未找到匹配的论文: Quantum-Trained Convolutional Neural Network for Deepfake Audio Detection
+2025-05-28 20:40:57,362 - reference_manager - INFO - 论文参考处理完成: processed=2, success=0, failed=0, skipped=2
+2025-05-28 20:40:57,365 - reference_manager - WARNING - 未找到匹配的论文: Censorship Resistance in On-Chain Auctions
+2025-05-28 20:40:57,369 - reference_manager - WARNING - 未找到匹配的论文: SCALM: Detecting Bad Practices in Smart Contracts Through LLMs
+2025-05-28 20:40:57,375 - reference_manager - WARNING - 未找到匹配的论文: Quantum-Train: Rethinking Hybrid Quantum-Classical Machine Learning in the Model Compression Perspective
+2025-05-28 20:40:57,378 - reference_manager - WARNING - 未找到匹配的论文: Transaction Fee Mechanism Design
+2025-05-28 20:40:57,381 - reference_manager - WARNING - 未找到匹配的论文: SoK: Security Analysis of Blockchain-based Cryptocurrency
+2025-05-28 20:40:57,386 - reference_manager - WARNING - 未找到匹配的论文: QTRL: Toward Practical Quantum Reinforcement Learning via Quantum-Train
+2025-05-28 20:40:57,389 - reference_manager - WARNING - 未找到匹配的论文: Foundations of Transaction Fee Mechanism Design
+2025-05-28 20:40:57,397 - reference_manager - WARNING - 未找到匹配的论文: Variational quantum algorithms
+2025-05-28 20:40:57,398 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attacks Detection and Traceability Mechanism Based on Beacon Packets in Connected Automobile Vehicles
+2025-05-28 20:40:57,403 - reference_manager - WARNING - 未找到匹配的论文: Flash Boys 2.0: Frontrunning, Transaction Reordering, and Consensus Instability in Decentralized Exchanges
+2025-05-28 20:40:57,408 - reference_manager - WARNING - 未找到匹配的论文: Unsupervised Learning of Visual Features by Contrasting Cluster Assignments
+2025-05-28 20:40:57,414 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts in the Real World: A Statistical Exploration of External Data Dependencies
+2025-05-28 20:40:57,414 - reference_manager - INFO - 论文参考处理完成: processed=6, success=0, failed=0, skipped=6
+2025-05-28 20:40:57,418 - reference_manager - WARNING - 未找到匹配的论文: Supervised learning with quantum-enhanced feature spaces
+2025-05-28 20:40:57,422 - reference_manager - WARNING - 未找到匹配的论文: SCLA: Automated Smart Contract Summarization via LLMs and Control Flow Prompt
+2025-05-28 20:40:57,424 - reference_manager - WARNING - 未找到匹配的论文: Quantum circuit learning
+2025-05-28 20:40:57,430 - reference_manager - WARNING - 未找到匹配的论文: Understanding the Decentralization of DPoS: Perspectives From Data-Driven Analysis on EOSIO
+2025-05-28 20:40:57,432 - reference_manager - WARNING - 未找到匹配的论文: Quantum machine learning
+2025-05-28 20:40:57,435 - reference_manager - WARNING - 未找到匹配的论文: Security Analysis of EOSIO Smart Contracts
+2025-05-28 20:40:57,438 - reference_manager - WARNING - 未找到匹配的论文: An introduction to quantum machine learning
+2025-05-28 20:40:57,444 - reference_manager - INFO - 论文参考处理完成: processed=15, success=0, failed=0, skipped=15
+2025-05-28 20:40:57,445 - reference_manager - WARNING - 未找到匹配的论文: WANA: Symbolic Execution of Wasm Bytecode for Cross-Platform Smart Contract Vulnerability Detection
+2025-05-28 20:40:57,445 - reference_manager - INFO - 论文参考处理完成: processed=11, success=0, failed=0, skipped=11
+2025-05-28 20:40:57,445 - reference_manager - INFO - 参考处理完成: processed=72, success=0, failed=0, skipped=72
+2025-05-28 20:40:57,445 - reference_manager - INFO - 参考处理摘要:
+2025-05-28 20:40:57,445 - reference_manager - INFO - - 总处理参考: 72
+2025-05-28 20:40:57,445 - reference_manager - INFO - - 成功创建: 0
+2025-05-28 20:40:57,445 - reference_manager - INFO - - 创建失败: 0
+2025-05-28 20:40:57,445 - reference_manager - INFO - - 跳过: 72

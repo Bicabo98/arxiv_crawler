@@ -1,0 +1,10 @@
+**/__pycache__
+**/.mypy_cache
+output*/
+test
+run.py
+papers.db
+
+data/
+cache/
+json*/

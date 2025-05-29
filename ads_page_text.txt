@@ -1,0 +1,120 @@
+参考文献列表(15)：
+
+标题: Federated Quantum-Train with Batched Parameter Generation
+作者: Liu, Chen-Yu, Yen-Chi Chen, Samuel
+年份: 2024
+出版信息: arXiv e-prints
+Bibcode: 2024arXiv240902763L
+DOI: 10.48550/arXiv.2409.02763
+
+
+标题: A Quantum Circuit-Based Compression Perspective for Parameter-Efficient Learning
+作者: Liu, Chen-Yu, Huck Yang, Chao-Han, Goan, Hsi-Sheng, Hsieh, Min-Hsiu
+年份: 2024
+出版信息: arXiv e-prints
+Bibcode: 2024arXiv241009846L
+DOI: 10.48550/arXiv.2410.09846
+
+
+标题: Quantum-Train Long Short-Term Memory: Application on Flood Prediction Problem
+作者: Lin, Chu-Hsuan Abraham, Liu, Chen-Yu, Chen, Kuan-Cheng
+年份: 2024
+出版信息: arXiv e-prints
+Bibcode: 2024arXiv240708617L
+DOI: 10.48550/arXiv.2407.08617
+
+
+标题: Quantum-Train-Based Distributed Multi-Agent Reinforcement Learning
+作者: Chen, Kuan-Cheng, Yen-Chi Chen, Samuel, Liu, Chen-Yu, Leung, Kin K.
+年份: 2024
+出版信息: arXiv e-prints
+Bibcode: 2024arXiv241208845C
+DOI: 10.48550/arXiv.2412.08845
+
+
+标题: Programming Variational Quantum Circuits with Quantum-Train Agent
+作者: Liu, Chen-Yu, Yen-Chi Chen, Samuel, Chen, Kuan-Cheng, Huang, Wei-Jia, Chang, Yen-Jui
+年份: 2024
+出版信息: arXiv e-prints
+Bibcode: 2024arXiv241201173L
+DOI: 10.48550/arXiv.2412.01173
+
+
+标题: Quantum-Train with Tensor Network Mapping Model and Distributed Circuit Ansatz
+作者: Liu, Chen-Yu, Lin, Chu-Hsuan Abraham, Chen, Kuan-Cheng
+年份: 2024
+出版信息: arXiv e-prints
+Bibcode: 2024arXiv240906992L
+DOI: 10.48550/arXiv.2409.06992
+
+
+标题: Quantum-Trained Convolutional Neural Network for Deepfake Audio Detection
+作者: Lin, Chu-Hsuan Abraham, Liu, Chen-Yu, Yen-Chi Chen, Samuel, Chen, Kuan-Cheng
+年份: 2024
+出版信息: arXiv e-prints
+Bibcode: 2024arXiv241009250L
+DOI: 10.48550/arXiv.2410.09250
+
+
+标题: Quantum-Train: Rethinking Hybrid Quantum-Classical Machine Learning in the Model Compression Perspective
+作者: Liu, Chen-Yu, Kuo, En-Jui, Lin, Chu-Hsuan Abraham, Gemsun Young, Jason, Chang, Yeong-Jar, Hsieh, Min-Hsiu, Goan, Hsi-Sheng
+年份: 2024
+出版信息: arXiv e-prints
+Bibcode: 2024arXiv240511304L
+DOI: 10.48550/arXiv.2405.11304
+
+
+标题: QTRL: Toward Practical Quantum Reinforcement Learning via Quantum-Train
+作者: Liu, Chen-Yu, Lin, Chu-Hsuan Abraham, Huck Yang, Chao-Han, Chen, Kuan-Cheng, Hsieh, Min-Hsiu
+年份: 2024
+出版信息: arXiv e-prints
+Bibcode: 2024arXiv240706103L
+DOI: 10.48550/arXiv.2407.06103
+
+
+标题: Variational quantum algorithms
+作者: Cerezo, M., Arrasmith, Andrew, Babbush, Ryan, Benjamin, Simon C., Endo, Suguru, Fujii, Keisuke, McClean, Jarrod R., Mitarai, Kosuke, Yuan, Xiao, Cincio, Lukasz, Coles, Patrick J.
+年份: 2021
+出版信息: Nature Reviews Physics
+Bibcode: 2021NatRP...3..625C
+DOI: 10.1038/s42254-021-00348-9
+
+
+标题: Unsupervised Learning of Visual Features by Contrasting Cluster Assignments
+作者: Caron, Mathilde, Misra, Ishan, Mairal, Julien, Goyal, Priya, Bojanowski, Piotr, Joulin, Armand
+年份: 2020
+出版信息: arXiv e-prints
+Bibcode: 2020arXiv200609882C
+DOI: 10.48550/arXiv.2006.09882
+
+
+标题: Supervised learning with quantum-enhanced feature spaces
+作者: Havlíček, Vojtěch, Córcoles, Antonio D., Temme, Kristan, Harrow, Aram W., Kandala, Abhinav, Chow, Jerry M., Gambetta, Jay M.
+年份: 2019
+出版信息: Nature
+Bibcode: 2019Natur.567..209H
+DOI: 10.1038/s41586-019-0980-2
+
+
+标题: Quantum circuit learning
+作者: Mitarai, K., Negoro, M., Kitagawa, M., Fujii, K.
+年份: 2018
+出版信息: Physical Review A
+Bibcode: 2018PhRvA..98c2309M
+DOI: 10.1103/PhysRevA.98.032309
+
+
+标题: Quantum machine learning
+作者: Biamonte, Jacob, Wittek, Peter, Pancotti, Nicola, Rebentrost, Patrick, Wiebe, Nathan, Lloyd, Seth
+年份: 2017
+出版信息: Nature
+Bibcode: 2017Natur.549..195B
+DOI: 10.1038/nature23474
+
+
+标题: An introduction to quantum machine learning
+作者: Schuld, Maria, Sinayskiy, Ilya, Petruccione, Francesco
+年份: 2015
+出版信息: Contemporary Physics
+Bibcode: 2015ConPh..56..172S
+DOI: 10.1080/00107514.2014.964942
