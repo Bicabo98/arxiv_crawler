@@ -22,7 +22,7 @@ class ArxivScraper(object):
         # optional_keywords=["LLM", "LLMs", "language model", "language models", "multimodal", "finetuning", "GPT"],
         optional_keywords=["blockchain"],
         trans_to="zh-CN",
-        proxy="http://127.0.0.1:7890",
+        proxy=None,
     ):
         """
         一个抓取指定日期范围内的arxiv文章的类,
@@ -323,9 +323,7 @@ class ArxivScraper(object):
             self.total = total
 
         results = soup.find_all("li", {"class": "arxiv-result"})
-        with open("search_results.txt", "w", encoding="utf-8") as file:
-                for result in results:
-                    file.write(str(result)) 
+
         papers = []
         for result in results:
 
@@ -427,7 +425,7 @@ if __name__ == "__main__":
     from datetime import date, timedelta
 
     today = date.today()
-    date_from = today - timedelta(days=180)
+    date_from = today - timedelta(days=1)
 
     scraper = ArxivScraper(
         date_from=date_from.strftime("%Y-%m-%d"),

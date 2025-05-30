@@ -14,13 +14,18 @@ from async_translator import async_translate
 from categories import parse_categories
 import requests
 import uuid
-from datetime import datetime
 import re
 import urllib3
 import os
 import time
 from bs4 import BeautifulSoup
 import tempfile
+import io
+import fitz  # PyMuPDF
+from PIL import Image
+import boto3
+from botocore.client import Config
+from botocore.exceptions import ClientError
 
 @dataclass
 class Paper:
@@ -35,8 +40,7 @@ class Paper:
     abstract_translated: str | None = None
     first_announced_date: datetime | None = None
     references: list = None 
-
-
+    thumbnail_path: str | None = None
 
     @classmethod
     def from_row(cls, row: sqlite3.Row):
@@ -52,6 +56,7 @@ class Paper:
             abstract_translated=row["abstract_translated"],
             first_announced_date=datetime.strptime(row["first_announced_date"], "%Y-%m-%d"),
             references=json.loads(row["paper_references"]) if row["paper_references"] else None,
+            thumbnail_path=row["thumbnail_path"] if "thumbnail_path" in row.keys() else None,
         )
     @property
     def papers_cool_url(self):
@@ -147,7 +152,8 @@ class PaperDatabase:
                     comments TEXT NOT NULL,
                     abstract TEXT NOT NULL,
                     abstract_translated TEXT,
-                    paper_references TEXT
+                    paper_references TEXT,
+                    thumbnail_path TEXT
                 )
             """
             )
@@ -168,6 +174,7 @@ class PaperDatabase:
                     paper.abstract_translated,
                     paper.comments,
                     json.dumps(paper.references) if paper.references else None,
+                    paper.thumbnail_path,
                     datetime.now(UTC).replace(tzinfo=None)
                 )
                 for paper in papers
@@ -175,8 +182,8 @@ class PaperDatabase:
             self.conn.executemany(
                 """
                 INSERT OR REPLACE INTO papers 
-                (url, authors, abstract, title, categories, first_submitted_date, first_announced_date, title_translated, abstract_translated, comments, paper_references, update_time)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (url, authors, abstract, title, categories, first_submitted_date, first_announced_date, title_translated, abstract_translated, comments, paper_references, thumbnail_path, update_time)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 data_to_insert,
             )
@@ -303,17 +310,17 @@ class PaperExporter:
 
         # 收集所有日期范围内的论文记录
         all_paper_records = []
-        
+
         for i in range(self.date_range_days):
             current = self.date_from + timedelta(days=i)
             current_filename = current.strftime(filename_format)
 
             papers = self.db.fetch_papers_on_date(current)
             chosen_records, filtered_records = self.filter_papers(papers)
-            
+
             # 将当天的论文记录添加到全部集合
             all_paper_records.extend(chosen_records + filtered_records)
-            
+
             with open(output_dir / f"{current_filename}.md", "w", encoding="utf-8") as file:
                 papers_str = f"# 论文全览：{current_filename}\n\n共有{len(chosen_records)}篇相关领域论文, 另有{len(filtered_records)}篇其他\n\n"
 
@@ -336,7 +343,7 @@ class PaperExporter:
             self.console.log(
                 f"[bold green]Output {current_filename}.md completed. {len(chosen_records)} papers chosen, {len(filtered_records)} papers filtered"
             )
-            
+
         # 处理完所有日期的文件后，单独处理一次图数据库存储
         # 这样可以避免频繁调用ADS API
         if all_paper_records:
@@ -344,7 +351,7 @@ class PaperExporter:
             self.save_papers_to_graph_db(all_paper_records)
 
     def save_papers_to_graph_db(self, paper_records):
-        """将论文记录保存到图数据库，并获取参考文献和引用"""
+        """将论文记录保存到图数据库，生成缩略图，但不获取引用和参考文献"""
         import requests
         import uuid
         import re
@@ -357,13 +364,25 @@ class PaperExporter:
         from pathlib import Path
         
         api_base_url = "http://localhost:8080/neo4j/v1"  # 图数据库API地址
-        ads_api_token = "fRz4Ale1aJyAsatFcdns7cuQPPnl1Mte63HhUZ1T"  # ADS API令牌，请替换为实际令牌
-        document_api_url = "http://167.86.95.197:8010/api/documents/post_document/"  # 文档上传API地址
-        document_api_token = "cbf4c9e050809600a3626ffa10c317dde81e7d5a"  # 文档API令牌
         http = urllib3.PoolManager()
+        
+        # AWS S3配置信息
+        AWS_CONFIG = {
+            "access_key": "AKIARLE6T3XC3DMAINFC",
+            "secret_key": "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",
+            "bucket_name": "dcnftmetadata",
+            "endpoint": "https://s3.ap-southeast-1.amazonaws.com",
+            "pub_url": "https://dcnftmetadata.s3.ap-southeast-1.amazonaws.com",
+            "region": "ap-southeast-1",
+            "upload_dir": "paper_thumbnails"  # 存储缩略图的目录
+        }
 
         # 保存所有论文的映射 {标题: 论文ID}
         paper_title_to_id = self.load_title_mapping()  # 加载现有映射
+        
+        # 创建标准化映射（所有键转为小写）
+        normalized_title_to_id = {title.lower().strip(): paper_id for title, paper_id in paper_title_to_id.items()}
+        
         papers_with_references = []
         
         # 创建缓存目录
@@ -374,13 +393,15 @@ class PaperExporter:
         citations_cache_dir = Path("./cache/citations")
         citations_cache_dir.mkdir(exist_ok=True, parents=True)
         
-        # PDF上传记录缓存目录
-        pdf_upload_cache_dir = Path("./cache/pdf_uploads")
-        pdf_upload_cache_dir.mkdir(exist_ok=True, parents=True)
+        # 缩略图缓存目录
+        thumbnails_dir = Path("./cache/thumbnails")
+        thumbnails_dir.mkdir(exist_ok=True, parents=True)
         
         # 全局限速设置
-        PAPER_INTERVAL = 100  # 处理下一篇论文前等待的时间（秒）
-        API_REQUEST_INTERVAL = 5  # 同一篇论文内两次API请求之间的间隔（秒）
+        PAPER_INTERVAL = 8  # 处理下一篇论文前等待的时间（秒）
+        API_REQUEST_INTERVAL = 1  # 同一篇论文内两次API请求之间的间隔（秒）
+        RETRY_INTERVAL = 30  # 遇到429错误时的重试间隔（秒）
+        MAX_RETRIES = 99  # 最大重试次数
         last_paper_time = 0  # 上一篇论文处理的时间戳
         
         # 请求计数和成功率统计
@@ -400,137 +421,277 @@ class PaperExporter:
             
             last_paper_time = time.time()
         
-        def ensure_api_rate_limit():
-            """确保同一篇论文内API请求之间的间隔"""
-            time.sleep(API_REQUEST_INTERVAL)
-        
-        def download_and_upload_pdf(pdf_url, title, arxiv_id):
-            """下载PDF并上传到文档API"""
-            # 检查是否已上传过该PDF
-            pdf_cache_file = pdf_upload_cache_dir / f"{arxiv_id}_uploaded.json"
+        def upload_to_s3(image_bytes, filename, content_type='image/jpeg'):
+            """上传图片到AWS S3
             
-            # 如果缓存文件存在，说明已经上传过
-            if pdf_cache_file.exists():
-                try:
-                    with open(pdf_cache_file, 'r') as f:
-                        cache_data = json.load(f)
-                    self.console.log(f"[green]PDF已上传过，跳过上传: {title}")
-                    return True, cache_data.get('message', '已上传')
-                except Exception as e:
-                    self.console.log(f"[yellow]读取PDF上传缓存失败: {e}")
-            
-            # 下载PDF文件到临时文件
+            Args:
+                image_bytes: 图片的二进制数据
+                filename: 文件名
+                content_type: 内容类型，默认为image/jpeg
+                
+            Returns:
+                str: 上传成功后的URL，失败则返回None
+            """
             try:
-                self.console.log(f"[blue]开始下载PDF: {pdf_url}")
-                
-                # 创建临时文件
-                temp_file = tempfile.NamedTemporaryFile(suffix='.pdf', delete=False)
-                temp_file_path = temp_file.name
-                temp_file.close()
-                
-                # 下载PDF
-                response = requests.get(pdf_url, stream=True)
-                if response.status_code != 200:
-                    self.console.log(f"[red]下载PDF失败，状态码: {response.status_code}")
-                    return False, f"下载失败: {response.status_code}"
-                
-                # 将PDF内容写入临时文件
-                with open(temp_file_path, 'wb') as f:
-                    for chunk in response.iter_content(chunk_size=8192):
-                        if chunk:
-                            f.write(chunk)
-                
-                self.console.log(f"[green]PDF下载成功: {temp_file_path}")
-                
-                # 上传PDF到文档API
-                self.console.log(f"[blue]开始上传PDF到文档API: {title}")
-                
-                headers = {
-                    'Authorization': f'Token {document_api_token}'
-                }
-                
-                # 准备上传的文件和数据
-                files = {
-                    'document': (os.path.basename(temp_file_path), open(temp_file_path, 'rb'), 'application/pdf')
-                }
-                
-                data = {
-                    'title': title,
-                    'document_type': '1',
-                    'tags': '1'
-                }
-                
-                # 上传文件
-                upload_response = requests.post(
-                    document_api_url,
-                    headers=headers,
-                    files=files,
-                    data=data
+                # 创建S3客户端
+                s3_client = boto3.client(
+                    's3',
+                    region_name=AWS_CONFIG["region"],
+                    endpoint_url=AWS_CONFIG["endpoint"],
+                    aws_access_key_id=AWS_CONFIG["access_key"],
+                    aws_secret_access_key=AWS_CONFIG["secret_key"]
                 )
                 
-                # 关闭并删除临时文件
-                files['document'][1].close()
-                try:
-                    os.unlink(temp_file_path)
-                except Exception as e:
-                    self.console.log(f"[yellow]删除临时文件失败: {e}")
+                # 生成S3存储路径
+                file_key = f"{AWS_CONFIG['upload_dir']}/{filename}"
                 
-                # 检查上传结果
-                if upload_response.status_code == 201 or upload_response.status_code == 200:
-                    upload_result = upload_response.json()
-                    self.console.log(f"[green]PDF上传成功: {title}")
-                    
-                    # 保存上传记录到缓存
-                    cache_data = {
-                        'title': title,
-                        'arxiv_id': arxiv_id,
-                        'upload_time': datetime.now().isoformat(),
-                        'status': 'success',
-                        'message': f"上传成功: {upload_response.status_code}"
-                    }
-                    
-                    try:
-                        with open(pdf_cache_file, 'w', encoding='utf-8') as f:
-                            json.dump(cache_data, f, ensure_ascii=False, indent=2)
-                    except Exception as e:
-                        self.console.log(f"[yellow]保存PDF上传缓存失败: {e}")
-                    
-                    return True, f"上传成功: {upload_response.status_code}"
-                else:
-                    self.console.log(f"[red]PDF上传失败，状态码: {upload_response.status_code}")
-                    self.console.log(f"[red]错误信息: {upload_response.text}")
-                    return False, f"上传失败: {upload_response.status_code}"
+                # 上传文件
+                self.console.log(f"[blue]开始上传缩略图到S3: {file_key}")
+                s3_client.put_object(
+                    Bucket=AWS_CONFIG["bucket_name"],
+                    Key=file_key,
+                    Body=image_bytes,
+                    ContentType=content_type
+                )
                 
+                # 生成公共URL
+                file_url = f"{AWS_CONFIG['pub_url']}/{file_key}"
+                self.console.log(f"[green]缩略图上传成功: {file_url}")
+                return file_url
+                
+            except ClientError as e:
+                self.console.log(f"[red]上传到S3失败: {str(e)}")
+                return None
             except Exception as e:
-                self.console.log(f"[red]下载或上传PDF过程中出错: {str(e)}")
+                self.console.log(f"[red]上传过程中发生错误: {str(e)}")
                 import traceback
                 self.console.log(traceback.format_exc())
-                return False, f"处理失败: {str(e)}"
+                return None
+
+        def generate_pdf_thumbnail(pdf_url, arxiv_id, title, size=(300, 300), upload_to_aws=True, max_retries=3, retry_delay=10):
+            """生成PDF首页缩略图并上传到AWS S3
+            
+            Args:
+                pdf_url: PDF的URL
+                arxiv_id: 论文的arxiv ID
+                title: 论文标题
+                size: 缩略图尺寸，默认300x300
+                upload_to_aws: 是否上传到AWS S3
+                max_retries: PDF下载最大重试次数
+                retry_delay: 重试等待时间(秒)
+                
+            Returns:
+                tuple: (成功标志, 缩略图URL或错误信息)
+            """
+            # 缓存文件路径（用于检查是否已生成过）
+            cache_info_path = thumbnails_dir / f"{arxiv_id}_thumbnail_info.json"
+            
+            # 检查缓存，如果已上传过，直接返回URL
+            if cache_info_path.exists():
+                try:
+                    with open(cache_info_path, 'r') as f:
+                        cache_data = json.load(f)
+                    if 's3_url' in cache_data:
+                        self.console.log(f"[green]缩略图已上传到S3，跳过生成: {title}")
+                        return True, cache_data['s3_url']
+                    elif 'thumbnail_path' in cache_data and not upload_to_aws:
+                        self.console.log(f"[green]缩略图已存在，跳过生成: {title}")
+                        return True, cache_data['thumbnail_path']
+                except Exception as e:
+                    self.console.log(f"[yellow]读取缩略图缓存信息失败: {e}")
+            
+            retries = 0
+            last_error = None
+            
+            while retries <= max_retries:
+                try:
+                    self.console.log(f"[blue]开始下载PDF用于生成缩略图: {pdf_url}" + (f" (尝试 {retries+1}/{max_retries+1})" if retries > 0 else ""))
+                    
+                    # 确保PDF URL以.pdf结尾
+                    if not pdf_url.endswith('.pdf'):
+                        pdf_url = f"{pdf_url}.pdf"
+                        
+                    # 下载PDF（带重试）
+                    session = requests.Session()
+                    # 设置超时时间和重试策略
+                    retry_strategy = urllib3.Retry(
+                        total=3,  # 内部重试3次
+                        backoff_factor=1,
+                        status_forcelist=[429, 500, 502, 503, 504],
+                        allowed_methods=["GET"]
+                    )
+                    adapter = requests.adapters.HTTPAdapter(max_retries=retry_strategy)
+                    session.mount("http://", adapter)
+                    session.mount("https://", adapter)
+                    
+                    # 使用会话下载PDF
+                    response = session.get(pdf_url, stream=True, timeout=(10, 30))  # 连接超时10秒，读取超时30秒
+                    
+                    if response.status_code != 200:
+                        self.console.log(f"[yellow]下载PDF失败，状态码: {response.status_code}，尝试重试...")
+                        retries += 1
+                        time.sleep(retry_delay)
+                        continue
+                    
+                    # 将PDF内容读入内存
+                    pdf_bytes = io.BytesIO(response.content)
+                    self.console.log(f"[green]PDF下载成功，准备生成缩略图")
+                    
+                    # 使用PyMuPDF打开PDF
+                    try:
+                        doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+                        if doc.page_count == 0:
+                            self.console.log(f"[red]PDF没有页面")
+                            return False, "PDF没有页面"
+                        
+                        # 获取首页
+                        first_page = doc[0]
+                        
+                        # 获取首页图像
+                        pix = first_page.get_pixmap(matrix=fitz.Matrix(2, 2))  # 使用2倍缩放以提高质量
+                        
+                        # 将图像转换为PIL图像
+                        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+                        
+                        # 缩放到指定尺寸
+                        img.thumbnail(size, Image.Resampling.LANCZOS)
+                        
+                        # 将图像保存到内存中
+                        img_bytes = io.BytesIO()
+                        img.save(img_bytes, format="JPEG", quality=85)
+                        img_bytes.seek(0)
+                        
+                        # 缓存数据
+                        cache_data = {
+                            'title': title,
+                            'arxiv_id': arxiv_id,
+                            'generate_time': datetime.now().isoformat(),
+                            'pdf_url': pdf_url
+                        }
+                        
+                        if upload_to_aws:
+                            # 生成唯一文件名
+                            unique_filename = f"{arxiv_id}_{uuid.uuid4()}.jpg"
+                            
+                            # 上传到AWS S3
+                            img_url = upload_to_s3(img_bytes.getvalue(), unique_filename)
+                            if img_url:
+                                # 更新缓存信息
+                                cache_data['s3_url'] = img_url
+                                
+                                try:
+                                    with open(cache_info_path, 'w') as f:
+                                        json.dump(cache_data, f, ensure_ascii=False, indent=2)
+                                except Exception as e:
+                                    self.console.log(f"[yellow]保存缩略图缓存信息失败: {e}")
+                                
+                                return True, img_url
+                            else:
+                                return False, "上传到AWS S3失败"
+                        else:
+                            # 保存到本地
+                            thumbnail_path = thumbnails_dir / f"{arxiv_id}_thumbnail.jpg"
+                            
+                            with open(thumbnail_path, "wb") as f:
+                                f.write(img_bytes.getvalue())
+                            
+                            self.console.log(f"[green]缩略图生成成功: {thumbnail_path}")
+                            
+                            # 更新缓存信息
+                            cache_data['thumbnail_path'] = str(thumbnail_path)
+                            
+                            try:
+                                with open(cache_info_path, 'w') as f:
+                                    json.dump(cache_data, f, ensure_ascii=False, indent=2)
+                            except Exception as e:
+                                self.console.log(f"[yellow]保存缩略图缓存信息失败: {e}")
+                            
+                            return True, str(thumbnail_path)
+                        
+                    except Exception as e:
+                        self.console.log(f"[red]生成缩略图时出错: {str(e)}")
+                        import traceback
+                        self.console.log(traceback.format_exc())
+                        return False, f"生成缩略图失败: {str(e)}"
+                    
+                except (requests.exceptions.SSLError, 
+                        requests.exceptions.ConnectionError, 
+                        requests.exceptions.Timeout,
+                        requests.exceptions.RequestException) as e:
+                    last_error = str(e)
+                    retries += 1
+                    if retries <= max_retries:
+                        self.console.log(f"[yellow]下载PDF时遇到网络错误: {last_error}")
+                        self.console.log(f"[yellow]等待{retry_delay}秒后重试... (尝试 {retries}/{max_retries})")
+                        time.sleep(retry_delay)
+                    else:
+                        self.console.log(f"[red]达到最大重试次数({max_retries})，PDF下载失败")
+                        break
+                except Exception as e:
+                    self.console.log(f"[red]下载PDF或生成缩略图过程中出错: {str(e)}")
+                    import traceback
+                    self.console.log(traceback.format_exc())
+                    last_error = str(e)
+                    retries += 1
+                    if retries <= max_retries:
+                        self.console.log(f"[yellow]等待{retry_delay}秒后重试... (尝试 {retries}/{max_retries})")
+                        time.sleep(retry_delay)
+                    else:
+                        break
+            
+            return False, f"处理失败: {last_error}"
         
-        for index, record in enumerate(paper_records):
-            paper = record.paper
-            self.console.log(f"[blue]处理论文 {index+1}/{len(paper_records)}: {paper.title}")
+        def safe_api_call(url, params=None, retry_count=0):
+            """安全调用API，处理429错误"""
+            nonlocal total_requests, successful_requests
             
-            # 检查这篇论文是否已经在映射中（根据标题）
-            paper_title_lower = paper.title.lower().strip()
-            if paper_title_lower in paper_title_to_id:
-                existing_id = paper_title_to_id[paper_title_lower]
-                self.console.log(f"[green]论文已存在于映射中，使用现有ID: {existing_id}")
-                continue
+            if retry_count >= MAX_RETRIES:
+                self.console.log(f"[red]达到最大重试次数({MAX_RETRIES})，放弃请求: {url}")
+                return None
             
-            # 确保论文之间的请求速率限制
-            ensure_paper_rate_limit()
+            # 增加请求计数
+            total_requests += 1
             
-            # 统计当前成功率
-            if total_requests > 0:
-                success_rate = (successful_requests / total_requests) * 100
-                self.console.log(f"[blue]当前请求成功率: {success_rate:.1f}% ({successful_requests}/{total_requests})")
-            
-            # 生成论文UUID
+            try:
+                response = requests.get(url, params=params)
+                
+                # 处理429错误（请求过多）
+                if response.status_code == 429:
+                    retry_count += 1
+                    self.console.log(f"[yellow]API限流(429)，等待{RETRY_INTERVAL}秒后重试... (尝试 {retry_count}/{MAX_RETRIES})")
+                    time.sleep(RETRY_INTERVAL)
+                    return safe_api_call(url, params, retry_count)
+                
+                # 如果请求成功
+                if response.status_code == 200:
+                    successful_requests += 1
+                    return response.json()
+                else:
+                    self.console.log(f"[red]API请求失败，状态码: {response.status_code}，URL: {url}")
+                    self.console.log(f"[red]响应内容: {response.text}")
+                    return None
+                
+            except Exception as e:
+                self.console.log(f"[red]API请求出错: {str(e)}")
+                return None
+
+        # 处理每一篇论文
+        for paper_record in paper_records:
+            paper = paper_record.paper
             paper_uuid = str(uuid.uuid4())
             
-            # 从URL中提取arXiv ID
-            arxiv_id = ""
+            self.console.log(f"[blue]===== 处理论文: {paper.title} =====")
+            ensure_paper_rate_limit()
+            
+            # 检查标题映射中是否已有此论文（不区分大小写）
+            paper_title_lower = paper.title.lower().strip()
+            
+            if paper_title_lower in normalized_title_to_id:
+                paper_id = normalized_title_to_id[paper_title_lower]
+                self.console.log(f"[green]论文已存在于映射中，跳过处理: {paper.title} (ID: {paper_id})")
+                continue
+
+            # 生成缩略图
             if paper.url and "arxiv.org/abs/" in paper.url:
                 match = re.search(r'arxiv\.org/abs/([^/]+)', paper.url)
                 if match:
@@ -539,211 +700,16 @@ class PaperExporter:
                     # 构建PDF URL
                     pdf_url = paper.url.replace("arxiv.org/abs/", "arxiv.org/pdf/") + ".pdf"
                     
-                    # 尝试下载并上传PDF
-                    pdf_upload_success, pdf_message = download_and_upload_pdf(pdf_url, paper.title, arxiv_id)
-                    
-                    # 如果下载和上传PDF成功，在两次API请求之间添加间隔
-                    if pdf_upload_success:
-                        ensure_api_rate_limit()
-                    
-                    # 尝试获取论文的参考文献和引用
-                    references_list = []
-                    citations_list = []
-                    cache_data = None
-                    citations_cache_data = None
-                    
-                    # 检查缓存中是否已有此论文的参考文献
-                    cache_file = cache_dir / f"{arxiv_id}_references.json"
-                    citations_cache_file = citations_cache_dir / f"{arxiv_id}_citations.json"
-                    
-                    # 1. 加载参考文献缓存
-                    if cache_file.exists():
-                        try:
-                            with open(cache_file, 'r', encoding='utf-8') as f:
-                                cache_data = json.load(f)
-                                # 检查缓存是否是新格式（包含uuid、title和references）
-                                if 'references' in cache_data:
-                                    references_list = cache_data['references']
-                                    self.console.log(f"[green]从缓存加载{len(references_list)}条参考文献")
-                                    # 如果缓存中的uuid不同于新生成的，使用缓存中的uuid
-                                    if 'uuid' in cache_data:
-                                        paper_uuid = cache_data['uuid']
-                                        self.console.log(f"[green]使用缓存中的论文UUID: {paper_uuid}")
-                                else:
-                                    # 旧格式缓存，直接作为references列表
-                                    references_list = cache_data
-                                    self.console.log(f"[green]从旧格式缓存加载{len(references_list)}条参考文献")
-                        except Exception as e:
-                            self.console.log(f"[yellow]读取参考文献缓存失败: {e}")
-                    
-                    # 2. 加载引用缓存
-                    if citations_cache_file.exists():
-                        try:
-                            with open(citations_cache_file, 'r', encoding='utf-8') as f:
-                                citations_cache_data = json.load(f)
-                                # 检查缓存是否是新格式
-                                if 'citations' in citations_cache_data:
-                                    citations_list = citations_cache_data['citations']
-                                    self.console.log(f"[green]从缓存加载{len(citations_list)}条引用")
-                                    # 如果参考文献缓存中没有uuid但引用缓存中有，使用引用缓存中的uuid
-                                    if not cache_data and 'uuid' in citations_cache_data:
-                                        paper_uuid = citations_cache_data['uuid']
-                                        self.console.log(f"[green]使用引用缓存中的论文UUID: {paper_uuid}")
-                                else:
-                                    # 旧格式缓存
-                                    citations_list = citations_cache_data
-                                    self.console.log(f"[green]从旧格式缓存加载{len(citations_list)}条引用")
-                        except Exception as e:
-                            self.console.log(f"[yellow]读取引用缓存失败: {e}")
-                    
-                    # 如果缓存中没有，则通过API获取
-                    if not references_list or not citations_list:
-                        # 解析作者列表
-                        authors_list = [author_name.strip() for author_name in paper.authors.split(',') if author_name.strip()]
-                        
-                        if arxiv_id and authors_list:
-                            self.console.log(f"[blue]尝试获取论文参考文献和引用...")
-                            
-                            # 1. 构造ADS URL和基础bibcode
-                            abstract_url, base_id = construct_ads_url(arxiv_id, authors_list, "abstract")
-                            
-                            if abstract_url and base_id:
-                                self.console.log(f"[blue]ADS摘要页面URL: {abstract_url}")
-                                
-                                # 更新请求计数
-                                total_requests += 1
-                                
-                                # 2. 爬取摘要页面以获取bibcode
-                                abstract_html = crawl_ads_page(abstract_url)
-                                
-                                if abstract_html:
-                                    # 更新成功请求计数
-                                    successful_requests += 1
-                                    
-                                    # 3. 从HTML中提取arxiv ID
-                                    extracted_arxiv_id = extract_bibcode_from_html(abstract_html)
-                                    
-                                    if extracted_arxiv_id:
-                                        self.console.log(f"[green]从HTML中提取到arXiv ID: {extracted_arxiv_id}")
-                                        
-                                        # 4. 使用提取的arxiv ID和作者列表重新构造正确的bibcode
-                                        _, new_bibcode = construct_ads_url(extracted_arxiv_id, authors_list, "abstract")
-                                        
-                                        if new_bibcode:
-                                            self.console.log(f"[green]构造ADS bibcode: {new_bibcode}")
-                                            bibcode = new_bibcode
-                                        else:
-                                            self.console.log(f"[yellow]无法构造新的bibcode，使用原始基础ID: {base_id}")
-                                            bibcode = base_id
-                                    else:
-                                        self.console.log(f"[yellow]未能从HTML中提取arXiv ID，使用原始基础ID: {base_id}")
-                                        bibcode = base_id
-                                    
-                                    # 5. 使用ADS API获取参考文献（如果缓存中没有）
-                                    if not references_list and bibcode:
-                                        self.console.log(f"[blue]使用bibcode获取参考文献: {bibcode}")
-                                        references_list = get_references_from_ads_api(bibcode, ads_api_token, False)
-                                        
-                                        # 更新请求计数
-                                        total_requests += 1
-                                        
-                                        if references_list:
-                                            # 更新成功请求计数
-                                            successful_requests += 1
-                                            
-                                            self.console.log(f"[green]成功获取{len(references_list)}条参考文献")
-                                            
-                                            # 创建包含论文UUID和标题的缓存数据
-                                            cache_data = {
-                                                "uuid": paper_uuid,
-                                                "title": paper.title,
-                                                "references": references_list
-                                            }
-                                            
-                                            # 保存到缓存
-                                            try:
-                                                with open(cache_file, 'w', encoding='utf-8') as f:
-                                                    json.dump(cache_data, f, ensure_ascii=False, indent=2)
-                                                self.console.log(f"[green]参考文献已保存到缓存")
-                                            except Exception as e:
-                                                self.console.log(f"[yellow]保存参考文献缓存失败: {e}")
-                                        else:
-                                            self.console.log(f"[yellow]未找到参考文献或获取失败")
-                                    
-                                    # 确保API请求之间的间隔
-                                    if not citations_list and bibcode:
-                                        ensure_api_rate_limit()
-                                        
-                                        # 6. 使用ADS API获取引用（如果缓存中没有）
-                                        self.console.log(f"[blue]使用bibcode获取引用: {bibcode}")
-                                        citations_list = get_references_from_ads_api(bibcode, ads_api_token, True)
-                                        
-                                        # 更新请求计数
-                                        total_requests += 1
-                                        
-                                        if citations_list:
-                                            # 更新成功请求计数
-                                            successful_requests += 1
-                                            
-                                            self.console.log(f"[green]成功获取{len(citations_list)}条引用")
-                                            
-                                            # 创建包含论文UUID和标题的缓存数据
-                                            citations_cache_data = {
-                                                "uuid": paper_uuid,
-                                                "title": paper.title,
-                                                "citations": citations_list
-                                            }
-                                            
-                                            # 保存到缓存
-                                            try:
-                                                with open(citations_cache_file, 'w', encoding='utf-8') as f:
-                                                    json.dump(citations_cache_data, f, ensure_ascii=False, indent=2)
-                                                self.console.log(f"[green]引用已保存到缓存")
-                                            except Exception as e:
-                                                self.console.log(f"[yellow]保存引用缓存失败: {e}")
-                                        else:
-                                            self.console.log(f"[yellow]未找到引用或获取失败")
-                                else:
-                                    self.console.log(f"[yellow]未能爬取ADS摘要页面")
-                            else:
-                                self.console.log(f"[yellow]无法构造有效的ADS URL")
-                    
-                    # 如果已经有了缓存数据但没有新格式的缓存，更新缓存
-                    if references_list and cache_data and 'references' not in cache_data:
-                        # 创建包含论文UUID和标题的缓存数据
-                        new_cache_data = {
-                            "uuid": paper_uuid,
-                            "title": paper.title,
-                            "references": references_list
-                        }
-                        
-                        # 保存到缓存
-                        try:
-                            with open(cache_file, 'w', encoding='utf-8') as f:
-                                json.dump(new_cache_data, f, ensure_ascii=False, indent=2)
-                            self.console.log(f"[green]更新参考文献缓存为新格式")
-                        except Exception as e:
-                            self.console.log(f"[yellow]更新参考文献缓存格式失败: {e}")
-                    
-                    # 同样更新引用缓存格式（如果需要）
-                    if citations_list and citations_cache_data and 'citations' not in citations_cache_data:
-                        # 创建包含论文UUID和标题的缓存数据
-                        new_citations_cache_data = {
-                            "uuid": paper_uuid,
-                            "title": paper.title,
-                            "citations": citations_list
-                        }
-                        
-                        # 保存到缓存
-                        try:
-                            with open(citations_cache_file, 'w', encoding='utf-8') as f:
-                                json.dump(new_citations_cache_data, f, ensure_ascii=False, indent=2)
-                            self.console.log(f"[green]更新引用缓存为新格式")
-                        except Exception as e:
-                            self.console.log(f"[yellow]更新引用缓存格式失败: {e}")
+                    # 生成PDF首页缩略图并上传到AWS S3
+                    thumbnail_success, thumbnail_result = generate_pdf_thumbnail(pdf_url, arxiv_id, paper.title, upload_to_aws=True)
+                    if thumbnail_success:
+                        paper.thumbnail_path = thumbnail_result
+                        self.console.log(f"[green]缩略图处理成功，URL: {thumbnail_result}")
+                    else:
+                        self.console.log(f"[yellow]缩略图处理失败: {thumbnail_result}")
             
             # 构建DOI
-            doi = f"10.48550/arXiv.{arxiv_id}" if arxiv_id else ""
+            doi = f"10.48550/arXiv.{arxiv_id}" if 'arxiv_id' in locals() and arxiv_id else ""
             
             # 从categories中提取关键词
             keywords = []
@@ -753,22 +719,25 @@ class PaperExporter:
             # 处理作者列表
             authors_list = [author_name.strip() for author_name in paper.authors.split(',') if author_name.strip()]
             
-            # 1. 创建论文
+            print(" paper.thumbnail_path = ", paper.thumbnail_path)
+
+            # 创建论文数据
             paper_data = {
                 "paper": {
                     "id": paper_uuid,  # 使用提前生成的UUID
                     "title": paper.title,
                     "abstract": paper.abstract,
                     "doi": doi,
-                    "url": paper.url,
-                    "citations": len(citations_list) if citations_list else 0,  # 设置为引用数量
-                    "referencescount": len(references_list) if references_list else 0,  # 参考文献数量
+                    "url": pdf_url if 'pdf_url' in locals() else paper.url,  # 使用PDF URL如果有的话
+                    "citations": 0,  # 先设置为0
+                    "referencescount": 0,  # 先设置为0
                     "published_at": paper.first_submitted_date.isoformat() + "Z",
                     "keywords": keywords,
                     "venue_id": "arxiv",
                     "venue_name": "arXiv",
-                    "external_id": "",  # 清空外部ID
-                    "data_source": "arxiv"  # 设置数据来源为arxiv
+                    "external_id": "",  # 外部ID暂时为空
+                    "data_source": "arxiv",  # 设置数据来源为arxiv
+                    "img_url": paper.thumbnail_path if paper.thumbnail_path else ""
                 },
                 "authors": [
                     {
@@ -783,22 +752,12 @@ class PaperExporter:
                 ]
             }
             
-            # 如果有参考文献，添加到paper_data中
-            if references_list:
-                paper_data["references"] = references_list
-            
-            # 如果有引用，添加到paper_data中
-            if citations_list:
-                paper_data["citations_list"] = citations_list
-            
             try:
                 # 创建论文
                 full_url = f"{api_base_url}/papers/create"
                 encoded_data = json.dumps(paper_data).encode('utf-8')
                 
-                # 更新请求计数
-                total_requests += 1
-                
+                # 发送请求
                 paper_response = http.request(
                     'POST',
                     full_url,
@@ -819,30 +778,86 @@ class PaperExporter:
                 self.console.log(f"[bold blue]论文已保存到图数据库: {paper.title}")
 
                 # 保存论文标题和ID的映射关系
-                paper_title_to_id[paper.title.lower().strip()] = paper_id
+                normalized_title_to_id[paper_title_lower] = paper_id
+                
+                # 不再需要单独更新缩略图URL，因为已经在创建时包含了
                 
                 # 每篇论文处理完成后立即更新映射文件
-                self.save_title_mapping(paper_title_to_id)
-                self.console.log(f"[green]已更新论文映射 (当前总计: {len(paper_title_to_id)}篇)")
+                self.save_title_mapping(normalized_title_to_id)
+                self.console.log(f"[green]已更新论文映射 (当前总计: {len(normalized_title_to_id)}篇)")
 
-                if paper.references and len(paper.references) > 0:
-                    papers_with_references.append((paper_id, paper.title, paper.references))
-                
             except Exception as e:
                 self.console.log(f"[bold red]保存论文到图数据库失败: {str(e)}")
                 import traceback
                 self.console.log(traceback.format_exc())
+                continue
+            
+            # 将此论文的ID和标题添加到papers_with_references列表，供后续处理
+            papers_with_references.append({
+                "id": paper_uuid,
+                "title": paper.title,
+                "arxiv_id": arxiv_id if 'arxiv_id' in locals() else None
+            })
         
-        # 如果有论文数据，更新本地数据库
-        if paper_records:
-            papers_to_update = [record.paper for record in paper_records]
-            self.db.add_papers(papers_to_update)
-            self.console.log(f"[green]已更新{len(papers_to_update)}篇论文到本地数据库")
+        # 在处理完所有论文后，保存论文ID映射到文件，以便后续引用和参考文献处理
+        references_data_path = Path("./data/papers_for_references.json")
+        try:
+            # 检查文件是否存在
+            existing_data = []
+            if references_data_path.exists():
+                with open(references_data_path, 'r', encoding='utf-8') as f:
+                    existing_data = json.load(f)
+            
+            # 合并新数据，避免重复
+            existing_ids = {paper["id"] for paper in existing_data}
+            for paper in papers_with_references:
+                if paper["id"] not in existing_ids:
+                    existing_data.append(paper)
+            
+            # 保存到文件
+            with open(references_data_path, 'w', encoding='utf-8') as f:
+                json.dump(existing_data, f, ensure_ascii=False, indent=2)
+            
+            self.console.log(f"[green]已保存{len(papers_with_references)}篇论文信息到 {references_data_path}，供后续处理引用和参考文献")
+        except Exception as e:
+            self.console.log(f"[red]保存论文信息到引用处理文件时出错: {str(e)}")
+            import traceback
+            self.console.log(traceback.format_exc())
         
-        # 输出最终统计
+        # 在处理完所有论文后，保存更新后的论文数据到数据库
+        self.console.log(f"[green]保存更新后的论文数据到数据库...")
+        db = PaperDatabase()
+        papers_to_update = []
+        
+        for paper_record in paper_records:
+            papers_to_update.append(paper_record.paper)
+        
+        db.add_papers(papers_to_update)
+        self.console.log(f"[green]数据库更新完成，共保存{len(papers_to_update)}篇论文")
+        
+        # 创建新的映射（从规范化的映射）
+        new_mapping = {}
+        for title_lower, paper_id in normalized_title_to_id.items():
+            # 尝试找到原始大小写的标题
+            original_title = None
+            for paper_record in paper_records:
+                if paper_record.paper.title.lower().strip() == title_lower:
+                    original_title = paper_record.paper.title
+                    break
+            
+            # 如果找不到原始标题，使用小写版本
+            if not original_title:
+                original_title = title_lower
+            
+            new_mapping[original_title] = paper_id
+        
+        # 保存标题映射
+        self.save_title_mapping(new_mapping)
+        
+        # 打印统计信息
         if total_requests > 0:
-            final_success_rate = (successful_requests / total_requests) * 100
-            self.console.log(f"[bold blue]请求统计: 总计{total_requests}次请求，成功{successful_requests}次，成功率{final_success_rate:.1f}%")
+            success_rate = (successful_requests / total_requests) * 100
+            self.console.log(f"[blue]API请求统计: 总计{total_requests}次，成功{successful_requests}次，成功率{success_rate:.2f}%")
         
         return papers_with_references
     
@@ -946,234 +961,6 @@ def extract_arxiv_id_from_url(url):
         return match.group(1)
     return None
 
-
-def parse_arxiv_id(arxiv_id):
-    """解析arXiv ID，支持新旧格式"""
-    # 检查是否是完整URL
-    if arxiv_id.startswith(('http://', 'https://')):
-        extracted_id = extract_arxiv_id_from_url(arxiv_id)
-        if extracted_id:
-            arxiv_id = extracted_id
-        else:
-            return None, None
-    
-    # 尝试匹配常规格式 YYMM.数字
-    match = re.match(r'(\d{4})\.(\d+)', arxiv_id)
-    if match:
-        year_month = match.group(1)
-        numbers = match.group(2)
-        
-        # 检查是否是新格式 (如 2505.16672，表示2025年5月)
-        if year_month[:2] in ['20', '21', '22', '23', '24', '25', '26', '27', '28', '29']:
-            year = '20' + year_month[:2]  # 提取完整年份
-            return year, year_month + numbers
-        # 旧格式，年份是yy形式
-        else:
-            return '20' + year_month[:2], year_month + numbers
-    return None, None
-
-
-def get_author_initial(author_list):
-    """获取第一位作者姓氏的首字母"""
-    if not author_list:
-        return None
-    
-    first_author = author_list[0]
-    # 假设姓在最后
-    parts = first_author.split()
-    surname = parts[-1]
-    return surname[0].upper()
-
-
-def construct_ads_url(arxiv_id, author_list, page_type="abstract"):
-    """根据arXiv ID和作者列表构造ADS URL
-    
-    page_type: 页面类型，可以是 "abstract" 或 "references"
-    """
-    year, id_without_dot = parse_arxiv_id(arxiv_id)
-    if not year or not id_without_dot:
-        return None, None
-    
-    author_initial = get_author_initial(author_list)
-    if not author_initial:
-        return None, None
-    
-    # 构造基础ADS URL
-    base_url = f"{year}arXiv{id_without_dot}{author_initial}"
-    
-    # 根据page_type构造完整URL
-    url = f"https://ui.adsabs.harvard.edu/abs/{base_url}/{page_type}"
-    return url, base_url
-
-
-def get_references_from_ads_api(bibcode, api_token, get_citations=False, max_retries=5):
-    """使用ADS API获取参考文献或引用列表，遇到429错误时自动重试
-    
-    Args:
-        bibcode: 论文的bibcode
-        api_token: ADS API令牌
-        get_citations: 是否获取引用(True)而不是参考文献(False)
-        max_retries: 最大重试次数
-    """
-    if get_citations:
-        api_url = "https://api.adsabs.harvard.edu/v1/search/query"
-        query_type = f'citations(bibcode:{bibcode})'
-    else:
-        api_url = "https://api.adsabs.harvard.edu/v1/search/query"
-        query_type = f'references(bibcode:{bibcode})'
-        
-    params = {
-        'q': query_type,
-        'fl': 'title,author,year,pub,bibcode,doi',
-        'rows': 50,
-        'sort': 'year desc'
-    }
-    
-    headers = {
-        'Authorization': f'Bearer {api_token}',
-        'Content-Type': 'application/json'
-    }
-    
-    retries = 0
-    while retries <= max_retries:
-        try:
-            response = requests.get(api_url, params=params, headers=headers)
-            
-            # 检查是否为429错误（请求过多）
-            if response.status_code == 429:
-                retries += 1
-                wait_time = 30  # 等待30秒
-                print(f"遇到API限流(429)，等待{wait_time}秒后重试... (尝试 {retries}/{max_retries})")
-                time.sleep(wait_time)
-                continue
-                
-            # 其他错误状态码处理
-            if response.status_code != 200:
-                print(f"ADS API请求失败，状态码: {response.status_code}")
-                print(f"响应内容: {response.text}")
-                return None
-            
-            data = response.json()
-            if 'response' not in data or 'docs' not in data['response']:
-                print("API响应格式不正确")
-                return None
-            
-            docs = data['response']['docs']
-            if not docs:
-                print(f"未找到{'引用' if get_citations else '参考文献'}")
-                return None
-            
-            result_list = []
-            for doc in docs:
-                title = doc.get('title', ['无标题'])[0] if 'title' in doc and doc['title'] else '无标题'
-                doi = doc.get('doi', [''])[0] if 'doi' in doc and doc['doi'] else ''
-                year = doc.get('year', '') if 'year' in doc else ''
-                pub = doc.get('pub', '') if 'pub' in doc else ''
-                
-                reference = {
-                    "external_id": "",  # 不使用external_id
-                    "title": title,
-                    "doi": doi if doi != '无DOI' else "",
-                    "source": "ads",
-                    "publication": pub if pub != '无出版信息' else "",
-                    "data_source": "ads",
-                    "year": year if year != '无年份' else ""
-                }
-                result_list.append(reference)
-            
-            return result_list
-            
-        except Exception as e:
-            print(f"使用ADS API获取{'引用' if get_citations else '参考文献'}时出错: {e}")
-            return None
-    
-    print(f"达到最大重试次数({max_retries})，未能获取{'引用' if get_citations else '参考文献'}")
-    return None
-
-
-def crawl_ads_page(url, max_retries=5, retry_delay=30):
-    """爬取ADS页面内容，遇到429错误时自动重试
-    
-    Args:
-        url: 要爬取的URL
-        max_retries: 最大重试次数
-        retry_delay: 重试前等待的秒数
-    
-    Returns:
-        成功时返回页面内容，失败时返回None
-    """
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    }
-    
-    retries = 0
-    while retries <= max_retries:
-        try:
-            response = requests.get(url, headers=headers)
-            
-            # 检查是否为429错误（请求过多）
-            if response.status_code == 429:
-                retries += 1
-                wait_time = retry_delay  # 等待指定秒数
-                print(f"爬取页面时遇到API限流(429)，等待{wait_time}秒后重试... (尝试 {retries}/{max_retries})")
-                time.sleep(wait_time)
-                continue
-            
-            # 其他错误状态码
-            if response.status_code != 200:
-                print(f"爬取页面失败，状态码: {response.status_code}")
-                return None
-                
-            response.raise_for_status()  # 如果请求失败则抛出异常
-            return response.text
-            
-        except requests.exceptions.RequestException as e:
-            if "429" in str(e):
-                retries += 1
-                wait_time = retry_delay
-                print(f"爬取页面时遇到API限流(429)，等待{wait_time}秒后重试... (尝试 {retries}/{max_retries})")
-                time.sleep(wait_time)
-                continue
-            print(f"爬取页面时出错: {e}")
-            return None
-    
-    print(f"达到最大重试次数({max_retries})，放弃爬取页面")
-    return None
-
-
-def extract_bibcode_from_html(html_content):
-    """从HTML中提取论文的bibcode或arXiv ID"""
-    soup = BeautifulSoup(html_content, 'html.parser')
-    meta_bibcode = soup.find('meta', {'name': 'citation_arxiv_id'})
-    
-    if not meta_bibcode:
-        print("未在HTML中找到bibcode")
-        return None
-    
-    bibcode_value = meta_bibcode.get('content', '')
-    # 有时bibcode是完整的arXiv ID，例如 arXiv:2505.16672
-    if bibcode_value.startswith('arXiv:'):
-        # 只返回arXiv ID部分，去掉前缀
-        return bibcode_value[6:]
-    
-    # 在<meta>标签中查找其他可能的bibcode
-    for meta in soup.find_all('meta'):
-        if 'name' in meta.attrs and meta['name'] == 'dc.identifier':
-            value = meta.get('content', '')
-            if value.startswith('doi:'):
-                continue
-            if value.startswith('arXiv:'):
-                return value[6:]  # 去掉arXiv:前缀
-            return value
-    
-    # 从URL中提取
-    canonical = soup.find('link', {'rel': 'canonical'})
-    if canonical and 'href' in canonical.attrs:
-        match = re.search(r'abs/([^/]+)', canonical['href'])
-        if match:
-            return match.group(1)
-    
-    return None
 
 
 if __name__ == "__main__":

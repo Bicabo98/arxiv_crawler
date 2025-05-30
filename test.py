@@ -7,7 +7,7 @@ import time  # 导入time模块以便使用sleep
 sch = SemanticScholar()
 
 # 论文标题
-paper_title = "Intersections of Web3 and AI -- View in 2024"
+paper_title = "DMind Benchmark: Toward a Holistic Assessment of LLM Capabilities across the Web3 Domain"
 
 i = 0
 max_attempts = 10
@@ -41,7 +41,7 @@ while i < max_attempts:
             
             # 使用获取到的ID通过SemanticScholar库获取完整论文信息
             paper_details_url = f"https://api.semanticscholar.org/graph/v1/paper/{paper_id}"
-            fields = "title,authors,abstract,citationCount,referenceCount,year,venue,fieldsOfStudy,openAccessPdf,s2FieldsOfStudy"
+            fields = "title,authors,abstract,citationCount,referenceCount,year,venue,fieldsOfStudy,openAccessPdf,s2FieldsOfStudy,citations,references"
             details_params = {"fields": fields}
             
             # 调用paper_details_url并检查状态码
