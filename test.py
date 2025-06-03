@@ -7,7 +7,7 @@ import time  # 导入time模块以便使用sleep
 sch = SemanticScholar()
 
 # 论文标题
-paper_title = "DMind Benchmark: Toward a Holistic Assessment of LLM Capabilities across the Web3 Domain"
+paper_title = "BPMN to Smart Contract by Business Analyst"
 
 i = 0
 max_attempts = 10

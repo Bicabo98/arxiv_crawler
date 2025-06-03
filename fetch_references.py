@@ -6,7 +6,7 @@
 
 此脚本从papers_for_references.json中读取论文信息，
 通过Semantic Scholar API获取引用和参考文献，
-然后将结果保存到Neo4j图数据库。
+然后将结果保存到本地缓存文件。
 
 与主爬虫流程解耦，可以单独运行，避免API限流影响主爬虫流程。
 """
@@ -14,8 +14,6 @@
 import json
 import time
 import requests
-import urllib3
-import uuid
 import os
 from pathlib import Path
 import traceback
@@ -23,10 +21,9 @@ from rich.console import Console
 from rich.progress import Progress
 
 # 配置信息
-API_BASE_URL = "http://localhost:8080/neo4j/v1"  # 图数据库API地址
 SEMANTIC_SCHOLAR_BASE_URL = "https://api.semanticscholar.org/graph/v1"  # Semantic Scholar API基础URL
-RETRY_INTERVAL = 60  # 遇到429错误时的重试间隔（秒）
-MAX_RETRIES = 99  # 最大重试次数
+RETRY_INTERVAL = 20  # 遇到429错误时的重试间隔（秒）
+MAX_RETRIES = 150  # 最大重试次数
 PAPER_INTERVAL = 5  # 处理下一篇论文前等待的时间（秒）
 API_REQUEST_INTERVAL = 2  # 同一篇论文内两次API请求之间的间隔（秒）
 
@@ -41,21 +38,38 @@ def ensure_api_rate_limit():
     """确保同一篇论文内API请求之间的间隔"""
     time.sleep(API_REQUEST_INTERVAL)
 
-def safe_api_call(url, params=None, retry_count=0):
-    """安全调用API，处理429错误"""
+def safe_api_call(url, params=None, method='GET', data=None, retry_count=0):
+    """安全调用API，处理429错误
+    
+    Args:
+        url (str): API URL
+        params (dict, optional): URL参数
+        method (str, optional): HTTP方法，默认为'GET'
+        data (dict, optional): POST请求数据
+        retry_count (int, optional): 当前重试次数
+    
+    Returns:
+        dict or None: API响应数据，如果请求失败则返回None
+    """
     if retry_count >= MAX_RETRIES:
         console.log(f"[red]达到最大重试次数({MAX_RETRIES})，放弃请求: {url}")
         return None
     
     try:
-        response = requests.get(url, params=params)
+        if method.upper() == 'GET':
+            response = requests.get(url, params=params)
+        elif method.upper() == 'POST':
+            response = requests.post(url, params=params, json=data)
+        else:
+            console.log(f"[red]不支持的HTTP方法: {method}")
+            return None
         
         # 处理429错误（请求过多）
         if response.status_code == 429:
             retry_count += 1
             console.log(f"[yellow]API限流(429)，等待{RETRY_INTERVAL}秒后重试... (尝试 {retry_count}/{MAX_RETRIES})")
             time.sleep(RETRY_INTERVAL)
-            return safe_api_call(url, params, retry_count)
+            return safe_api_call(url, params, method, data, retry_count)
         
         # 如果请求成功
         if response.status_code == 200:
@@ -90,7 +104,10 @@ def get_paper_details_from_semantic_scholar(paper_title):
     # 2. 使用获取到的ID获取完整论文信息
     paper_details_url = f"{SEMANTIC_SCHOLAR_BASE_URL}/paper/{paper_id}"
     fields = "title,authors,abstract,citationCount,referenceCount,year,venue,fieldsOfStudy,openAccessPdf,s2FieldsOfStudy,citations,references"
-    details_params = {"fields": fields}
+    details_params = {
+        "fields": fields,
+        #"id": paper_id
+    }
     
     paper_details = safe_api_call(paper_details_url, details_params)
     
@@ -161,7 +178,7 @@ def save_to_cache(arxiv_id, paper_uuid, paper_title, semantic_scholar_id, refere
         try:
             with open(cache_file, 'w', encoding='utf-8') as f:
                 json.dump(cache_data, f, ensure_ascii=False, indent=2)
-            console.log(f"[green]参考文献已保存到缓存")
+            console.log(f"[green]参考文献已保存到缓存: {cache_file}")
         except Exception as e:
             console.log(f"[yellow]保存参考文献缓存失败: {e}")
     
@@ -177,59 +194,9 @@ def save_to_cache(arxiv_id, paper_uuid, paper_title, semantic_scholar_id, refere
         try:
             with open(citations_cache_file, 'w', encoding='utf-8') as f:
                 json.dump(citations_cache_data, f, ensure_ascii=False, indent=2)
-            console.log(f"[green]引用已保存到缓存")
+            console.log(f"[green]引用已保存到缓存: {citations_cache_file}")
         except Exception as e:
             console.log(f"[yellow]保存引用缓存失败: {e}")
-
-def update_paper_in_db(paper_uuid, paper_title, arxiv_id, semantic_scholar_id, references_list, citations_list):
-    """将引用和参考文献更新到数据库"""
-    http = urllib3.PoolManager()
-    
-    # 构建DOI
-    doi = f"10.48550/arXiv.{arxiv_id}" if arxiv_id else ""
-    
-    # 创建论文数据
-    paper_data = {
-        "paper": {
-            "id": paper_uuid,
-            "external_id": semantic_scholar_id if semantic_scholar_id else "",
-            "data_source": "semantic_scholar"
-        }
-    }
-    
-    # 如果有参考文献，添加到paper_data中
-    if references_list:
-        paper_data["references"] = references_list
-    
-    # 如果有引用，添加到paper_data中
-    if citations_list:
-        paper_data["citations_list"] = citations_list
-    
-    try:
-        # 更新论文
-        update_url = f"{API_BASE_URL}/papers/update_references"
-        encoded_data = json.dumps(paper_data).encode('utf-8')
-        
-        # 发送请求
-        paper_response = http.request(
-            'POST',
-            update_url,
-            body=encoded_data,
-            headers={'Content-Type': 'application/json'}
-        )
-        
-        response_text = paper_response.data.decode('utf-8')
-        if paper_response.status >= 400:
-            console.log(f"[red]更新论文引用关系失败，状态码: {paper_response.status}")
-            console.log(f"[red]响应内容: {response_text}")
-            return False
-        
-        console.log(f"[green]成功更新论文引用关系: {paper_title}")
-        return True
-        
-    except Exception as e:
-        console.log(f"[red]更新论文引用关系失败: {str(e)}")
-        return False
 
 def process_paper(paper):
     """处理单篇论文的引用和参考文献"""
@@ -254,81 +221,30 @@ def process_paper(paper):
         cache_file = cache_dir / f"{arxiv_id}_references.json"
         citations_cache_file = citations_cache_dir / f"{arxiv_id}_citations.json"
     
-    references_list = []
-    citations_list = []
-    semantic_scholar_id = None
+    # 检查是否需要获取数据
+    references_cache_exists = cache_file and cache_file.exists()
+    citations_cache_exists = citations_cache_file and citations_cache_file.exists()
     
-    # 1. 尝试从缓存加载参考文献
-    if cache_file and cache_file.exists():
-        try:
-            with open(cache_file, 'r', encoding='utf-8') as f:
-                cache_data = json.load(f)
-                # 检查缓存是否是新格式（包含uuid、title和references）
-                if 'references' in cache_data:
-                    references_list = cache_data['references']
-                    console.log(f"[green]从缓存加载{len(references_list)}条参考文献")
-                    
-                    if 'semantic_scholar_id' in cache_data:
-                        semantic_scholar_id = cache_data['semantic_scholar_id']
-                        console.log(f"[green]从缓存获取Semantic Scholar ID: {semantic_scholar_id}")
-                else:
-                    # 旧格式缓存，直接作为references列表
-                    references_list = cache_data
-                    console.log(f"[green]从旧格式缓存加载{len(references_list)}条参考文献")
-        except Exception as e:
-            console.log(f"[yellow]读取参考文献缓存失败: {e}")
+    if references_cache_exists and citations_cache_exists:
+        console.log(f"[green]缓存中已有此论文的数据，跳过处理")
+        return True
     
-    # 2. 尝试从缓存加载引用
-    if citations_cache_file and citations_cache_file.exists():
-        try:
-            with open(citations_cache_file, 'r', encoding='utf-8') as f:
-                citations_cache_data = json.load(f)
-                # 检查缓存是否是新格式
-                if 'citations' in citations_cache_data:
-                    citations_list = citations_cache_data['citations']
-                    console.log(f"[green]从缓存加载{len(citations_list)}条引用")
-                    
-                    if not semantic_scholar_id and 'semantic_scholar_id' in citations_cache_data:
-                        semantic_scholar_id = citations_cache_data['semantic_scholar_id']
-                        console.log(f"[green]从引用缓存获取Semantic Scholar ID: {semantic_scholar_id}")
-                else:
-                    # 旧格式缓存
-                    citations_list = citations_cache_data
-                    console.log(f"[green]从旧格式缓存加载{len(citations_list)}条引用")
-        except Exception as e:
-            console.log(f"[yellow]读取引用缓存失败: {e}")
+    # 通过API获取
+    console.log(f"[blue]尝试从Semantic Scholar获取论文信息: {paper_title}")
     
-    # 3. 如果缓存中没有，通过API获取
-    if not references_list or not citations_list:
-        console.log(f"[blue]尝试从Semantic Scholar获取论文信息: {paper_title}")
-        
-        # 调用Semantic Scholar API获取论文详情
-        new_semantic_scholar_id, new_references, new_citations = get_paper_details_from_semantic_scholar(paper_title)
-        
-        # 更新语义学者ID
-        if new_semantic_scholar_id:
-            semantic_scholar_id = new_semantic_scholar_id
-        
-        # 更新参考文献
-        if new_references:
-            references_list = new_references
-            console.log(f"[green]成功从Semantic Scholar获取{len(references_list)}条参考文献")
-        
-        # 更新引用
-        if new_citations:
-            citations_list = new_citations
-            console.log(f"[green]成功从Semantic Scholar获取{len(citations_list)}条引用")
-        
-        # 保存到缓存
-        if arxiv_id and (new_references or new_citations) and semantic_scholar_id:
-            save_to_cache(arxiv_id, paper_id, paper_title, semantic_scholar_id, new_references, new_citations)
+    # 调用Semantic Scholar API获取论文详情
+    semantic_scholar_id, references_list, citations_list = get_paper_details_from_semantic_scholar(paper_title)
     
-    # 4. 更新数据库
-    if (references_list or citations_list) and semantic_scholar_id:
-        success = update_paper_in_db(paper_id, paper_title, arxiv_id, semantic_scholar_id, references_list, citations_list)
-        return success
+    # 保存到缓存
+    if arxiv_id and semantic_scholar_id:
+        if references_list or citations_list:
+            save_to_cache(arxiv_id, paper_id, paper_title, semantic_scholar_id, references_list, citations_list)
+            return True
+        else:
+            console.log(f"[yellow]未获取到参考文献或引用")
+            return False
     else:
-        console.log(f"[yellow]未获取到参考文献或引用，跳过更新数据库")
+        console.log(f"[yellow]缺少必要信息，无法保存")
         return False
 
 def main():
@@ -352,6 +268,7 @@ def main():
     # 处理每一篇论文
     successful_count = 0
     failed_count = 0
+    skipped_count = 0
     
     with Progress() as progress:
         task = progress.add_task("[cyan]处理论文...", total=len(papers))
@@ -360,6 +277,18 @@ def main():
             progress.update(task, description=f"[cyan]处理论文 {i+1}/{len(papers)}")
             
             try:
+                # 检查缓存是否已存在
+                arxiv_id = paper.get("arxiv_id")
+                if arxiv_id:
+                    ref_file = Path(f"./cache/references/{arxiv_id}_references.json")
+                    cit_file = Path(f"./cache/citations/{arxiv_id}_citations.json")
+                    
+                    if ref_file.exists() and cit_file.exists():
+                        console.log(f"[cyan]论文 {paper.get('title')} 的缓存已存在，跳过")
+                        skipped_count += 1
+                        progress.update(task, advance=1)
+                        continue
+                
                 success = process_paper(paper)
                 if success:
                     successful_count += 1
@@ -378,7 +307,7 @@ def main():
                 ensure_paper_rate_limit()
     
     # 统计结果
-    console.log(f"[bold green]处理完成！成功: {successful_count}, 失败: {failed_count}, 总计: {len(papers)}")
+    console.log(f"[bold green]处理完成！成功: {successful_count}, 失败: {failed_count}, 跳过: {skipped_count}, 总计: {len(papers)}")
 
 if __name__ == "__main__":
     main() 

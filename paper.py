@@ -785,7 +785,7 @@ class PaperExporter:
                 # 每篇论文处理完成后立即更新映射文件
                 self.save_title_mapping(normalized_title_to_id)
                 self.console.log(f"[green]已更新论文映射 (当前总计: {len(normalized_title_to_id)}篇)")
-
+                
             except Exception as e:
                 self.console.log(f"[bold red]保存论文到图数据库失败: {str(e)}")
                 import traceback
