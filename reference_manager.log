@@ -220,3 +220,1086 @@
 2025-05-28 20:40:57,445 - reference_manager - INFO - - 成功创建: 0
 2025-05-28 20:40:57,445 - reference_manager - INFO - - 创建失败: 0
 2025-05-28 20:40:57,445 - reference_manager - INFO - - 跳过: 72
+2025-06-05 09:50:59,925 - reference_manager - INFO - 参考管理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 09:50:59,925 - reference_manager - INFO - 已加载 4 个现有论文映射
+2025-06-05 09:50:59,926 - reference_manager - INFO - 在 ./cache/references 目录中找到 4 个参考文件
+2025-06-05 09:51:00,001 - reference_manager - INFO - 处理论文 'Smart Contracts for SMEs and Large Companies' (ID: d22883f8-97f4-4dfa-98c0-2a20e11be2d6) 的参考关系，共 70 个参考
+2025-06-05 09:51:00,002 - reference_manager - WARNING - 未找到匹配的论文: Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair
+2025-06-05 09:51:00,003 - reference_manager - WARNING - 未找到匹配的论文: TABS: Transforming automatically BPMN models into blockchain smart contracts
+2025-06-05 09:51:00,003 - reference_manager - WARNING - 未找到匹配的论文: Aroc: An Automatic Repair Framework for On-Chain Smart Contracts
+2025-06-05 09:51:00,003 - reference_manager - INFO - 处理论文 'Chainless Apps: A Modular Framework for Building Apps with Web2 Capability and Web3 Trust' (ID: 69e74226-6647-4272-8dab-6e33a1c7beaa) 的参考关系，共 21 个参考
+2025-06-05 09:51:00,004 - reference_manager - WARNING - 未找到匹配的论文: Supporting Long-term Transactions in Smart Contracts
+2025-06-05 09:51:00,004 - reference_manager - WARNING - 未找到匹配的论文: vApps: Verifiable Applications at Internet Scale
+2025-06-05 09:51:00,004 - reference_manager - INFO - 处理论文 'A Smart-Contract to Resolve Multiple Equilibrium in Intermediated Trade' (ID: 6f78ccaa-211f-431f-8ea9-8587cc525b1a) 的参考关系，共 22 个参考
+2025-06-05 09:51:00,005 - reference_manager - WARNING - 未找到匹配的论文: SolSaviour: A Defending Framework for Deployed Defective Smart Contracts
+2025-06-05 09:51:00,005 - reference_manager - WARNING - 未找到匹配的论文: A Layer-2 Expansion Shared Sequencer Model for Blockchain Scalability
+2025-06-05 09:51:00,006 - reference_manager - WARNING - 未找到匹配的论文: SoK: Understanding Design Choices and Pitfalls of Trusted Execution Environments
+2025-06-05 09:51:00,007 - reference_manager - WARNING - 未找到匹配的论文: From BPMN to smart contracts on blockchains: Transforming BPMN to DE-HSM multi-modal model
+2025-06-05 09:51:00,007 - reference_manager - WARNING - 未找到匹配的论文: A scalable verification solution for blockchains
+2025-06-05 09:51:00,008 - reference_manager - WARNING - 未找到匹配的论文: Technologies That Replace a “Central Planner”
+2025-06-05 09:51:00,008 - reference_manager - INFO - 处理论文 'BPMN to Smart Contract by Business Analyst' (ID: 9c3a0601-7f78-4495-98e8-267bfed29af1) 的参考关系，共 16 个参考
+2025-06-05 09:51:00,008 - reference_manager - WARNING - 未找到匹配的论文: Decentralized collaborative business process execution using blockchain
+2025-06-05 09:51:00,009 - reference_manager - WARNING - 未找到匹配的论文: LazyLedger: A Distributed Data Availability Ledger With Client-Side Smart Contracts
+2025-06-05 09:51:00,010 - reference_manager - WARNING - 未找到匹配的论文: The Ins and Outs of Collateral Re-use
+2025-06-05 09:51:00,012 - reference_manager - WARNING - 未找到匹配的论文: Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair
+2025-06-05 09:51:00,013 - reference_manager - WARNING - 未找到匹配的论文: A Tool for Moving Blockchain Computations Off-Chain
+2025-06-05 09:51:00,015 - reference_manager - WARNING - 未找到匹配的论文: Succinct Non-Interactive Zero Knowledge for a von Neumann Architecture
+2025-06-05 09:51:00,015 - reference_manager - WARNING - 未找到匹配的论文: Blockchain Disruption and Smart Contracts
+2025-06-05 09:51:00,016 - reference_manager - WARNING - 未找到匹配的论文: Decentralized collaborative business process execution using blockchain
+2025-06-05 09:51:00,016 - reference_manager - WARNING - 未找到匹配的论文: Blockchain smart contracts: Applications, challenges, and future trends
+2025-06-05 09:51:00,017 - reference_manager - WARNING - 未找到匹配的论文: Aggregated Blockchains: A New Thesis
+2025-06-05 09:51:00,017 - reference_manager - WARNING - 未找到匹配的论文: Contracts: Ex Machina
+2025-06-05 09:51:00,018 - reference_manager - WARNING - 未找到匹配的论文: Blockchain smart contracts: Applications, challenges, and future trends
+2025-06-05 09:51:00,019 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain and smart contract development: Techniques, tools, and open challenges
+2025-06-05 09:51:00,019 - reference_manager - WARNING - 未找到匹配的论文: Scalable, transparent, and post-quantum secure computational integrity
+2025-06-05 09:51:00,019 - reference_manager - WARNING - 未找到匹配的论文: An Introduction to Mechanized Reasoning
+2025-06-05 09:51:00,020 - reference_manager - WARNING - 未找到匹配的论文: Controlled flexibility in blockchain-based collaborative business processes
+2025-06-05 09:51:00,021 - reference_manager - WARNING - 未找到匹配的论文: Using FSMs to Find Patterns for Off-Chain Computing: Finding Patterns for Off-Chain Computing with FSMs
+2025-06-05 09:51:00,021 - reference_manager - WARNING - 未找到匹配的论文: Arbitrum: Scalable, private smart contracts
+2025-06-05 09:51:00,022 - reference_manager - WARNING - 未找到匹配的论文: Institutional Cash Pools and the Triffin Dilemma of the U.S. Banking System
+2025-06-05 09:51:00,023 - reference_manager - WARNING - 未找到匹配的论文: Integrated model‐driven engineering of blockchain applications for business processes and asset management
+2025-06-05 09:51:00,024 - reference_manager - WARNING - 未找到匹配的论文: EVMPatch: Timely and Automated Patching of Ethereum Smart Contracts
+2025-06-05 09:51:00,025 - reference_manager - WARNING - 未找到匹配的论文: Using Blockchain to Improve Collaborative Business Process Management: Systematic Literature Review
+2025-06-05 09:51:00,026 - reference_manager - WARNING - 未找到匹配的论文: T RISC Zero zkVM: Scalable, Transparent Arguments of RISC-V Integrity
+2025-06-05 09:51:00,027 - reference_manager - WARNING - 未找到匹配的论文: A Review on Scalability of Blockchain
+2025-06-05 09:51:00,027 - reference_manager - WARNING - 未找到匹配的论文: Controlled flexibility in blockchain-based collaborative business processes
+2025-06-05 09:51:00,029 - reference_manager - WARNING - 未找到匹配的论文: “Micro-Rollups: Modular Micro-Services for Web3” 2024.
+2025-06-05 09:51:00,030 - reference_manager - WARNING - 未找到匹配的论文: Rational cooperation in the finitely repeated prisoners' dilemma
+2025-06-05 09:51:00,031 - reference_manager - WARNING - 未找到匹配的论文: A Three-Layered Approach for Designing Smart Contracts in Collaborative Processes
+2025-06-05 09:51:00,032 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Blockchain Interoperability: Past, Present, and Future Trends
+2025-06-05 09:51:00,033 - reference_manager - WARNING - 未找到匹配的论文: EigenLayer: The Restaking Collective
+2025-06-05 09:51:00,034 - reference_manager - WARNING - 未找到匹配的论文: Rules Rather than Discretion: The Inconsistency of Optimal Plans
+2025-06-05 09:51:00,034 - reference_manager - WARNING - 未找到匹配的论文: Caterpillar: A business process execution engine on the Ethereum blockchain
+2025-06-05 09:51:00,035 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain cyber security
+2025-06-05 09:51:00,035 - reference_manager - WARNING - 未找到匹配的论文: “Demystifying Application Specific Rollups on Solana VM — An Eclipse Deep Dive.”
+2025-06-05 09:51:00,036 - reference_manager - WARNING - 未找到匹配的论文: SoK: Fully-homomorphic encryption in smart contracts
+2025-06-05 09:51:00,036 - reference_manager - WARNING - 未找到匹配的论文: IPFS - Content Addressed, Versioned, P2P File System
+2025-06-05 09:51:00,036 - reference_manager - WARNING - 未找到匹配的论文: A Review on Scalability of Blockchain
+2025-06-05 09:51:00,037 - reference_manager - WARNING - 未找到匹配的论文: “The [A-Z]app Paradigm: Trust-less Apps with Web2 UX and Web3 Verifiabil-ity.”
+2025-06-05 09:51:00,037 - reference_manager - WARNING - 未找到匹配的论文: Who participates in cleared repo? Technical report
+2025-06-05 09:51:00,038 - reference_manager - WARNING - 未找到匹配的论文: Survey of Model-Driven Engineering Techniques for Blockchain-Based Applications
+2025-06-05 09:51:00,038 - reference_manager - WARNING - 未找到匹配的论文: A Three-Layered Approach for Designing Smart Contracts in Collaborative Processes
+2025-06-05 09:51:00,040 - reference_manager - WARNING - 未找到匹配的论文: zkHyperliquid: A Proof of Concept Chain-less App for High-Performance Spot Trading
+2025-06-05 09:51:00,041 - reference_manager - WARNING - 未找到匹配的论文: Shadow banking: The money view. Technical report
+2025-06-05 09:51:00,041 - reference_manager - WARNING - 未找到匹配的论文: A Systematic Lit. Review Of Blockchain Cyber Security
+2025-06-05 09:51:00,042 - reference_manager - WARNING - 未找到匹配的论文: Blockchain Support for Collaborative Business Processes
+2025-06-05 09:51:00,042 - reference_manager - WARNING - 未找到匹配的论文: “Scaling Blockchains: The Mod-ularity Thesis.”
+2025-06-05 09:51:00,043 - reference_manager - WARNING - 未找到匹配的论文: Computable Economics: An Introduction to Recursive Computational Models
+2025-06-05 09:51:00,044 - reference_manager - WARNING - 未找到匹配的论文: Lorikeet: A Model-Driven Engineering Tool for Blockchain-Based Business Process Execution and Asset Management
+2025-06-05 09:51:00,044 - reference_manager - WARNING - 未找到匹配的论文: Caterpillar: A business process execution engine on the Ethereum blockchain
+2025-06-05 09:51:00,045 - reference_manager - WARNING - 未找到匹配的论文: Avail: A Modular Data Availability Layer for Scalable Blockchain Applications
+2025-06-05 09:51:00,046 - reference_manager - WARNING - 未找到匹配的论文: The Computation of Economic Equilibria
+2025-06-05 09:51:00,046 - reference_manager - WARNING - 未找到匹配的论文: Caterpillar: A Blockchain-Based Business Process Management System
+2025-06-05 09:51:00,047 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-Based Traceability of Inter-organisational Business Processes
+2025-06-05 09:51:00,047 - reference_manager - WARNING - 未找到匹配的论文: “An Incomplete Guide to Rollups.”
+2025-06-05 09:51:00,047 - reference_manager - WARNING - 未找到匹配的论文: Principles of mathematical analysis
+2025-06-05 09:51:00,048 - reference_manager - WARNING - 未找到匹配的论文: 2024. Tabs+: Transforming Automatically BPMN Models To Smart Contracts with Nested Collaborative Transactions
+2025-06-05 09:51:00,048 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-Based, Decentralized Access Control for IPFS
+2025-06-05 09:51:00,049 - reference_manager - WARNING - 未找到匹配的论文: “SP1: A General-Purpose zkVM for Verifying Arbitrary Programs.”
+2025-06-05 09:51:00,049 - reference_manager - WARNING - 未找到匹配的论文: An essay on bargaining
+2025-06-05 09:51:00,049 - reference_manager - WARNING - 未找到匹配的论文: DMN Tutorial
+2025-06-05 09:51:00,050 - reference_manager - WARNING - 未找到匹配的论文: Solving the Buyer and Seller’s Dilemma: A Dual-Deposit Escrow Smart Contract for Provably Cheat-Proof Delivery and Payment for a Digital Good without a Trusted Mediator
+2025-06-05 09:51:00,050 - reference_manager - WARNING - 未找到匹配的论文: . Plonky3: Recursive zk-SNARKs over Modern Curves
+2025-06-05 09:51:00,051 - reference_manager - WARNING - 未找到匹配的论文: Introducing zama threshold key management system (tkms)
+2025-06-05 09:51:00,051 - reference_manager - WARNING - 未找到匹配的论文: BPMN, CMMN, and DMN Specifications
+2025-06-05 09:51:00,052 - reference_manager - WARNING - 未找到匹配的论文: Tool Demonstration: FSolidM for Designing Secure Ethereum Smart Contracts
+2025-06-05 09:51:00,052 - reference_manager - WARNING - 未找到匹配的论文: “Endgame (Thoughts on Blockchain Decentralization).”
+2025-06-05 09:51:00,053 - reference_manager - WARNING - 未找到匹配的论文: In the first leg, each client-broker-dealer pair agrees to a schedule { r i , T i } Nn =1 repo-rate: security pairs it is willing to trade, one for each of the N values of T (the "client schedule")
+2025-06-05 09:51:00,053 - reference_manager - INFO - 论文参考处理完成: processed=16, success=0, failed=0, skipped=16
+2025-06-05 09:51:00,054 - reference_manager - WARNING - 未找到匹配的论文: Designing Secure Ethereum Smart Contracts: A Finite State Machine Based Approach
+2025-06-05 09:51:00,054 - reference_manager - WARNING - 未找到匹配的论文: Fhe cryptographic references
+2025-06-05 09:51:00,054 - reference_manager - WARNING - 未找到匹配的论文: “Introducing Rollup-Boost: Launching on Unichain.”
+2025-06-05 09:51:00,055 - reference_manager - WARNING - 未找到匹配的论文: Blockchains for Business Process Management - Challenges and Opportunities
+2025-06-05 09:51:00,055 - reference_manager - WARNING - 未找到匹配的论文: By the negative slope of RM supply function S_r, this
+2025-06-05 09:51:00,055 - reference_manager - INFO - 论文参考处理完成: processed=21, success=0, failed=0, skipped=21
+2025-06-05 09:51:00,055 - reference_manager - WARNING - 未找到匹配的论文: PQConnect Project
+2025-06-05 09:51:00,056 - reference_manager - WARNING - 未找到匹配的论文: Untrusted Business Process Monitoring and Execution Using Blockchain
+2025-06-05 09:51:00,056 - reference_manager - WARNING - 未找到匹配的论文: Essays on Incentive Designs to Improve Market Performance.
+2025-06-05 09:51:00,057 - reference_manager - WARNING - 未找到匹配的论文: What’s So Different about Blockchain? — Blockchain is a Probabilistic State Machine
+2025-06-05 09:51:00,057 - reference_manager - INFO - 论文参考处理完成: processed=22, success=0, failed=0, skipped=22
+2025-06-05 09:51:00,058 - reference_manager - WARNING - 未找到匹配的论文: IPFS - Content Addressed, Versioned, P2P File System
+2025-06-05 09:51:00,058 - reference_manager - WARNING - 未找到匹配的论文: (Re-)Justifying BPM: A Quest for the Interaction Turn Reviewing Subject-Oriented BPM
+2025-06-05 09:51:00,059 - reference_manager - WARNING - 未找到匹配的论文: Semantics and analysis of business process models in BPMN
+2025-06-05 09:51:00,059 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical finite state machines with multiple concurrency models
+2025-06-05 09:51:00,060 - reference_manager - WARNING - 未找到匹配的论文: Discrete event systems: Modeling and performance analysis
+2025-06-05 09:51:00,060 - reference_manager - WARNING - 未找到匹配的论文: Statecharts: A Visual Formalism for Complex Systems
+2025-06-05 09:51:00,061 - reference_manager - WARNING - 未找到匹配的论文: Blockchain and Trustworthy Systems: 5th International Conference, BlockSys 2023, Haikou, China, August 8–10, 2023, Proceedings, Part II
+2025-06-05 09:51:00,061 - reference_manager - WARNING - 未找到匹配的论文: Automating Smart Contract Generation on Blockchains Using Multi-modal Modeling
+2025-06-05 09:51:00,061 - reference_manager - WARNING - 未找到匹配的论文: Hyperledger
+2025-06-05 09:51:00,062 - reference_manager - WARNING - 未找到匹配的论文: Survey of Model-Driven Engineering Techniques for Blockchain-Based Applications
+2025-06-05 09:51:00,063 - reference_manager - WARNING - 未找到匹配的论文: How Developing Java Apps is Easier with a Process Engine
+2025-06-05 09:51:00,063 - reference_manager - WARNING - 未找到匹配的论文: Upgradeability Concept for Collaborative Blockchain-Based Business Process Execution Framework
+2025-06-05 09:51:00,064 - reference_manager - WARNING - 未找到匹配的论文: Gas cost of a sha256 hash
+2025-06-05 09:51:00,064 - reference_manager - WARNING - 未找到匹配的论文: Lorikeet: A Model-Driven Engineering Tool for Blockchain-Based Business Process Execution and Asset Management
+2025-06-05 09:51:00,065 - reference_manager - WARNING - 未找到匹配的论文: Plasma : Scalable Autonomous Smart Contracts
+2025-06-05 09:51:00,065 - reference_manager - WARNING - 未找到匹配的论文: A Short History of Bitcoin and Crypto Currency Everyone Should Read
+2025-06-05 09:51:00,065 - reference_manager - WARNING - 未找到匹配的论文: A NEXT GENERATION SMART CONTRACT & DECENTRALIZED APPLICATION PLATFORM
+2025-06-05 09:51:00,066 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical State Machines
+2025-06-05 09:51:00,066 - reference_manager - WARNING - 未找到匹配的论文: Data-Driven Documents
+2025-06-05 09:51:00,066 - reference_manager - WARNING - 未找到匹配的论文: About the Business Process Model and Notation Specification 2.0
+2025-06-05 09:51:00,067 - reference_manager - WARNING - 未找到匹配的论文: Bitcoin: A Peer-to-Peer Electronic Cash System
+2025-06-05 09:51:00,067 - reference_manager - WARNING - 未找到匹配的论文: “Transforming BPMN into BPEL: Why and How.”
+2025-06-05 09:51:00,067 - reference_manager - WARNING - 未找到匹配的论文: Theoretical Informatics
+2025-06-05 09:51:00,068 - reference_manager - WARNING - 未找到匹配的论文: Advanced Information Systems Engineering
+2025-06-05 09:51:00,068 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts: Building Blocks for Digital Free Markets
+2025-06-05 09:51:00,069 - reference_manager - WARNING - 未找到匹配的论文: Blind Signatures for Untraceable Payments
+2025-06-05 09:51:00,069 - reference_manager - WARNING - 未找到匹配的论文: Communicating sequential processes
+2025-06-05 09:51:00,069 - reference_manager - WARNING - 未找到匹配的论文: Ethereum Average Block Size
+2025-06-05 09:51:00,069 - reference_manager - WARNING - 未找到匹配的论文: Simba: Smart-Contract-as-a-Service User Guide
+2025-06-05 09:51:00,070 - reference_manager - WARNING - 未找到匹配的论文: 2023. Long-Term blockchain transactions spanning multiplicity of smart contract methods
+2025-06-05 09:51:00,071 - reference_manager - WARNING - 未找到匹配的论文: Analysis and multi-step trade-transaction specification: The model’s computation flow is analyzed to identify localized sub-graphs that are then used to define nested
+2025-06-05 09:51:00,071 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Symbols-A complete guide with examples
+2025-06-05 09:51:00,071 - reference_manager - WARNING - 未找到匹配的论文: InterPlanetary File System (IPFS): Concepts
+2025-06-05 09:51:00,072 - reference_manager - WARNING - 未找到匹配的论文: Process Orchestration for end-to-end automation
+2025-06-05 09:51:00,073 - reference_manager - WARNING - 未找到匹配的论文: Node.js—Open-source, cross-platform JavaScript runtime environment
+2025-06-05 09:51:00,075 - reference_manager - WARNING - 未找到匹配的论文: Transformation to DE-HSM Model: The BPMN model is first transformed into a graph representation and then into a DE-HSM model
+2025-06-05 09:51:00,076 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Introduction—Flowable Open-Source Documentation
+2025-06-05 09:51:00,076 - reference_manager - WARNING - 未找到匹配的论文: Upgrading smart contracts
+2025-06-05 09:51:00,077 - reference_manager - WARNING - 未找到匹配的论文: Graph Visualization Software Documentation
+2025-06-05 09:51:00,078 - reference_manager - WARNING - 未找到匹配的论文: Simplify Contract Management with Bitregalo’s Smart Contract as a Service (SCaaS)
+2025-06-05 09:51:00,078 - reference_manager - WARNING - 未找到匹配的论文: Truffle: The most comprehensive suite of tools for smart contract development
+2025-06-05 09:51:00,079 - reference_manager - WARNING - 未找到匹配的论文: Received 3 July 2023; revised 22 February 2024; accepted 19 March 2024
+2025-06-05 09:51:00,079 - reference_manager - INFO - 论文参考处理完成: processed=70, success=0, failed=0, skipped=70
+2025-06-05 09:51:00,079 - reference_manager - INFO - 参考处理完成: processed=129, success=0, failed=0, skipped=129
+2025-06-05 09:51:00,079 - reference_manager - INFO - 参考处理摘要:
+2025-06-05 09:51:00,079 - reference_manager - INFO - - 总处理参考: 129
+2025-06-05 09:51:00,079 - reference_manager - INFO - - 成功创建: 0
+2025-06-05 09:51:00,079 - reference_manager - INFO - - 创建失败: 0
+2025-06-05 09:51:00,079 - reference_manager - INFO - - 跳过: 129
+2025-06-05 09:55:04,204 - reference_manager - INFO - 参考管理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 09:55:04,205 - reference_manager - INFO - 已加载 4 个现有论文映射
+2025-06-05 09:55:04,205 - reference_manager - INFO - 在 ./cache/references 目录中找到 4 个参考文件
+2025-06-05 09:55:04,221 - reference_manager - INFO - 处理论文 'Smart Contracts for SMEs and Large Companies' (ID: d22883f8-97f4-4dfa-98c0-2a20e11be2d6) 的参考关系，共 70 个参考
+2025-06-05 09:55:04,223 - reference_manager - INFO - 处理论文 'Chainless Apps: A Modular Framework for Building Apps with Web2 Capability and Web3 Trust' (ID: 69e74226-6647-4272-8dab-6e33a1c7beaa) 的参考关系，共 21 个参考
+2025-06-05 09:55:04,224 - reference_manager - WARNING - 未找到匹配的论文: vApps: Verifiable Applications at Internet Scale
+2025-06-05 09:55:04,225 - reference_manager - WARNING - 未找到匹配的论文: A Layer-2 Expansion Shared Sequencer Model for Blockchain Scalability
+2025-06-05 09:55:04,225 - reference_manager - INFO - 处理论文 'A Smart-Contract to Resolve Multiple Equilibrium in Intermediated Trade' (ID: 6f78ccaa-211f-431f-8ea9-8587cc525b1a) 的参考关系，共 22 个参考
+2025-06-05 09:55:04,225 - reference_manager - WARNING - 未找到匹配的论文: A scalable verification solution for blockchains
+2025-06-05 09:55:04,226 - reference_manager - WARNING - 未找到匹配的论文: SoK: Understanding Design Choices and Pitfalls of Trusted Execution Environments
+2025-06-05 09:55:04,226 - reference_manager - WARNING - 未找到匹配的论文: LazyLedger: A Distributed Data Availability Ledger With Client-Side Smart Contracts
+2025-06-05 09:55:04,227 - reference_manager - WARNING - 未找到匹配的论文: Technologies That Replace a “Central Planner”
+2025-06-05 09:55:04,227 - reference_manager - WARNING - 未找到匹配的论文: Succinct Non-Interactive Zero Knowledge for a von Neumann Architecture
+2025-06-05 09:55:04,227 - reference_manager - WARNING - 未找到匹配的论文: The Ins and Outs of Collateral Re-use
+2025-06-05 09:55:04,228 - reference_manager - INFO - 处理论文 'BPMN to Smart Contract by Business Analyst' (ID: 9c3a0601-7f78-4495-98e8-267bfed29af1) 的参考关系，共 16 个参考
+2025-06-05 09:55:04,228 - reference_manager - WARNING - 未找到匹配的论文: Aggregated Blockchains: A New Thesis
+2025-06-05 09:55:04,228 - reference_manager - WARNING - 未找到匹配的论文: Blockchain Disruption and Smart Contracts
+2025-06-05 09:55:04,229 - reference_manager - WARNING - 未找到匹配的论文: Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair
+2025-06-05 09:55:04,229 - reference_manager - WARNING - 未找到匹配的论文: Scalable, transparent, and post-quantum secure computational integrity
+2025-06-05 09:55:04,229 - reference_manager - WARNING - 未找到匹配的论文: Contracts: Ex Machina
+2025-06-05 09:55:04,231 - reference_manager - WARNING - 未找到匹配的论文: Decentralized collaborative business process execution using blockchain
+2025-06-05 09:55:04,231 - reference_manager - WARNING - 未找到匹配的论文: Arbitrum: Scalable, private smart contracts
+2025-06-05 09:55:04,232 - reference_manager - WARNING - 未找到匹配的论文: An Introduction to Mechanized Reasoning
+2025-06-05 09:55:04,232 - reference_manager - WARNING - 未找到匹配的论文: Blockchain smart contracts: Applications, challenges, and future trends
+2025-06-05 09:55:04,233 - reference_manager - WARNING - 未找到匹配的论文: T RISC Zero zkVM: Scalable, Transparent Arguments of RISC-V Integrity
+2025-06-05 09:55:04,233 - reference_manager - WARNING - 未找到匹配的论文: Institutional Cash Pools and the Triffin Dilemma of the U.S. Banking System
+2025-06-05 09:55:04,234 - reference_manager - WARNING - 未找到匹配的论文: Controlled flexibility in blockchain-based collaborative business processes
+2025-06-05 09:55:04,235 - reference_manager - WARNING - 未找到匹配的论文: “Micro-Rollups: Modular Micro-Services for Web3” 2024.
+2025-06-05 09:55:04,235 - reference_manager - WARNING - 未找到匹配的论文: Rational cooperation in the finitely repeated prisoners' dilemma
+2025-06-05 09:55:04,236 - reference_manager - WARNING - 未找到匹配的论文: Integrated model‐driven engineering of blockchain applications for business processes and asset management
+2025-06-05 09:55:04,237 - reference_manager - WARNING - 未找到匹配的论文: EigenLayer: The Restaking Collective
+2025-06-05 09:55:04,237 - reference_manager - WARNING - 未找到匹配的论文: Rules Rather than Discretion: The Inconsistency of Optimal Plans
+2025-06-05 09:55:04,238 - reference_manager - WARNING - 未找到匹配的论文: A Review on Scalability of Blockchain
+2025-06-05 09:55:04,238 - reference_manager - WARNING - 未找到匹配的论文: “Demystifying Application Specific Rollups on Solana VM — An Eclipse Deep Dive.”
+2025-06-05 09:55:04,238 - reference_manager - WARNING - 未找到匹配的论文: SoK: Fully-homomorphic encryption in smart contracts
+2025-06-05 09:55:04,239 - reference_manager - WARNING - 未找到匹配的论文: A Three-Layered Approach for Designing Smart Contracts in Collaborative Processes
+2025-06-05 09:55:04,239 - reference_manager - WARNING - 未找到匹配的论文: “The [A-Z]app Paradigm: Trust-less Apps with Web2 UX and Web3 Verifiabil-ity.”
+2025-06-05 09:55:04,240 - reference_manager - WARNING - 未找到匹配的论文: Who participates in cleared repo? Technical report
+2025-06-05 09:55:04,240 - reference_manager - WARNING - 未找到匹配的论文: Caterpillar: A business process execution engine on the Ethereum blockchain
+2025-06-05 09:55:04,241 - reference_manager - WARNING - 未找到匹配的论文: zkHyperliquid: A Proof of Concept Chain-less App for High-Performance Spot Trading
+2025-06-05 09:55:04,241 - reference_manager - WARNING - 未找到匹配的论文: Shadow banking: The money view. Technical report
+2025-06-05 09:55:04,242 - reference_manager - WARNING - 未找到匹配的论文: IPFS - Content Addressed, Versioned, P2P File System
+2025-06-05 09:55:04,243 - reference_manager - WARNING - 未找到匹配的论文: “Scaling Blockchains: The Mod-ularity Thesis.”
+2025-06-05 09:55:04,244 - reference_manager - WARNING - 未找到匹配的论文: Computable Economics: An Introduction to Recursive Computational Models
+2025-06-05 09:55:04,246 - reference_manager - WARNING - 未找到匹配的论文: Survey of Model-Driven Engineering Techniques for Blockchain-Based Applications
+2025-06-05 09:55:04,247 - reference_manager - WARNING - 未找到匹配的论文: Avail: A Modular Data Availability Layer for Scalable Blockchain Applications
+2025-06-05 09:55:04,247 - reference_manager - WARNING - 未找到匹配的论文: The Computation of Economic Equilibria
+2025-06-05 09:55:04,247 - reference_manager - WARNING - 未找到匹配的论文: A Systematic Lit. Review Of Blockchain Cyber Security
+2025-06-05 09:55:04,248 - reference_manager - WARNING - 未找到匹配的论文: “An Incomplete Guide to Rollups.”
+2025-06-05 09:55:04,248 - reference_manager - WARNING - 未找到匹配的论文: Principles of mathematical analysis
+2025-06-05 09:55:04,249 - reference_manager - WARNING - 未找到匹配的论文: Lorikeet: A Model-Driven Engineering Tool for Blockchain-Based Business Process Execution and Asset Management
+2025-06-05 09:55:04,250 - reference_manager - WARNING - 未找到匹配的论文: “SP1: A General-Purpose zkVM for Verifying Arbitrary Programs.”
+2025-06-05 09:55:04,250 - reference_manager - WARNING - 未找到匹配的论文: An essay on bargaining
+2025-06-05 09:55:04,251 - reference_manager - WARNING - 未找到匹配的论文: Caterpillar: A Blockchain-Based Business Process Management System
+2025-06-05 09:55:04,251 - reference_manager - WARNING - 未找到匹配的论文: . Plonky3: Recursive zk-SNARKs over Modern Curves
+2025-06-05 09:55:04,251 - reference_manager - WARNING - 未找到匹配的论文: Introducing zama threshold key management system (tkms)
+2025-06-05 09:55:04,252 - reference_manager - WARNING - 未找到匹配的论文: 2024. Tabs+: Transforming Automatically BPMN Models To Smart Contracts with Nested Collaborative Transactions
+2025-06-05 09:55:04,252 - reference_manager - WARNING - 未找到匹配的论文: “Endgame (Thoughts on Blockchain Decentralization).”
+2025-06-05 09:55:04,254 - reference_manager - WARNING - 未找到匹配的论文: In the first leg, each client-broker-dealer pair agrees to a schedule { r i , T i } Nn =1 repo-rate: security pairs it is willing to trade, one for each of the N values of T (the "client schedule")
+2025-06-05 09:55:04,254 - reference_manager - WARNING - 未找到匹配的论文: DMN Tutorial
+2025-06-05 09:55:04,255 - reference_manager - WARNING - 未找到匹配的论文: “Introducing Rollup-Boost: Launching on Unichain.”
+2025-06-05 09:55:04,255 - reference_manager - WARNING - 未找到匹配的论文: Fhe cryptographic references
+2025-06-05 09:55:04,256 - reference_manager - WARNING - 未找到匹配的论文: BPMN, CMMN, and DMN Specifications
+2025-06-05 09:55:04,256 - reference_manager - INFO - 论文参考处理完成: processed=21, success=0, failed=0, skipped=21
+2025-06-05 09:55:04,256 - reference_manager - WARNING - 未找到匹配的论文: By the negative slope of RM supply function S_r, this
+2025-06-05 09:55:04,256 - reference_manager - INFO - 论文参考处理完成: processed=16, success=0, failed=0, skipped=16
+2025-06-05 09:55:04,257 - reference_manager - WARNING - 未找到匹配的论文: PQConnect Project
+2025-06-05 09:55:04,257 - reference_manager - WARNING - 未找到匹配的论文: Essays on Incentive Designs to Improve Market Performance.
+2025-06-05 09:55:04,257 - reference_manager - INFO - 论文参考处理完成: processed=22, success=0, failed=0, skipped=22
+2025-06-05 09:55:05,144 - reference_manager - ERROR - 创建参考关系失败: 500 - {"details":"source paper not exists: paper not found: d22883f8-97f4-4dfa-98c0-2a20e11be2d6","error":"Failed to add reference"}
+2025-06-05 09:55:05,144 - reference_manager - WARNING - 未找到匹配的论文: TABS: Transforming automatically BPMN models into blockchain smart contracts
+2025-06-05 09:55:05,144 - reference_manager - WARNING - 未找到匹配的论文: Aroc: An Automatic Repair Framework for On-Chain Smart Contracts
+2025-06-05 09:55:05,145 - reference_manager - WARNING - 未找到匹配的论文: Supporting Long-term Transactions in Smart Contracts
+2025-06-05 09:55:05,145 - reference_manager - WARNING - 未找到匹配的论文: SolSaviour: A Defending Framework for Deployed Defective Smart Contracts
+2025-06-05 09:55:05,146 - reference_manager - WARNING - 未找到匹配的论文: From BPMN to smart contracts on blockchains: Transforming BPMN to DE-HSM multi-modal model
+2025-06-05 09:55:05,146 - reference_manager - WARNING - 未找到匹配的论文: Decentralized collaborative business process execution using blockchain
+2025-06-05 09:55:05,146 - reference_manager - WARNING - 未找到匹配的论文: A Tool for Moving Blockchain Computations Off-Chain
+2025-06-05 09:55:05,147 - reference_manager - WARNING - 未找到匹配的论文: Blockchain smart contracts: Applications, challenges, and future trends
+2025-06-05 09:55:05,147 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain and smart contract development: Techniques, tools, and open challenges
+2025-06-05 09:55:05,148 - reference_manager - WARNING - 未找到匹配的论文: Using FSMs to Find Patterns for Off-Chain Computing: Finding Patterns for Off-Chain Computing with FSMs
+2025-06-05 09:55:05,149 - reference_manager - WARNING - 未找到匹配的论文: EVMPatch: Timely and Automated Patching of Ethereum Smart Contracts
+2025-06-05 09:55:05,150 - reference_manager - WARNING - 未找到匹配的论文: Using Blockchain to Improve Collaborative Business Process Management: Systematic Literature Review
+2025-06-05 09:55:05,152 - reference_manager - WARNING - 未找到匹配的论文: Controlled flexibility in blockchain-based collaborative business processes
+2025-06-05 09:55:05,154 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Blockchain Interoperability: Past, Present, and Future Trends
+2025-06-05 09:55:05,156 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain cyber security
+2025-06-05 09:55:05,159 - reference_manager - WARNING - 未找到匹配的论文: A Review on Scalability of Blockchain
+2025-06-05 09:55:05,160 - reference_manager - WARNING - 未找到匹配的论文: A Three-Layered Approach for Designing Smart Contracts in Collaborative Processes
+2025-06-05 09:55:05,160 - reference_manager - WARNING - 未找到匹配的论文: Blockchain Support for Collaborative Business Processes
+2025-06-05 09:55:05,160 - reference_manager - WARNING - 未找到匹配的论文: Caterpillar: A business process execution engine on the Ethereum blockchain
+2025-06-05 09:55:05,161 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-Based Traceability of Inter-organisational Business Processes
+2025-06-05 09:55:05,163 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-Based, Decentralized Access Control for IPFS
+2025-06-05 09:55:05,165 - reference_manager - WARNING - 未找到匹配的论文: Solving the Buyer and Seller’s Dilemma: A Dual-Deposit Escrow Smart Contract for Provably Cheat-Proof Delivery and Payment for a Digital Good without a Trusted Mediator
+2025-06-05 09:55:05,166 - reference_manager - WARNING - 未找到匹配的论文: Tool Demonstration: FSolidM for Designing Secure Ethereum Smart Contracts
+2025-06-05 09:55:05,167 - reference_manager - WARNING - 未找到匹配的论文: Designing Secure Ethereum Smart Contracts: A Finite State Machine Based Approach
+2025-06-05 09:55:05,167 - reference_manager - WARNING - 未找到匹配的论文: Blockchains for Business Process Management - Challenges and Opportunities
+2025-06-05 09:55:05,168 - reference_manager - WARNING - 未找到匹配的论文: Untrusted Business Process Monitoring and Execution Using Blockchain
+2025-06-05 09:55:05,169 - reference_manager - WARNING - 未找到匹配的论文: What’s So Different about Blockchain? — Blockchain is a Probabilistic State Machine
+2025-06-05 09:55:05,171 - reference_manager - WARNING - 未找到匹配的论文: IPFS - Content Addressed, Versioned, P2P File System
+2025-06-05 09:55:05,172 - reference_manager - WARNING - 未找到匹配的论文: (Re-)Justifying BPM: A Quest for the Interaction Turn Reviewing Subject-Oriented BPM
+2025-06-05 09:55:05,174 - reference_manager - WARNING - 未找到匹配的论文: Semantics and analysis of business process models in BPMN
+2025-06-05 09:55:05,175 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical finite state machines with multiple concurrency models
+2025-06-05 09:55:05,176 - reference_manager - WARNING - 未找到匹配的论文: Discrete event systems: Modeling and performance analysis
+2025-06-05 09:55:05,180 - reference_manager - WARNING - 未找到匹配的论文: Statecharts: A Visual Formalism for Complex Systems
+2025-06-05 09:55:05,182 - reference_manager - WARNING - 未找到匹配的论文: Blockchain and Trustworthy Systems: 5th International Conference, BlockSys 2023, Haikou, China, August 8–10, 2023, Proceedings, Part II
+2025-06-05 09:55:05,183 - reference_manager - WARNING - 未找到匹配的论文: Automating Smart Contract Generation on Blockchains Using Multi-modal Modeling
+2025-06-05 09:55:05,183 - reference_manager - WARNING - 未找到匹配的论文: Hyperledger
+2025-06-05 09:55:05,184 - reference_manager - WARNING - 未找到匹配的论文: Survey of Model-Driven Engineering Techniques for Blockchain-Based Applications
+2025-06-05 09:55:05,185 - reference_manager - WARNING - 未找到匹配的论文: How Developing Java Apps is Easier with a Process Engine
+2025-06-05 09:55:05,185 - reference_manager - WARNING - 未找到匹配的论文: Upgradeability Concept for Collaborative Blockchain-Based Business Process Execution Framework
+2025-06-05 09:55:05,185 - reference_manager - WARNING - 未找到匹配的论文: Gas cost of a sha256 hash
+2025-06-05 09:55:05,187 - reference_manager - WARNING - 未找到匹配的论文: Lorikeet: A Model-Driven Engineering Tool for Blockchain-Based Business Process Execution and Asset Management
+2025-06-05 09:55:05,187 - reference_manager - WARNING - 未找到匹配的论文: Plasma : Scalable Autonomous Smart Contracts
+2025-06-05 09:55:05,188 - reference_manager - WARNING - 未找到匹配的论文: A Short History of Bitcoin and Crypto Currency Everyone Should Read
+2025-06-05 09:55:05,188 - reference_manager - WARNING - 未找到匹配的论文: A NEXT GENERATION SMART CONTRACT & DECENTRALIZED APPLICATION PLATFORM
+2025-06-05 09:55:05,189 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical State Machines
+2025-06-05 09:55:05,189 - reference_manager - WARNING - 未找到匹配的论文: Data-Driven Documents
+2025-06-05 09:55:05,189 - reference_manager - WARNING - 未找到匹配的论文: About the Business Process Model and Notation Specification 2.0
+2025-06-05 09:55:05,190 - reference_manager - WARNING - 未找到匹配的论文: Bitcoin: A Peer-to-Peer Electronic Cash System
+2025-06-05 09:55:05,191 - reference_manager - WARNING - 未找到匹配的论文: “Transforming BPMN into BPEL: Why and How.”
+2025-06-05 09:55:05,192 - reference_manager - WARNING - 未找到匹配的论文: Theoretical Informatics
+2025-06-05 09:55:05,192 - reference_manager - WARNING - 未找到匹配的论文: Advanced Information Systems Engineering
+2025-06-05 09:55:05,193 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts: Building Blocks for Digital Free Markets
+2025-06-05 09:55:05,193 - reference_manager - WARNING - 未找到匹配的论文: Blind Signatures for Untraceable Payments
+2025-06-05 09:55:05,194 - reference_manager - WARNING - 未找到匹配的论文: Communicating sequential processes
+2025-06-05 09:55:05,195 - reference_manager - WARNING - 未找到匹配的论文: Ethereum Average Block Size
+2025-06-05 09:55:05,195 - reference_manager - WARNING - 未找到匹配的论文: Simba: Smart-Contract-as-a-Service User Guide
+2025-06-05 09:55:05,195 - reference_manager - WARNING - 未找到匹配的论文: 2023. Long-Term blockchain transactions spanning multiplicity of smart contract methods
+2025-06-05 09:55:05,196 - reference_manager - WARNING - 未找到匹配的论文: Analysis and multi-step trade-transaction specification: The model’s computation flow is analyzed to identify localized sub-graphs that are then used to define nested
+2025-06-05 09:55:05,197 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Symbols-A complete guide with examples
+2025-06-05 09:55:05,197 - reference_manager - WARNING - 未找到匹配的论文: InterPlanetary File System (IPFS): Concepts
+2025-06-05 09:55:05,197 - reference_manager - WARNING - 未找到匹配的论文: Process Orchestration for end-to-end automation
+2025-06-05 09:55:05,198 - reference_manager - WARNING - 未找到匹配的论文: Node.js—Open-source, cross-platform JavaScript runtime environment
+2025-06-05 09:55:05,199 - reference_manager - WARNING - 未找到匹配的论文: Transformation to DE-HSM Model: The BPMN model is first transformed into a graph representation and then into a DE-HSM model
+2025-06-05 09:55:05,199 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Introduction—Flowable Open-Source Documentation
+2025-06-05 09:55:05,200 - reference_manager - WARNING - 未找到匹配的论文: Upgrading smart contracts
+2025-06-05 09:55:05,200 - reference_manager - WARNING - 未找到匹配的论文: Graph Visualization Software Documentation
+2025-06-05 09:55:05,200 - reference_manager - WARNING - 未找到匹配的论文: Simplify Contract Management with Bitregalo’s Smart Contract as a Service (SCaaS)
+2025-06-05 09:55:05,201 - reference_manager - WARNING - 未找到匹配的论文: Truffle: The most comprehensive suite of tools for smart contract development
+2025-06-05 09:55:05,201 - reference_manager - WARNING - 未找到匹配的论文: Received 3 July 2023; revised 22 February 2024; accepted 19 March 2024
+2025-06-05 09:55:05,201 - reference_manager - INFO - 论文参考处理完成: processed=70, success=0, failed=1, skipped=69
+2025-06-05 09:55:05,202 - reference_manager - INFO - 参考处理完成: processed=129, success=0, failed=1, skipped=128
+2025-06-05 09:55:05,202 - reference_manager - INFO - 参考处理摘要:
+2025-06-05 09:55:05,202 - reference_manager - INFO - - 总处理参考: 129
+2025-06-05 09:55:05,202 - reference_manager - INFO - - 成功创建: 0
+2025-06-05 09:55:05,202 - reference_manager - INFO - - 创建失败: 1
+2025-06-05 09:55:05,202 - reference_manager - INFO - - 跳过: 128
+2025-06-05 10:01:25,195 - reference_manager - INFO - 参考管理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 10:01:25,196 - reference_manager - INFO - 已加载 22 个现有论文映射
+2025-06-05 10:01:25,197 - reference_manager - INFO - 在 ./cache/references 目录中找到 0 个参考文件
+2025-06-05 10:01:25,197 - reference_manager - INFO - 未找到参考文件
+2025-06-05 10:01:25,197 - reference_manager - INFO - 参考处理摘要:
+2025-06-05 10:01:25,197 - reference_manager - INFO - - 总处理参考: 0
+2025-06-05 10:01:25,197 - reference_manager - INFO - - 成功创建: 0
+2025-06-05 10:01:25,197 - reference_manager - INFO - - 创建失败: 0
+2025-06-05 10:01:25,197 - reference_manager - INFO - - 跳过: 0
+2025-06-05 10:07:29,694 - reference_manager - INFO - 参考管理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 10:07:29,695 - reference_manager - INFO - 已加载 8 个现有论文映射
+2025-06-05 10:07:29,695 - reference_manager - INFO - 在 ./cache/references 目录中找到 5 个参考文件
+2025-06-05 10:07:29,712 - reference_manager - INFO - 处理论文 'Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair' (ID: b231cb3d-12fd-45dd-b6dd-ffb0c7d70980) 的参考关系，共 48 个参考
+2025-06-05 10:07:29,714 - reference_manager - WARNING - 未找到匹配的论文: Research on Smart Contract Verification and Generation Method Based on BPMN
+2025-06-05 10:07:29,715 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts for SMEs and Large Companies
+2025-06-05 10:07:29,715 - reference_manager - INFO - 处理论文 'Poster: FedBlockParadox -- A Framework for Simulating and Securing Decentralized Federated Learning' (ID: 4d31c53f-396e-418a-838c-c1e9899368df) 的参考关系，共 15 个参考
+2025-06-05 10:07:29,716 - reference_manager - WARNING - 未找到匹配的论文: A Comprehensive Survey of Upgradeable Smart Contract Patterns
+2025-06-05 10:07:29,718 - reference_manager - WARNING - 未找到匹配的论文: A Federated Learning Platform as a Service for Advancing Stroke Management in European Clinical Centers
+2025-06-05 10:07:29,719 - reference_manager - WARNING - 未找到匹配的论文: TABS: Transforming automatically BPMN models into blockchain smart contracts
+2025-06-05 10:07:29,721 - reference_manager - WARNING - 未找到匹配的论文: Evaluating the Impact of Privacy-Preserving Federated Learning on CAN Intrusion Detection
+2025-06-05 10:07:29,722 - reference_manager - WARNING - 未找到匹配的论文: Aroc: An Automatic Repair Framework for On-Chain Smart Contracts
+2025-06-05 10:07:29,722 - reference_manager - INFO - 处理论文 'A Preference-Driven Methodology for High-Quality Solidity Code Generation' (ID: 7fff1d1e-d1be-4149-93a7-3650ff95c788) 的参考关系，共 71 个参考
+2025-06-05 10:07:29,724 - reference_manager - WARNING - 未找到匹配的论文: A blockchain-based framework for federated learning with privacy preservation in power load forecasting
+2025-06-05 10:07:29,725 - reference_manager - WARNING - 未找到匹配的论文: Supporting Long-term Transactions in Smart Contracts
+2025-06-05 10:07:29,726 - reference_manager - INFO - 处理论文 'When Blockchain Meets Crawlers: Real-time Market Analytics in Solana NFT Markets' (ID: 9bc8b304-c79e-476f-8c4e-102dccf5ff4f) 的参考关系，共 46 个参考
+2025-06-05 10:07:29,729 - reference_manager - WARNING - 未找到匹配的论文: Smart Contract Security in Decentralized Finance: Enhancing Vulnerability Detection with Reinforcement Learning
+2025-06-05 10:07:29,731 - reference_manager - WARNING - 未找到匹配的论文: A Decentralized Federated Learning Based on Node Selection and Knowledge Distillation
+2025-06-05 10:07:29,732 - reference_manager - WARNING - 未找到匹配的论文: Flexible Execution of Multi-Party Business Processes on Blockchain
+2025-06-05 10:07:29,732 - reference_manager - INFO - 处理论文 'Decentralized COVID-19 Health System Leveraging Blockchain' (ID: e94fd57b-4098-492d-971e-d29e01f5889e) 的参考关系，共 42 个参考
+2025-06-05 10:07:29,734 - reference_manager - WARNING - 未找到匹配的论文: Malicious Code Detection in Smart Contracts via Opcode Vectorization
+2025-06-05 10:07:29,735 - reference_manager - WARNING - 未找到匹配的论文: Unearthing Gas-Wasting Code Smells in Smart Contracts With Large Language Models
+2025-06-05 10:07:29,736 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Secure and Private Federated Learning Using Blockchain: Theory and Application in Resource-Constrained Computing
+2025-06-05 10:07:29,738 - reference_manager - WARNING - 未找到匹配的论文: SolSaviour: A Defending Framework for Deployed Defective Smart Contracts
+2025-06-05 10:07:29,739 - reference_manager - WARNING - 未找到匹配的论文: Malicious Code Detection in Smart Contracts via Opcode Vectorization
+2025-06-05 10:07:29,740 - reference_manager - WARNING - 未找到匹配的论文: Enhancing Smart Contract Vulnerability Detection in DApps Leveraging Fine-Tuned LLM
+2025-06-05 10:07:29,741 - reference_manager - WARNING - 未找到匹配的论文: Generation of Optimized Solidity Code for Machine Learning Models using LLMs
+2025-06-05 10:07:29,742 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-empowered Federated Learning: Challenges, Solutions, and Future Directions
+2025-06-05 10:07:29,744 - reference_manager - WARNING - 未找到匹配的论文: From BPMN to smart contracts on blockchains: Transforming BPMN to DE-HSM multi-modal model
+2025-06-05 10:07:29,746 - reference_manager - WARNING - 未找到匹配的论文: Enhancing Smart Contract Vulnerability Detection in DApps Leveraging Fine-Tuned LLM
+2025-06-05 10:07:29,747 - reference_manager - WARNING - 未找到匹配的论文: SmartBugBert: BERT-Enhanced Vulnerability Detection for Smart Contract Bytecode
+2025-06-05 10:07:29,748 - reference_manager - WARNING - 未找到匹配的论文: SolEval: Benchmarking Large Language Models for Repository-level Solidity Code Generation
+2025-06-05 10:07:29,749 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-enabled Federated Learning: A Survey
+2025-06-05 10:07:29,750 - reference_manager - WARNING - 未找到匹配的论文: Decentralized collaborative business process execution using blockchain
+2025-06-05 10:07:29,751 - reference_manager - WARNING - 未找到匹配的论文: SmartBugBert: BERT-Enhanced Vulnerability Detection for Smart Contract Bytecode
+2025-06-05 10:07:29,752 - reference_manager - WARNING - 未找到匹配的论文: SoK: Security Analysis of Blockchain-based Cryptocurrency
+2025-06-05 10:07:29,753 - reference_manager - WARNING - 未找到匹配的论文: DeepSeek-V3 Technical Report
+2025-06-05 10:07:29,754 - reference_manager - WARNING - 未找到匹配的论文: Biscotti: A Blockchain System for Private and Secure Federated Learning
+2025-06-05 10:07:29,754 - reference_manager - WARNING - 未找到匹配的论文: A Tool for Moving Blockchain Computations Off-Chain
+2025-06-05 10:07:29,755 - reference_manager - WARNING - 未找到匹配的论文: SoK: Security Analysis of Blockchain-based Cryptocurrency
+2025-06-05 10:07:29,756 - reference_manager - WARNING - 未找到匹配的论文: SCALM: Detecting Bad Practices in Smart Contracts Through LLMs
+2025-06-05 10:07:29,757 - reference_manager - WARNING - 未找到匹配的论文: What You See Is What You Get: Attention-based Self-guided Automatic Unit Test Generation
+2025-06-05 10:07:29,758 - reference_manager - WARNING - 未找到匹配的论文: Federated Learning Meets Blockchain in Edge Computing: Opportunities and Challenges
+2025-06-05 10:07:29,759 - reference_manager - WARNING - 未找到匹配的论文: Blockchain smart contracts: Applications, challenges, and future trends
+2025-06-05 10:07:29,760 - reference_manager - WARNING - 未找到匹配的论文: SCALM: Detecting Bad Practices in Smart Contracts Through LLMs
+2025-06-05 10:07:29,761 - reference_manager - WARNING - 未找到匹配的论文: Detecting Malicious Accounts in Web3 through Transaction Graph
+2025-06-05 10:07:29,763 - reference_manager - WARNING - 未找到匹配的论文: Benchmarking Large Language Models for Ethereum Smart Contract Development
+2025-06-05 10:07:29,764 - reference_manager - WARNING - 未找到匹配的论文: When Federated Learning Meets Blockchain: A New Distributed Learning Paradigm
+2025-06-05 10:07:29,765 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain and smart contract development: Techniques, tools, and open challenges
+2025-06-05 10:07:29,766 - reference_manager - WARNING - 未找到匹配的论文: Guardians of the Ledger: Protecting Decentralized Exchanges from State Derailment Defects
+2025-06-05 10:07:29,768 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts in the Real World: A Statistical Exploration of External Data Dependencies
+2025-06-05 10:07:29,769 - reference_manager - WARNING - 未找到匹配的论文: CodeDPO: Aligning Code Models with Self Generated and Verified Source Code
+2025-06-05 10:07:29,770 - reference_manager - WARNING - 未找到匹配的论文: A Blockchain-Based Decentralized Federated Learning Framework with Committee Consensus
+2025-06-05 10:07:29,772 - reference_manager - WARNING - 未找到匹配的论文: Using FSMs to Find Patterns for Off-Chain Computing: Finding Patterns for Off-Chain Computing with FSMs
+2025-06-05 10:07:29,773 - reference_manager - WARNING - 未找到匹配的论文: Detecting Malicious Accounts in Web3 through Transaction Graph
+2025-06-05 10:07:29,775 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-enabled Smart Contracts and the Internet of Things: Advancing the research agenda through a narrative review
+2025-06-05 10:07:29,776 - reference_manager - WARNING - 未找到匹配的论文: ThinkRepair: Self-Directed Automated Program Repair
+2025-06-05 10:07:29,777 - reference_manager - WARNING - 未找到匹配的论文: Decentralized Privacy Using Blockchain-Enabled Federated Learning in Fog Computing
+2025-06-05 10:07:29,778 - reference_manager - WARNING - 未找到匹配的论文: EVMPatch: Timely and Automated Patching of Ethereum Smart Contracts
+2025-06-05 10:07:29,780 - reference_manager - WARNING - 未找到匹配的论文: COBRA: Interaction-Aware Bytecode-Level Vulnerability Detector for Smart Contracts
+2025-06-05 10:07:29,782 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attacks Detection and Traceability Mechanism Based on Beacon Packets in Connected Automobile Vehicles
+2025-06-05 10:07:29,783 - reference_manager - WARNING - 未找到匹配的论文: Rectifier: Code Translation with Corrector via LLMs
+2025-06-05 10:07:29,784 - reference_manager - WARNING - 未找到匹配的论文: Communication-Efficient Learning of Deep Networks from Decentralized Data
+2025-06-05 10:07:29,785 - reference_manager - WARNING - 未找到匹配的论文: A Survey of Smart Contract Formal Specification and Verification
+2025-06-05 10:07:29,786 - reference_manager - WARNING - 未找到匹配的论文: Toward Web3 Applications: Easing the Access and Transition
+2025-06-05 10:07:29,787 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attack Detection in VANETs: An LSTM-Based BiGAN Approach
+2025-06-05 10:07:29,788 - reference_manager - WARNING - 未找到匹配的论文: Evaluating Large Language Models in Class-Level Code Generation
+2025-06-05 10:07:29,788 - reference_manager - WARNING - 未找到匹配的论文: Vulnerabilities in Federated Learning
+2025-06-05 10:07:29,790 - reference_manager - WARNING - 未找到匹配的论文: Using Blockchain to Improve Collaborative Business Process Management: Systematic Literature Review
+2025-06-05 10:07:29,791 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts in the Real World: A Statistical Exploration of External Data Dependencies
+2025-06-05 10:07:29,792 - reference_manager - WARNING - 未找到匹配的论文: Tackling Sybil Attacks in Intelligent connected vehicles: A Review of Machine Learning and Deep Learning Techniques
+2025-06-05 10:07:29,794 - reference_manager - WARNING - 未找到匹配的论文: EvoCodeBench: An Evolving Code Generation Benchmark Aligned with Real-World Code Repositories
+2025-06-05 10:07:29,795 - reference_manager - WARNING - 未找到匹配的论文: Learning Multiple Layers of Features from Tiny Images
+2025-06-05 10:07:29,796 - reference_manager - WARNING - 未找到匹配的论文: Controlled flexibility in blockchain-based collaborative business processes
+2025-06-05 10:07:29,797 - reference_manager - WARNING - 未找到匹配的论文: GasTrace: Detecting Sandwich Attack Malicious Accounts in Ethereum
+2025-06-05 10:07:29,799 - reference_manager - WARNING - 未找到匹配的论文: Ultra-Short-Term Continuous Time Series Prediction of Blockchain-Based Cryptocurrency Using LSTM in the Big Data Era
+2025-06-05 10:07:29,800 - reference_manager - WARNING - 未找到匹配的论文: LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code
+2025-06-05 10:07:29,800 - reference_manager - INFO - 论文参考处理完成: processed=15, success=0, failed=0, skipped=15
+2025-06-05 10:07:29,801 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Blockchain Interoperability: Past, Present, and Future Trends
+2025-06-05 10:07:29,802 - reference_manager - WARNING - 未找到匹配的论文: Research on Anti-crawler and Anti-Anti-crawler Technology
+2025-06-05 10:07:29,803 - reference_manager - WARNING - 未找到匹配的论文: OpenCodeInterpreter: Integrating Code Generation with Execution and Refinement
+2025-06-05 10:07:29,804 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain cyber security
+2025-06-05 10:07:29,805 - reference_manager - WARNING - 未找到匹配的论文: DeFiTail: DeFi Protocol Inspection through Cross-Contract Execution Analysis
+2025-06-05 10:07:29,806 - reference_manager - WARNING - 未找到匹配的论文: AuthROS: Secure Data Sharing Among Robot Operating Systems based on Ethereum
+2025-06-05 10:07:29,808 - reference_manager - WARNING - 未找到匹配的论文: DeepSeek-Coder: When the Large Language Model Meets Programming - The Rise of Code Intelligence
+2025-06-05 10:07:29,809 - reference_manager - WARNING - 未找到匹配的论文: Engineering trustable choreography-based systems using blockchain
+2025-06-05 10:07:29,810 - reference_manager - WARNING - 未找到匹配的论文: StateGuard: Detecting State Derailment Defects in Decentralized Exchange Smart Contract
+2025-06-05 10:07:29,812 - reference_manager - WARNING - 未找到匹配的论文: MES-FPMIPv6: MIH-Enabled and enhanced secure Fast Proxy Mobile IPv6 handover protocol for 5G networks*^
+2025-06-05 10:07:29,813 - reference_manager - WARNING - 未找到匹配的论文: LLM Maybe LongLM: Self-Extend LLM Context Window Without Tuning
+2025-06-05 10:07:29,813 - reference_manager - WARNING - 未找到匹配的论文: A Review on Scalability of Blockchain
+2025-06-05 10:07:29,815 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attacks Detection and Traceability Mechanism Based on Beacon Packets in Connected Automobile Vehicles
+2025-06-05 10:07:29,816 - reference_manager - WARNING - 未找到匹配的论文: Can Solana be the Solution to the Blockchain Scalability Problem?
+2025-06-05 10:07:29,818 - reference_manager - WARNING - 未找到匹配的论文: A^3-CodGen: A Repository-Level Code Generation Framework for Code Reuse with Local-Aware, Global-Aware, and Third-Party-Library-Aware
+2025-06-05 10:07:29,819 - reference_manager - WARNING - 未找到匹配的论文: A Three-Layered Approach for Designing Smart Contracts in Collaborative Processes
+2025-06-05 10:07:29,820 - reference_manager - WARNING - 未找到匹配的论文: Characterizing the Solana NFT Ecosystem
+2025-06-05 10:07:29,821 - reference_manager - WARNING - 未找到匹配的论文: Automated driver management for Selenium WebDriver
+2025-06-05 10:07:29,822 - reference_manager - WARNING - 未找到匹配的论文: Magicoder: Empowering Code Generation with OSS-Instruct
+2025-06-05 10:07:29,823 - reference_manager - WARNING - 未找到匹配的论文: Process-Based Composition of Permissioned and Permissionless Blockchain Smart Contracts
+2025-06-05 10:07:29,824 - reference_manager - WARNING - 未找到匹配的论文: Unveiling Wash Trading in Popular NFT Markets
+2025-06-05 10:07:29,825 - reference_manager - WARNING - 未找到匹配的论文: Blockchain and Tokenized Securities: The Potential for Green Finance
+2025-06-05 10:07:29,827 - reference_manager - WARNING - 未找到匹配的论文: CodeScope: An Execution-based Multilingual Multitask Multidimensional Benchmark for Evaluating LLMs on Code Understanding and Generation
+2025-06-05 10:07:29,828 - reference_manager - WARNING - 未找到匹配的论文: Blockchain Support for Collaborative Business Processes
+2025-06-05 10:07:29,829 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attack Detection in VANETs: An LSTM-Based BiGAN Approach
+2025-06-05 10:07:29,831 - reference_manager - WARNING - 未找到匹配的论文: A comprehensive review of deterministic models and applications for mean-variance portfolio optimization
+2025-06-05 10:07:29,832 - reference_manager - WARNING - 未找到匹配的论文: Qwen Technical Report
+2025-06-05 10:07:29,832 - reference_manager - WARNING - 未找到匹配的论文: Modeling and execution of blockchain-aware business processes
+2025-06-05 10:07:29,834 - reference_manager - WARNING - 未找到匹配的论文: Distributed Ledger Technology Review and Decentralized Applications Development Guidelines
+2025-06-05 10:07:29,835 - reference_manager - WARNING - 未找到匹配的论文: PathMarker: protecting web contents against inside crawlers
+2025-06-05 10:07:29,836 - reference_manager - WARNING - 未找到匹配的论文: When ChatGPT Meets Smart Contract Vulnerability Detection: How Far Are We?
+2025-06-05 10:07:29,837 - reference_manager - WARNING - 未找到匹配的论文: VeriSolid: Correct-by-Design Smart Contracts for Ethereum
+2025-06-05 10:07:29,837 - reference_manager - WARNING - 未找到匹配的论文: Hyperledger Fabric Blockchain: Chaincode Performance Analysis
+2025-06-05 10:07:29,839 - reference_manager - WARNING - 未找到匹配的论文: Blockchain in global supply chains and cross border trade: a critical synthesis of the state-of-the-art, challenges and opportunities
+2025-06-05 10:07:29,841 - reference_manager - WARNING - 未找到匹配的论文: Empirical Review of Smart Contract and DeFi Security: Vulnerability Detection and Automated Repair
+2025-06-05 10:07:29,842 - reference_manager - WARNING - 未找到匹配的论文: Caterpillar: A business process execution engine on the Ethereum blockchain
+2025-06-05 10:07:29,843 - reference_manager - WARNING - 未找到匹配的论文: Hyperledger fabric: a distributed operating system for permissioned blockchains
+2025-06-05 10:07:29,844 - reference_manager - WARNING - 未找到匹配的论文: An Android Vulnerability Detection System
+2025-06-05 10:07:29,844 - reference_manager - WARNING - 未找到匹配的论文: Code Llama: Open Foundation Models for Code
+2025-06-05 10:07:29,845 - reference_manager - WARNING - 未找到匹配的论文: Tool Demonstration: FSolidM for Designing Secure Ethereum Smart Contracts
+2025-06-05 10:07:29,847 - reference_manager - WARNING - 未找到匹配的论文: An Android Vulnerability Detection System
+2025-06-05 10:07:29,848 - reference_manager - WARNING - 未找到匹配的论文: System-level attacks against android by exploiting asynchronous programming
+2025-06-05 10:07:29,849 - reference_manager - WARNING - 未找到匹配的论文: Instruction Tuning for Large Language Models: A Survey
+2025-06-05 10:07:29,850 - reference_manager - WARNING - 未找到匹配的论文: Designing Secure Ethereum Smart Contracts: A Finite State Machine Based Approach
+2025-06-05 10:07:29,851 - reference_manager - WARNING - 未找到匹配的论文: System-level attacks against android by exploiting asynchronous programming
+2025-06-05 10:07:29,852 - reference_manager - WARNING - 未找到匹配的论文: MedRec: Using Blockchain for Medical Data Access and Permission Management
+2025-06-05 10:07:29,853 - reference_manager - WARNING - 未找到匹配的论文: Direct Preference Optimization: Your Language Model is Secretly a Reward Model
+2025-06-05 10:07:29,854 - reference_manager - WARNING - 未找到匹配的论文: Blockchains for Business Process Management - Challenges and Opportunities
+2025-06-05 10:07:29,855 - reference_manager - WARNING - 未找到匹配的论文: A Temporal Blockchain: A Formal Analysis
+2025-06-05 10:07:29,856 - reference_manager - WARNING - 未找到匹配的论文: Half-Baked Cookies: Hardening Cookie-Based Authentication for the Modern Web
+2025-06-05 10:07:29,857 - reference_manager - WARNING - 未找到匹配的论文: Structured Chain-of-Thought Prompting for Code Generation
+2025-06-05 10:07:29,858 - reference_manager - WARNING - 未找到匹配的论文: What’s So Different about Blockchain? — Blockchain is a Probabilistic State Machine
+2025-06-05 10:07:29,859 - reference_manager - WARNING - 未找到匹配的论文: Channel coding and decoding in a relay system operated with physical-layer network coding
+2025-06-05 10:07:29,861 - reference_manager - WARNING - 未找到匹配的论文: Survey on JavaScript security policies and their enforcement mechanisms in a web browser
+2025-06-05 10:07:29,862 - reference_manager - WARNING - 未找到匹配的论文: AChecker: Statically Detecting Smart Contract Access Control Vulnerabilities
+2025-06-05 10:07:29,863 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical finite state machines with multiple concurrency models
+2025-06-05 10:07:29,864 - reference_manager - WARNING - 未找到匹配的论文: Cryptanalysis of the Hash Functions MD4 and RIPEMD
+2025-06-05 10:07:29,865 - reference_manager - WARNING - 未找到匹配的论文: One-time cookies: Preventing session hijacking attacks with stateless authentication tokens
+2025-06-05 10:07:29,866 - reference_manager - WARNING - 未找到匹配的论文: Self-Collaboration Code Generation via ChatGPT
+2025-06-05 10:07:29,867 - reference_manager - WARNING - 未找到匹配的论文: Discrete event systems: Modeling and performance analysis
+2025-06-05 10:07:29,867 - reference_manager - WARNING - 未找到匹配的论文: US Secure Hash Algorithm 1 (SHA1)
+2025-06-05 10:07:29,869 - reference_manager - WARNING - 未找到匹配的论文: Censorship by Proxy: The First Amendment, Internet Intermediaries, and the Problem of the Weakest Link
+2025-06-05 10:07:29,870 - reference_manager - WARNING - 未找到匹配的论文: Teaching Large Language Models to Self-Debug
+2025-06-05 10:07:29,871 - reference_manager - WARNING - 未找到匹配的论文: Long-term blockchain transactions spanning multiplicity of smart contract methods
+2025-06-05 10:07:29,872 - reference_manager - WARNING - 未找到匹配的论文: Practical Byzantine fault tolerance
+2025-06-05 10:07:29,873 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-Enabled Fintech Innovation: A Case of Reengineering Stock Trading Services
+2025-06-05 10:07:29,874 - reference_manager - WARNING - 未找到匹配的论文: Automated Program Repair via Conversation: Fixing 162 out of 337 Bugs for $0.42 Each using ChatGPT
+2025-06-05 10:07:29,875 - reference_manager - WARNING - 未找到匹配的论文: Automating Smart Contract Generation on Blockchains Using Multi-modal Modeling
+2025-06-05 10:07:29,876 - reference_manager - WARNING - 未找到匹配的论文: Divertible Protocols and Atomic Proxy Cryptography
+2025-06-05 10:07:29,876 - reference_manager - WARNING - 未找到匹配的论文: What is a blockchain
+2025-06-05 10:07:29,877 - reference_manager - WARNING - 未找到匹配的论文: A survey on smart contract vulnerabilities: Data sources, detection and repair
+2025-06-05 10:07:29,878 - reference_manager - WARNING - 未找到匹配的论文: Upgradability of smart contracts: a review
+2025-06-05 10:07:29,879 - reference_manager - WARNING - 未找到匹配的论文: The Byzantine Generals Problem
+2025-06-05 10:07:29,880 - reference_manager - WARNING - 未找到匹配的论文: On Discovering Vulnerabilities in Android Applications
+2025-06-05 10:07:29,881 - reference_manager - WARNING - 未找到匹配的论文: Self-Planning Code Generation with Large Language Models
+2025-06-05 10:07:29,882 - reference_manager - WARNING - 未找到匹配的论文: Survey of Model-Driven Engineering Techniques for Blockchain-Based Applications
+2025-06-05 10:07:29,884 - reference_manager - WARNING - 未找到匹配的论文: SerdeSniffer: Enhancing Java Deserialization Vulnerability Detection with Function Summaries
+2025-06-05 10:07:29,885 - reference_manager - WARNING - 未找到匹配的论文: The business blockchain: promise, practice, and application of the next Internet technology
+2025-06-05 10:07:29,886 - reference_manager - WARNING - 未找到匹配的论文: Large Language Models Can Be Easily Distracted by Irrelevant Context
+2025-06-05 10:07:29,887 - reference_manager - WARNING - 未找到匹配的论文: Upgradeability Concept for Collaborative Blockchain-Based Business Process Execution Framework
+2025-06-05 10:07:29,889 - reference_manager - WARNING - 未找到匹配的论文: Hybrid analysis of smart contracts and malicious behaviors in ethereum
+2025-06-05 10:07:29,889 - reference_manager - WARNING - 未找到匹配的论文: Introduction to Modern Time Series Analysis
+2025-06-05 10:07:29,891 - reference_manager - WARNING - 未找到匹配的论文: CLAM: Selective Clarification for Ambiguous Questions with Generative Language Models
+2025-06-05 10:07:29,892 - reference_manager - WARNING - 未找到匹配的论文: Lorikeet: A Model-Driven Engineering Tool for Blockchain-Based Business Process Execution and Asset Management
+2025-06-05 10:07:29,893 - reference_manager - WARNING - 未找到匹配的论文: On Discovering Vulnerabilities in Android Applications
+2025-06-05 10:07:29,894 - reference_manager - WARNING - 未找到匹配的论文: SCLA: Automated Smart Contract Summarization via LLMs and Semantic Augmentation
+2025-06-05 10:07:29,897 - reference_manager - WARNING - 未找到匹配的论文: Incorporating domain knowledge through task augmentation for front-end JavaScript code generation
+2025-06-05 10:07:29,898 - reference_manager - WARNING - 未找到匹配的论文: A NEXT GENERATION SMART CONTRACT & DECENTRALIZED APPLICATION PLATFORM
+2025-06-05 10:07:29,900 - reference_manager - WARNING - 未找到匹配的论文: Cryptographic access control scheme for cloud storage based on proxy re-encryption
+2025-06-05 10:07:29,900 - reference_manager - WARNING - 未找到匹配的论文: kriptovaliutu˛
+2025-06-05 10:07:29,901 - reference_manager - WARNING - 未找到匹配的论文: PanGu-Coder: Program Synthesis with Function-Level Language Modeling
+2025-06-05 10:07:29,901 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical State Machines
+2025-06-05 10:07:29,902 - reference_manager - WARNING - 未找到匹配的论文: Delegated proof-of-stake (dpos)
+2025-06-05 10:07:29,903 - reference_manager - WARNING - 未找到匹配的论文: Characterizing discussion trend on blockchain development by mining stack overflow
+2025-06-05 10:07:29,904 - reference_manager - WARNING - 未找到匹配的论文: Repository-Level Prompt Generation for Large Language Models of Code
+2025-06-05 10:07:29,905 - reference_manager - WARNING - 未找到匹配的论文: Transforming BPMN into BPEL: Why and How
+2025-06-05 10:07:29,906 - reference_manager - WARNING - 未找到匹配的论文: Adoption of Electronic Health Record Systems among U . S . Non-Federal Acute Care Hospitals : 2008-2015
+2025-06-05 10:07:29,907 - reference_manager - WARNING - 未找到匹配的论文: matches any number of decimal points or digits. The decimal point needs to be escaped ( \.
+2025-06-05 10:07:29,908 - reference_manager - WARNING - 未找到匹配的论文: Security Analysis of DeFi: Vulnerabilities, Attacks and Advances
+2025-06-05 10:07:29,909 - reference_manager - WARNING - 未找到匹配的论文: Theories of Programming Languages: Communicating Sequential Processes
+2025-06-05 10:07:29,910 - reference_manager - WARNING - 未找到匹配的论文: Trusted Platform Module
+2025-06-05 10:07:29,912 - reference_manager - WARNING - 未找到匹配的论文: The ‘tmp_name’ expression matches strings shaped like ‘"collection_name": "Some Collection Name"’ and extracts ‘Some Collection Name’ by capturing the group
+2025-06-05 10:07:29,913 - reference_manager - WARNING - 未找到匹配的论文: InCoder: A Generative Model for Code Infilling and Synthesis
+2025-06-05 10:07:29,914 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Introduction - Flowable Open-Source Documentation
+2025-06-05 10:07:29,914 - reference_manager - WARNING - 未找到匹配的论文: Bitcoin: A Peer-to-Peer Electronic Cash System
+2025-06-05 10:07:29,916 - reference_manager - WARNING - 未找到匹配的论文: Hybrid analysis of smart contracts and malicious behaviors in ethereum
+2025-06-05 10:07:29,917 - reference_manager - WARNING - 未找到匹配的论文: CodeGen: An Open Large Language Model for Code with Multi-Turn Program Synthesis
+2025-06-05 10:07:29,918 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Symbols — A complete guide with examples
+2025-06-05 10:07:29,919 - reference_manager - WARNING - 未找到匹配的论文: The md5 message-digest algorithm. Technical report
+2025-06-05 10:07:29,921 - reference_manager - WARNING - 未找到匹配的论文: ‘tmp_volume’ : The entire expression matches strings of the form ‘"volume":12345,’ , where the numeric portion can be any positive integer or floating-point number
+2025-06-05 10:07:29,922 - reference_manager - WARNING - 未找到匹配的论文: Competition-level code generation with AlphaCode
+2025-06-05 10:07:29,923 - reference_manager - WARNING - 未找到匹配的论文: Process Orchestration for end-to-end automation
+2025-06-05 10:07:29,924 - reference_manager - WARNING - 未找到匹配的论文: SCLA: Automated Smart Contract Summarization via LLMs and Semantic Augmentation
+2025-06-05 10:07:29,926 - reference_manager - WARNING - 未找到匹配的论文: The ‘tmp_collectionid’ expression matches strings of the form ‘"collection_id":"ABCD123"’ , excluding closing quotes
+2025-06-05 10:07:29,927 - reference_manager - WARNING - 未找到匹配的论文: Characterizing and Detecting Gas-Inefficient Patterns in Smart Contracts
+2025-06-05 10:07:29,928 - reference_manager - WARNING - 未找到匹配的论文: Business Process Model and Notation (BPMN), Version 2.0.2
+2025-06-05 10:07:29,930 - reference_manager - WARNING - 未找到匹配的论文: Alice first encrypts the ciphertext data with her own private key Sk1
+2025-06-05 10:07:29,932 - reference_manager - WARNING - 未找到匹配的论文: ‘\"collection_name\":\s*\"’ : matches the literal string ‘"collection_name":’ followed by any number of whitespace characters ( ‘\s*’ )
+2025-06-05 10:07:29,934 - reference_manager - WARNING - 未找到匹配的论文: CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation
+2025-06-05 10:07:29,934 - reference_manager - INFO - 论文参考处理完成: processed=48, success=0, failed=0, skipped=48
+2025-06-05 10:07:29,935 - reference_manager - WARNING - 未找到匹配的论文: Alice generates a data delkey based on Bob’s public key Pk2 and her own private key Sk1, and sends it to the server
+2025-06-05 10:07:29,936 - reference_manager - WARNING - 未找到匹配的论文: Manuscript submitted to ACM
+2025-06-05 10:07:29,937 - reference_manager - WARNING - 未找到匹配的论文: Evaluating Large Language Models Trained on Code
+2025-06-05 10:07:29,940 - reference_manager - WARNING - 未找到匹配的论文: Add system dependencies. The dependency information of the Go language is saved in the go.mod file. Enter the program folder and enter the go mod tidy command to add dependencies to the system
+2025-06-05 10:07:29,941 - reference_manager - INFO - 论文参考处理完成: processed=42, success=0, failed=0, skipped=42
+2025-06-05 10:07:29,941 - reference_manager - WARNING - 未找到匹配的论文: SoK: Decentralized Finance (DeFi)
+2025-06-05 10:07:29,941 - reference_manager - WARNING - 未找到匹配的论文: matches the literal comma
+2025-06-05 10:07:29,942 - reference_manager - WARNING - 未找到匹配的论文: The Eye of Horus: Spotting and Analyzing Attacks on Ethereum Smart Contracts
+2025-06-05 10:07:29,943 - reference_manager - WARNING - 未找到匹配的论文: ElementClickInterceptedException
+2025-06-05 10:07:29,944 - reference_manager - WARNING - 未找到匹配的论文: The Decentralized Financial Crisis
+2025-06-05 10:07:29,945 - reference_manager - WARNING - 未找到匹配的论文: matches any number of letters (upper or lower case) and numbers
+2025-06-05 10:07:29,946 - reference_manager - WARNING - 未找到匹配的论文: PyTorch: An Imperative Style, High-Performance Deep Learning Library
+2025-06-05 10:07:29,946 - reference_manager - INFO - 论文参考处理完成: processed=46, success=0, failed=0, skipped=46
+2025-06-05 10:07:29,948 - reference_manager - WARNING - 未找到匹配的论文: Empirical Review of Automated Analysis Tools on 47,587 Ethereum Smart Contracts
+2025-06-05 10:07:29,949 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Ethereum Systems Security
+2025-06-05 10:07:29,949 - reference_manager - WARNING - 未找到匹配的论文: Replication
+2025-06-05 10:07:29,950 - reference_manager - WARNING - 未找到匹配的论文: Slither: A Static Analysis Framework for Smart Contracts
+2025-06-05 10:07:29,951 - reference_manager - WARNING - 未找到匹配的论文: A Survey of Attacks on Ethereum Smart Contracts (SoK)
+2025-06-05 10:07:29,952 - reference_manager - WARNING - 未找到匹配的论文: Under-optimized smart contracts devour your money
+2025-06-05 10:07:29,953 - reference_manager - WARNING - 未找到匹配的论文: GASOL: Gas Analysis and Optimization for Ethereum Smart Contracts
+2025-06-05 10:07:29,954 - reference_manager - WARNING - 未找到匹配的论文: The PageRank Citation Ranking : Bringing Order to the Web
+2025-06-05 10:07:29,954 - reference_manager - WARNING - 未找到匹配的论文: SolTG: A CHC-Based Solidity Test Case Generator
+2025-06-05 10:07:29,956 - reference_manager - WARNING - 未找到匹配的论文: xCodeEval: A Large Scale Multilingual Multitask Benchmark for Code Understanding, Generation, Translation and Retrieval
+2025-06-05 10:07:29,956 - reference_manager - WARNING - 未找到匹配的论文: “Hugging face,”
+2025-06-05 10:07:29,958 - reference_manager - WARNING - 未找到匹配的论文: Using Coq to Enforce the Checks-Effects-Interactions Pattern in DeepSEA Smart Contracts (Short Paper)
+2025-06-05 10:07:29,959 - reference_manager - WARNING - 未找到匹配的论文: “Trl: Transformer reinforcement learning,”
+2025-06-05 10:07:29,960 - reference_manager - WARNING - 未找到匹配的论文: “Blockchain immutable nature and smart contract vulnerabilities,”
+2025-06-05 10:07:29,961 - reference_manager - WARNING - 未找到匹配的论文: “Slowmist blockchain security incident database,”
+2025-06-05 10:07:29,962 - reference_manager - WARNING - 未找到匹配的论文: “How can i access gpt-4, gpt-4 turbo, gpt-4o, and gpt-4o mini?”
+2025-06-05 10:07:29,964 - reference_manager - WARNING - 未找到匹配的论文: “Codereval: A benchmark of pragmatic code generation with generative pre-trained models,”
+2025-06-05 10:07:29,964 - reference_manager - WARNING - 未找到匹配的论文: “Defi protocol financial losses analysis,”
+2025-06-05 10:07:29,965 - reference_manager - WARNING - 未找到匹配的论文: “On the immutable nature of blockchain deployments and security implications,”
+2025-06-05 10:07:29,966 - reference_manager - WARNING - 未找到匹配的论文: “Tree-sitter, a parser generator tool and an incremental parsing library.”
+2025-06-05 10:07:29,967 - reference_manager - WARNING - 未找到匹配的论文: “Chatgpt: Optimizing language models for dialogue
+2025-06-05 10:07:29,968 - reference_manager - WARNING - 未找到匹配的论文: “Analysis of smart contract security incidents and financial impact,”
+2025-06-05 10:07:29,968 - reference_manager - WARNING - 未找到匹配的论文: “Deepseek-r1,”
+2025-06-05 10:07:29,969 - reference_manager - INFO - 论文参考处理完成: processed=71, success=0, failed=0, skipped=71
+2025-06-05 10:07:29,969 - reference_manager - INFO - 参考处理完成: processed=222, success=0, failed=0, skipped=222
+2025-06-05 10:07:29,969 - reference_manager - INFO - 参考处理摘要:
+2025-06-05 10:07:29,969 - reference_manager - INFO - - 总处理参考: 222
+2025-06-05 10:07:29,969 - reference_manager - INFO - - 成功创建: 0
+2025-06-05 10:07:29,969 - reference_manager - INFO - - 创建失败: 0
+2025-06-05 10:07:29,969 - reference_manager - INFO - - 跳过: 222
+2025-06-05 10:07:56,033 - reference_manager - INFO - 参考管理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 10:07:56,034 - reference_manager - INFO - 已加载 8 个现有论文映射
+2025-06-05 10:07:56,034 - reference_manager - INFO - 在 ./cache/references 目录中找到 5 个参考文件
+2025-06-05 10:07:56,049 - reference_manager - INFO - 处理论文 'Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair' (ID: b231cb3d-12fd-45dd-b6dd-ffb0c7d70980) 的参考关系，共 48 个参考
+2025-06-05 10:07:56,051 - reference_manager - WARNING - 未找到匹配的论文: Research on Smart Contract Verification and Generation Method Based on BPMN
+2025-06-05 10:07:56,052 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts for SMEs and Large Companies
+2025-06-05 10:07:56,053 - reference_manager - WARNING - 未找到匹配的论文: A Comprehensive Survey of Upgradeable Smart Contract Patterns
+2025-06-05 10:07:56,054 - reference_manager - WARNING - 未找到匹配的论文: TABS: Transforming automatically BPMN models into blockchain smart contracts
+2025-06-05 10:07:56,055 - reference_manager - WARNING - 未找到匹配的论文: Aroc: An Automatic Repair Framework for On-Chain Smart Contracts
+2025-06-05 10:07:56,055 - reference_manager - WARNING - 未找到匹配的论文: Supporting Long-term Transactions in Smart Contracts
+2025-06-05 10:07:56,056 - reference_manager - INFO - 处理论文 'Poster: FedBlockParadox -- A Framework for Simulating and Securing Decentralized Federated Learning' (ID: 4d31c53f-396e-418a-838c-c1e9899368df) 的参考关系，共 15 个参考
+2025-06-05 10:07:56,057 - reference_manager - WARNING - 未找到匹配的论文: Flexible Execution of Multi-Party Business Processes on Blockchain
+2025-06-05 10:07:56,058 - reference_manager - WARNING - 未找到匹配的论文: A Federated Learning Platform as a Service for Advancing Stroke Management in European Clinical Centers
+2025-06-05 10:07:56,059 - reference_manager - WARNING - 未找到匹配的论文: SolSaviour: A Defending Framework for Deployed Defective Smart Contracts
+2025-06-05 10:07:56,061 - reference_manager - WARNING - 未找到匹配的论文: Evaluating the Impact of Privacy-Preserving Federated Learning on CAN Intrusion Detection
+2025-06-05 10:07:56,063 - reference_manager - WARNING - 未找到匹配的论文: From BPMN to smart contracts on blockchains: Transforming BPMN to DE-HSM multi-modal model
+2025-06-05 10:07:56,063 - reference_manager - INFO - 处理论文 'A Preference-Driven Methodology for High-Quality Solidity Code Generation' (ID: 7fff1d1e-d1be-4149-93a7-3650ff95c788) 的参考关系，共 71 个参考
+2025-06-05 10:07:56,064 - reference_manager - WARNING - 未找到匹配的论文: A blockchain-based framework for federated learning with privacy preservation in power load forecasting
+2025-06-05 10:07:56,065 - reference_manager - WARNING - 未找到匹配的论文: Decentralized collaborative business process execution using blockchain
+2025-06-05 10:07:56,067 - reference_manager - WARNING - 未找到匹配的论文: Smart Contract Security in Decentralized Finance: Enhancing Vulnerability Detection with Reinforcement Learning
+2025-06-05 10:07:56,069 - reference_manager - WARNING - 未找到匹配的论文: A Decentralized Federated Learning Based on Node Selection and Knowledge Distillation
+2025-06-05 10:07:56,070 - reference_manager - WARNING - 未找到匹配的论文: A Tool for Moving Blockchain Computations Off-Chain
+2025-06-05 10:07:56,070 - reference_manager - INFO - 处理论文 'When Blockchain Meets Crawlers: Real-time Market Analytics in Solana NFT Markets' (ID: 9bc8b304-c79e-476f-8c4e-102dccf5ff4f) 的参考关系，共 46 个参考
+2025-06-05 10:07:56,071 - reference_manager - WARNING - 未找到匹配的论文: Unearthing Gas-Wasting Code Smells in Smart Contracts With Large Language Models
+2025-06-05 10:07:56,071 - reference_manager - INFO - 处理论文 'Decentralized COVID-19 Health System Leveraging Blockchain' (ID: e94fd57b-4098-492d-971e-d29e01f5889e) 的参考关系，共 42 个参考
+2025-06-05 10:07:56,073 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Secure and Private Federated Learning Using Blockchain: Theory and Application in Resource-Constrained Computing
+2025-06-05 10:07:56,074 - reference_manager - WARNING - 未找到匹配的论文: Blockchain smart contracts: Applications, challenges, and future trends
+2025-06-05 10:07:56,075 - reference_manager - WARNING - 未找到匹配的论文: Malicious Code Detection in Smart Contracts via Opcode Vectorization
+2025-06-05 10:07:56,076 - reference_manager - WARNING - 未找到匹配的论文: Generation of Optimized Solidity Code for Machine Learning Models using LLMs
+2025-06-05 10:07:56,080 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-empowered Federated Learning: Challenges, Solutions, and Future Directions
+2025-06-05 10:07:56,081 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain and smart contract development: Techniques, tools, and open challenges
+2025-06-05 10:07:56,083 - reference_manager - WARNING - 未找到匹配的论文: Enhancing Smart Contract Vulnerability Detection in DApps Leveraging Fine-Tuned LLM
+2025-06-05 10:07:56,084 - reference_manager - WARNING - 未找到匹配的论文: SolEval: Benchmarking Large Language Models for Repository-level Solidity Code Generation
+2025-06-05 10:07:56,085 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-enabled Federated Learning: A Survey
+2025-06-05 10:07:56,086 - reference_manager - WARNING - 未找到匹配的论文: Using FSMs to Find Patterns for Off-Chain Computing: Finding Patterns for Off-Chain Computing with FSMs
+2025-06-05 10:07:56,088 - reference_manager - WARNING - 未找到匹配的论文: SmartBugBert: BERT-Enhanced Vulnerability Detection for Smart Contract Bytecode
+2025-06-05 10:07:56,088 - reference_manager - WARNING - 未找到匹配的论文: DeepSeek-V3 Technical Report
+2025-06-05 10:07:56,089 - reference_manager - WARNING - 未找到匹配的论文: Biscotti: A Blockchain System for Private and Secure Federated Learning
+2025-06-05 10:07:56,090 - reference_manager - WARNING - 未找到匹配的论文: EVMPatch: Timely and Automated Patching of Ethereum Smart Contracts
+2025-06-05 10:07:56,091 - reference_manager - WARNING - 未找到匹配的论文: SoK: Security Analysis of Blockchain-based Cryptocurrency
+2025-06-05 10:07:56,093 - reference_manager - WARNING - 未找到匹配的论文: What You See Is What You Get: Attention-based Self-guided Automatic Unit Test Generation
+2025-06-05 10:07:56,094 - reference_manager - WARNING - 未找到匹配的论文: Federated Learning Meets Blockchain in Edge Computing: Opportunities and Challenges
+2025-06-05 10:07:56,096 - reference_manager - WARNING - 未找到匹配的论文: A Survey of Smart Contract Formal Specification and Verification
+2025-06-05 10:07:56,098 - reference_manager - WARNING - 未找到匹配的论文: SCALM: Detecting Bad Practices in Smart Contracts Through LLMs
+2025-06-05 10:07:56,099 - reference_manager - WARNING - 未找到匹配的论文: Benchmarking Large Language Models for Ethereum Smart Contract Development
+2025-06-05 10:07:56,100 - reference_manager - WARNING - 未找到匹配的论文: When Federated Learning Meets Blockchain: A New Distributed Learning Paradigm
+2025-06-05 10:07:56,102 - reference_manager - WARNING - 未找到匹配的论文: Using Blockchain to Improve Collaborative Business Process Management: Systematic Literature Review
+2025-06-05 10:07:56,103 - reference_manager - WARNING - 未找到匹配的论文: Detecting Malicious Accounts in Web3 through Transaction Graph
+2025-06-05 10:07:56,104 - reference_manager - WARNING - 未找到匹配的论文: CodeDPO: Aligning Code Models with Self Generated and Verified Source Code
+2025-06-05 10:07:56,105 - reference_manager - WARNING - 未找到匹配的论文: A Blockchain-Based Decentralized Federated Learning Framework with Committee Consensus
+2025-06-05 10:07:56,106 - reference_manager - WARNING - 未找到匹配的论文: Controlled flexibility in blockchain-based collaborative business processes
+2025-06-05 10:07:56,108 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts in the Real World: A Statistical Exploration of External Data Dependencies
+2025-06-05 10:07:56,108 - reference_manager - WARNING - 未找到匹配的论文: ThinkRepair: Self-Directed Automated Program Repair
+2025-06-05 10:07:56,110 - reference_manager - WARNING - 未找到匹配的论文: Decentralized Privacy Using Blockchain-Enabled Federated Learning in Fog Computing
+2025-06-05 10:07:56,111 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Blockchain Interoperability: Past, Present, and Future Trends
+2025-06-05 10:07:56,113 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-enabled Smart Contracts and the Internet of Things: Advancing the research agenda through a narrative review
+2025-06-05 10:07:56,114 - reference_manager - WARNING - 未找到匹配的论文: Rectifier: Code Translation with Corrector via LLMs
+2025-06-05 10:07:56,115 - reference_manager - WARNING - 未找到匹配的论文: Communication-Efficient Learning of Deep Networks from Decentralized Data
+2025-06-05 10:07:56,116 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain cyber security
+2025-06-05 10:07:56,118 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attacks Detection and Traceability Mechanism Based on Beacon Packets in Connected Automobile Vehicles
+2025-06-05 10:07:56,119 - reference_manager - WARNING - 未找到匹配的论文: Evaluating Large Language Models in Class-Level Code Generation
+2025-06-05 10:07:56,120 - reference_manager - WARNING - 未找到匹配的论文: Vulnerabilities in Federated Learning
+2025-06-05 10:07:56,121 - reference_manager - WARNING - 未找到匹配的论文: Engineering trustable choreography-based systems using blockchain
+2025-06-05 10:07:56,122 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attack Detection in VANETs: An LSTM-Based BiGAN Approach
+2025-06-05 10:07:56,123 - reference_manager - WARNING - 未找到匹配的论文: EvoCodeBench: An Evolving Code Generation Benchmark Aligned with Real-World Code Repositories
+2025-06-05 10:07:56,124 - reference_manager - WARNING - 未找到匹配的论文: Learning Multiple Layers of Features from Tiny Images
+2025-06-05 10:07:56,124 - reference_manager - WARNING - 未找到匹配的论文: A Review on Scalability of Blockchain
+2025-06-05 10:07:56,126 - reference_manager - WARNING - 未找到匹配的论文: Tackling Sybil Attacks in Intelligent connected vehicles: A Review of Machine Learning and Deep Learning Techniques
+2025-06-05 10:07:56,128 - reference_manager - WARNING - 未找到匹配的论文: LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code
+2025-06-05 10:07:56,128 - reference_manager - INFO - 论文参考处理完成: processed=15, success=0, failed=0, skipped=15
+2025-06-05 10:07:56,129 - reference_manager - WARNING - 未找到匹配的论文: A Three-Layered Approach for Designing Smart Contracts in Collaborative Processes
+2025-06-05 10:07:56,131 - reference_manager - WARNING - 未找到匹配的论文: Ultra-Short-Term Continuous Time Series Prediction of Blockchain-Based Cryptocurrency Using LSTM in the Big Data Era
+2025-06-05 10:07:56,133 - reference_manager - WARNING - 未找到匹配的论文: OpenCodeInterpreter: Integrating Code Generation with Execution and Refinement
+2025-06-05 10:07:56,134 - reference_manager - WARNING - 未找到匹配的论文: Process-Based Composition of Permissioned and Permissionless Blockchain Smart Contracts
+2025-06-05 10:07:56,135 - reference_manager - WARNING - 未找到匹配的论文: Research on Anti-crawler and Anti-Anti-crawler Technology
+2025-06-05 10:07:56,136 - reference_manager - WARNING - 未找到匹配的论文: DeepSeek-Coder: When the Large Language Model Meets Programming - The Rise of Code Intelligence
+2025-06-05 10:07:56,137 - reference_manager - WARNING - 未找到匹配的论文: Blockchain Support for Collaborative Business Processes
+2025-06-05 10:07:56,139 - reference_manager - WARNING - 未找到匹配的论文: AuthROS: Secure Data Sharing Among Robot Operating Systems based on Ethereum
+2025-06-05 10:07:56,140 - reference_manager - WARNING - 未找到匹配的论文: LLM Maybe LongLM: Self-Extend LLM Context Window Without Tuning
+2025-06-05 10:07:56,141 - reference_manager - WARNING - 未找到匹配的论文: Modeling and execution of blockchain-aware business processes
+2025-06-05 10:07:56,142 - reference_manager - WARNING - 未找到匹配的论文: MES-FPMIPv6: MIH-Enabled and enhanced secure Fast Proxy Mobile IPv6 handover protocol for 5G networks*^
+2025-06-05 10:07:56,144 - reference_manager - WARNING - 未找到匹配的论文: A^3-CodGen: A Repository-Level Code Generation Framework for Code Reuse with Local-Aware, Global-Aware, and Third-Party-Library-Aware
+2025-06-05 10:07:56,145 - reference_manager - WARNING - 未找到匹配的论文: VeriSolid: Correct-by-Design Smart Contracts for Ethereum
+2025-06-05 10:07:56,148 - reference_manager - WARNING - 未找到匹配的论文: Can Solana be the Solution to the Blockchain Scalability Problem?
+2025-06-05 10:07:56,150 - reference_manager - WARNING - 未找到匹配的论文: Magicoder: Empowering Code Generation with OSS-Instruct
+2025-06-05 10:07:56,155 - reference_manager - WARNING - 未找到匹配的论文: Caterpillar: A business process execution engine on the Ethereum blockchain
+2025-06-05 10:07:56,161 - reference_manager - WARNING - 未找到匹配的论文: Automated driver management for Selenium WebDriver
+2025-06-05 10:07:56,173 - reference_manager - WARNING - 未找到匹配的论文: Tool Demonstration: FSolidM for Designing Secure Ethereum Smart Contracts
+2025-06-05 10:07:56,175 - reference_manager - WARNING - 未找到匹配的论文: CodeScope: An Execution-based Multilingual Multitask Multidimensional Benchmark for Evaluating LLMs on Code Understanding and Generation
+2025-06-05 10:07:56,176 - reference_manager - WARNING - 未找到匹配的论文: Blockchain and Tokenized Securities: The Potential for Green Finance
+2025-06-05 10:07:56,178 - reference_manager - WARNING - 未找到匹配的论文: Designing Secure Ethereum Smart Contracts: A Finite State Machine Based Approach
+2025-06-05 10:07:56,179 - reference_manager - WARNING - 未找到匹配的论文: Qwen Technical Report
+2025-06-05 10:07:56,182 - reference_manager - WARNING - 未找到匹配的论文: A comprehensive review of deterministic models and applications for mean-variance portfolio optimization
+2025-06-05 10:07:56,184 - reference_manager - WARNING - 未找到匹配的论文: Blockchains for Business Process Management - Challenges and Opportunities
+2025-06-05 10:07:56,185 - reference_manager - WARNING - 未找到匹配的论文: When ChatGPT Meets Smart Contract Vulnerability Detection: How Far Are We?
+2025-06-05 10:07:56,187 - reference_manager - WARNING - 未找到匹配的论文: PathMarker: protecting web contents against inside crawlers
+2025-06-05 10:07:56,189 - reference_manager - WARNING - 未找到匹配的论文: What’s So Different about Blockchain? — Blockchain is a Probabilistic State Machine
+2025-06-05 10:07:56,191 - reference_manager - WARNING - 未找到匹配的论文: Empirical Review of Smart Contract and DeFi Security: Vulnerability Detection and Automated Repair
+2025-06-05 10:07:56,194 - reference_manager - WARNING - 未找到匹配的论文: Blockchain in global supply chains and cross border trade: a critical synthesis of the state-of-the-art, challenges and opportunities
+2025-06-05 10:07:56,197 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical finite state machines with multiple concurrency models
+2025-06-05 10:07:56,198 - reference_manager - WARNING - 未找到匹配的论文: Code Llama: Open Foundation Models for Code
+2025-06-05 10:07:56,199 - reference_manager - WARNING - 未找到匹配的论文: An Android Vulnerability Detection System
+2025-06-05 10:07:56,200 - reference_manager - WARNING - 未找到匹配的论文: Discrete event systems: Modeling and performance analysis
+2025-06-05 10:07:56,201 - reference_manager - WARNING - 未找到匹配的论文: Instruction Tuning for Large Language Models: A Survey
+2025-06-05 10:07:56,203 - reference_manager - WARNING - 未找到匹配的论文: System-level attacks against android by exploiting asynchronous programming
+2025-06-05 10:07:56,204 - reference_manager - WARNING - 未找到匹配的论文: Long-term blockchain transactions spanning multiplicity of smart contract methods
+2025-06-05 10:07:56,207 - reference_manager - WARNING - 未找到匹配的论文: Direct Preference Optimization: Your Language Model is Secretly a Reward Model
+2025-06-05 10:07:56,208 - reference_manager - WARNING - 未找到匹配的论文: MedRec: Using Blockchain for Medical Data Access and Permission Management
+2025-06-05 10:07:56,209 - reference_manager - WARNING - 未找到匹配的论文: Automating Smart Contract Generation on Blockchains Using Multi-modal Modeling
+2025-06-05 10:07:56,211 - reference_manager - WARNING - 未找到匹配的论文: Structured Chain-of-Thought Prompting for Code Generation
+2025-06-05 10:07:56,214 - reference_manager - WARNING - 未找到匹配的论文: Half-Baked Cookies: Hardening Cookie-Based Authentication for the Modern Web
+2025-06-05 10:07:56,215 - reference_manager - WARNING - 未找到匹配的论文: Upgradability of smart contracts: a review
+2025-06-05 10:07:56,216 - reference_manager - WARNING - 未找到匹配的论文: AChecker: Statically Detecting Smart Contract Access Control Vulnerabilities
+2025-06-05 10:07:56,217 - reference_manager - WARNING - 未找到匹配的论文: Survey on JavaScript security policies and their enforcement mechanisms in a web browser
+2025-06-05 10:07:56,219 - reference_manager - WARNING - 未找到匹配的论文: Survey of Model-Driven Engineering Techniques for Blockchain-Based Applications
+2025-06-05 10:07:56,221 - reference_manager - WARNING - 未找到匹配的论文: Self-Collaboration Code Generation via ChatGPT
+2025-06-05 10:07:56,223 - reference_manager - WARNING - 未找到匹配的论文: One-time cookies: Preventing session hijacking attacks with stateless authentication tokens
+2025-06-05 10:07:56,224 - reference_manager - WARNING - 未找到匹配的论文: Upgradeability Concept for Collaborative Blockchain-Based Business Process Execution Framework
+2025-06-05 10:07:56,225 - reference_manager - WARNING - 未找到匹配的论文: Teaching Large Language Models to Self-Debug
+2025-06-05 10:07:56,230 - reference_manager - WARNING - 未找到匹配的论文: Censorship by Proxy: The First Amendment, Internet Intermediaries, and the Problem of the Weakest Link
+2025-06-05 10:07:56,233 - reference_manager - WARNING - 未找到匹配的论文: Lorikeet: A Model-Driven Engineering Tool for Blockchain-Based Business Process Execution and Asset Management
+2025-06-05 10:07:56,234 - reference_manager - WARNING - 未找到匹配的论文: Automated Program Repair via Conversation: Fixing 162 out of 337 Bugs for $0.42 Each using ChatGPT
+2025-06-05 10:07:56,236 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-Enabled Fintech Innovation: A Case of Reengineering Stock Trading Services
+2025-06-05 10:07:56,239 - reference_manager - WARNING - 未找到匹配的论文: What is a blockchain
+2025-06-05 10:07:56,237 - reference_manager - WARNING - 未找到匹配的论文: A NEXT GENERATION SMART CONTRACT & DECENTRALIZED APPLICATION PLATFORM
+2025-06-05 10:07:56,240 - reference_manager - WARNING - 未找到匹配的论文: On Discovering Vulnerabilities in Android Applications
+2025-06-05 10:07:56,239 - reference_manager - WARNING - 未找到匹配的论文: A survey on smart contract vulnerabilities: Data sources, detection and repair
+2025-06-05 10:07:56,241 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical State Machines
+2025-06-05 10:07:56,242 - reference_manager - WARNING - 未找到匹配的论文: The business blockchain: promise, practice, and application of the next Internet technology
+2025-06-05 10:07:56,244 - reference_manager - WARNING - 未找到匹配的论文: Self-Planning Code Generation with Large Language Models
+2025-06-05 10:07:56,246 - reference_manager - WARNING - 未找到匹配的论文: Transforming BPMN into BPEL: Why and How
+2025-06-05 10:07:56,248 - reference_manager - WARNING - 未找到匹配的论文: Introduction to Modern Time Series Analysis
+2025-06-05 10:07:56,249 - reference_manager - WARNING - 未找到匹配的论文: Large Language Models Can Be Easily Distracted by Irrelevant Context
+2025-06-05 10:07:56,250 - reference_manager - WARNING - 未找到匹配的论文: Theories of Programming Languages: Communicating Sequential Processes
+2025-06-05 10:07:56,252 - reference_manager - WARNING - 未找到匹配的论文: SCLA: Automated Smart Contract Summarization via LLMs and Semantic Augmentation
+2025-06-05 10:07:56,253 - reference_manager - WARNING - 未找到匹配的论文: CLAM: Selective Clarification for Ambiguous Questions with Generative Language Models
+2025-06-05 10:07:56,254 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Introduction - Flowable Open-Source Documentation
+2025-06-05 10:07:56,255 - reference_manager - WARNING - 未找到匹配的论文: kriptovaliutu˛
+2025-06-05 10:07:56,255 - reference_manager - ERROR - 创建参考关系失败: 500 - {"details":"source paper not exists: paper not found: e94fd57b-4098-492d-971e-d29e01f5889e","error":"Failed to add reference"}
+2025-06-05 10:07:56,257 - reference_manager - WARNING - 未找到匹配的论文: Incorporating domain knowledge through task augmentation for front-end JavaScript code generation
+2025-06-05 10:07:56,258 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Symbols — A complete guide with examples
+2025-06-05 10:07:56,259 - reference_manager - WARNING - 未找到匹配的论文: Characterizing discussion trend on blockchain development by mining stack overflow
+2025-06-05 10:07:56,260 - reference_manager - WARNING - 未找到匹配的论文: Enhancing Smart Contract Vulnerability Detection in DApps Leveraging Fine-Tuned LLM
+2025-06-05 10:07:56,263 - reference_manager - WARNING - 未找到匹配的论文: PanGu-Coder: Program Synthesis with Function-Level Language Modeling
+2025-06-05 10:07:56,265 - reference_manager - WARNING - 未找到匹配的论文: Process Orchestration for end-to-end automation
+2025-06-05 10:07:56,268 - reference_manager - WARNING - 未找到匹配的论文: matches any number of decimal points or digits. The decimal point needs to be escaped ( \.
+2025-06-05 10:07:56,272 - reference_manager - WARNING - 未找到匹配的论文: SmartBugBert: BERT-Enhanced Vulnerability Detection for Smart Contract Bytecode
+2025-06-05 10:07:56,273 - reference_manager - WARNING - 未找到匹配的论文: Repository-Level Prompt Generation for Large Language Models of Code
+2025-06-05 10:07:56,274 - reference_manager - WARNING - 未找到匹配的论文: Business Process Model and Notation (BPMN), Version 2.0.2
+2025-06-05 10:07:56,278 - reference_manager - WARNING - 未找到匹配的论文: The ‘tmp_name’ expression matches strings shaped like ‘"collection_name": "Some Collection Name"’ and extracts ‘Some Collection Name’ by capturing the group
+2025-06-05 10:07:56,280 - reference_manager - WARNING - 未找到匹配的论文: SoK: Security Analysis of Blockchain-based Cryptocurrency
+2025-06-05 10:07:56,281 - reference_manager - WARNING - 未找到匹配的论文: Security Analysis of DeFi: Vulnerabilities, Attacks and Advances
+2025-06-05 10:07:56,282 - reference_manager - INFO - 论文参考处理完成: processed=48, success=0, failed=0, skipped=48
+2025-06-05 10:07:56,283 - reference_manager - WARNING - 未找到匹配的论文: Hybrid analysis of smart contracts and malicious behaviors in ethereum
+2025-06-05 10:07:56,284 - reference_manager - WARNING - 未找到匹配的论文: SCALM: Detecting Bad Practices in Smart Contracts Through LLMs
+2025-06-05 10:07:56,285 - reference_manager - WARNING - 未找到匹配的论文: InCoder: A Generative Model for Code Infilling and Synthesis
+2025-06-05 10:07:56,288 - reference_manager - WARNING - 未找到匹配的论文: ‘tmp_volume’ : The entire expression matches strings of the form ‘"volume":12345,’ , where the numeric portion can be any positive integer or floating-point number
+2025-06-05 10:07:56,289 - reference_manager - WARNING - 未找到匹配的论文: Guardians of the Ledger: Protecting Decentralized Exchanges from State Derailment Defects
+2025-06-05 10:07:56,291 - reference_manager - WARNING - 未找到匹配的论文: CodeGen: An Open Large Language Model for Code with Multi-Turn Program Synthesis
+2025-06-05 10:07:56,293 - reference_manager - WARNING - 未找到匹配的论文: The ‘tmp_collectionid’ expression matches strings of the form ‘"collection_id":"ABCD123"’ , excluding closing quotes
+2025-06-05 10:07:56,295 - reference_manager - WARNING - 未找到匹配的论文: Detecting Malicious Accounts in Web3 through Transaction Graph
+2025-06-05 10:07:56,297 - reference_manager - WARNING - 未找到匹配的论文: Competition-level code generation with AlphaCode
+2025-06-05 10:07:56,299 - reference_manager - WARNING - 未找到匹配的论文: ‘\"collection_name\":\s*\"’ : matches the literal string ‘"collection_name":’ followed by any number of whitespace characters ( ‘\s*’ )
+2025-06-05 10:07:56,301 - reference_manager - WARNING - 未找到匹配的论文: COBRA: Interaction-Aware Bytecode-Level Vulnerability Detector for Smart Contracts
+2025-06-05 10:07:56,302 - reference_manager - WARNING - 未找到匹配的论文: Characterizing and Detecting Gas-Inefficient Patterns in Smart Contracts
+2025-06-05 10:07:56,303 - reference_manager - WARNING - 未找到匹配的论文: Manuscript submitted to ACM
+2025-06-05 10:07:56,304 - reference_manager - WARNING - 未找到匹配的论文: Toward Web3 Applications: Easing the Access and Transition
+2025-06-05 10:07:56,306 - reference_manager - WARNING - 未找到匹配的论文: CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation
+2025-06-05 10:07:56,306 - reference_manager - WARNING - 未找到匹配的论文: matches the literal comma
+2025-06-05 10:07:56,307 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts in the Real World: A Statistical Exploration of External Data Dependencies
+2025-06-05 10:07:56,308 - reference_manager - WARNING - 未找到匹配的论文: Evaluating Large Language Models Trained on Code
+2025-06-05 10:07:56,309 - reference_manager - WARNING - 未找到匹配的论文: ElementClickInterceptedException
+2025-06-05 10:07:56,310 - reference_manager - WARNING - 未找到匹配的论文: GasTrace: Detecting Sandwich Attack Malicious Accounts in Ethereum
+2025-06-05 10:07:56,311 - reference_manager - WARNING - 未找到匹配的论文: SoK: Decentralized Finance (DeFi)
+2025-06-05 10:07:56,312 - reference_manager - WARNING - 未找到匹配的论文: matches any number of letters (upper or lower case) and numbers
+2025-06-05 10:07:56,314 - reference_manager - WARNING - 未找到匹配的论文: DeFiTail: DeFi Protocol Inspection through Cross-Contract Execution Analysis
+2025-06-05 10:07:56,315 - reference_manager - WARNING - 未找到匹配的论文: The Eye of Horus: Spotting and Analyzing Attacks on Ethereum Smart Contracts
+2025-06-05 10:07:56,315 - reference_manager - INFO - 论文参考处理完成: processed=46, success=0, failed=0, skipped=46
+2025-06-05 10:07:56,316 - reference_manager - WARNING - 未找到匹配的论文: StateGuard: Detecting State Derailment Defects in Decentralized Exchange Smart Contract
+2025-06-05 10:07:56,318 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attacks Detection and Traceability Mechanism Based on Beacon Packets in Connected Automobile Vehicles
+2025-06-05 10:07:56,318 - reference_manager - WARNING - 未找到匹配的论文: Characterizing the Solana NFT Ecosystem
+2025-06-05 10:07:56,319 - reference_manager - WARNING - 未找到匹配的论文: Unveiling Wash Trading in Popular NFT Markets
+2025-06-05 10:07:56,320 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attack Detection in VANETs: An LSTM-Based BiGAN Approach
+2025-06-05 10:07:56,321 - reference_manager - WARNING - 未找到匹配的论文: Distributed Ledger Technology Review and Decentralized Applications Development Guidelines
+2025-06-05 10:07:56,322 - reference_manager - WARNING - 未找到匹配的论文: Hyperledger Fabric Blockchain: Chaincode Performance Analysis
+2025-06-05 10:07:56,323 - reference_manager - WARNING - 未找到匹配的论文: Hyperledger fabric: a distributed operating system for permissioned blockchains
+2025-06-05 10:07:56,324 - reference_manager - WARNING - 未找到匹配的论文: An Android Vulnerability Detection System
+2025-06-05 10:07:56,325 - reference_manager - WARNING - 未找到匹配的论文: System-level attacks against android by exploiting asynchronous programming
+2025-06-05 10:07:56,326 - reference_manager - WARNING - 未找到匹配的论文: A Temporal Blockchain: A Formal Analysis
+2025-06-05 10:07:56,327 - reference_manager - WARNING - 未找到匹配的论文: Channel coding and decoding in a relay system operated with physical-layer network coding
+2025-06-05 10:07:56,328 - reference_manager - WARNING - 未找到匹配的论文: Cryptanalysis of the Hash Functions MD4 and RIPEMD
+2025-06-05 10:07:56,329 - reference_manager - WARNING - 未找到匹配的论文: The Decentralized Financial Crisis
+2025-06-05 10:07:56,330 - reference_manager - WARNING - 未找到匹配的论文: US Secure Hash Algorithm 1 (SHA1)
+2025-06-05 10:07:56,331 - reference_manager - WARNING - 未找到匹配的论文: PyTorch: An Imperative Style, High-Performance Deep Learning Library
+2025-06-05 10:07:56,332 - reference_manager - WARNING - 未找到匹配的论文: Practical Byzantine fault tolerance
+2025-06-05 10:07:56,333 - reference_manager - WARNING - 未找到匹配的论文: Empirical Review of Automated Analysis Tools on 47,587 Ethereum Smart Contracts
+2025-06-05 10:07:56,334 - reference_manager - WARNING - 未找到匹配的论文: Divertible Protocols and Atomic Proxy Cryptography
+2025-06-05 10:07:56,334 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Ethereum Systems Security
+2025-06-05 10:07:56,335 - reference_manager - WARNING - 未找到匹配的论文: The Byzantine Generals Problem
+2025-06-05 10:07:56,335 - reference_manager - WARNING - 未找到匹配的论文: Replication
+2025-06-05 10:07:56,336 - reference_manager - WARNING - 未找到匹配的论文: SerdeSniffer: Enhancing Java Deserialization Vulnerability Detection with Function Summaries
+2025-06-05 10:07:56,337 - reference_manager - WARNING - 未找到匹配的论文: Slither: A Static Analysis Framework for Smart Contracts
+2025-06-05 10:07:56,338 - reference_manager - WARNING - 未找到匹配的论文: Hybrid analysis of smart contracts and malicious behaviors in ethereum
+2025-06-05 10:07:56,339 - reference_manager - WARNING - 未找到匹配的论文: A Survey of Attacks on Ethereum Smart Contracts (SoK)
+2025-06-05 10:07:56,340 - reference_manager - WARNING - 未找到匹配的论文: On Discovering Vulnerabilities in Android Applications
+2025-06-05 10:07:56,341 - reference_manager - WARNING - 未找到匹配的论文: Under-optimized smart contracts devour your money
+2025-06-05 10:07:56,342 - reference_manager - WARNING - 未找到匹配的论文: Cryptographic access control scheme for cloud storage based on proxy re-encryption
+2025-06-05 10:07:56,343 - reference_manager - WARNING - 未找到匹配的论文: GASOL: Gas Analysis and Optimization for Ethereum Smart Contracts
+2025-06-05 10:07:56,344 - reference_manager - WARNING - 未找到匹配的论文: Delegated proof-of-stake (dpos)
+2025-06-05 10:07:56,345 - reference_manager - WARNING - 未找到匹配的论文: The PageRank Citation Ranking : Bringing Order to the Web
+2025-06-05 10:07:56,347 - reference_manager - WARNING - 未找到匹配的论文: Adoption of Electronic Health Record Systems among U . S . Non-Federal Acute Care Hospitals : 2008-2015
+2025-06-05 10:07:56,347 - reference_manager - WARNING - 未找到匹配的论文: SolTG: A CHC-Based Solidity Test Case Generator
+2025-06-05 10:07:56,348 - reference_manager - WARNING - 未找到匹配的论文: Trusted Platform Module
+2025-06-05 10:07:56,349 - reference_manager - WARNING - 未找到匹配的论文: xCodeEval: A Large Scale Multilingual Multitask Benchmark for Code Understanding, Generation, Translation and Retrieval
+2025-06-05 10:07:56,350 - reference_manager - WARNING - 未找到匹配的论文: Bitcoin: A Peer-to-Peer Electronic Cash System
+2025-06-05 10:07:56,351 - reference_manager - WARNING - 未找到匹配的论文: “Hugging face,”
+2025-06-05 10:07:56,352 - reference_manager - WARNING - 未找到匹配的论文: The md5 message-digest algorithm. Technical report
+2025-06-05 10:07:56,353 - reference_manager - WARNING - 未找到匹配的论文: Using Coq to Enforce the Checks-Effects-Interactions Pattern in DeepSEA Smart Contracts (Short Paper)
+2025-06-05 10:07:56,354 - reference_manager - WARNING - 未找到匹配的论文: SCLA: Automated Smart Contract Summarization via LLMs and Semantic Augmentation
+2025-06-05 10:07:56,355 - reference_manager - WARNING - 未找到匹配的论文: “Trl: Transformer reinforcement learning,”
+2025-06-05 10:07:56,356 - reference_manager - WARNING - 未找到匹配的论文: Alice first encrypts the ciphertext data with her own private key Sk1
+2025-06-05 10:07:56,357 - reference_manager - WARNING - 未找到匹配的论文: “Blockchain immutable nature and smart contract vulnerabilities,”
+2025-06-05 10:07:56,358 - reference_manager - WARNING - 未找到匹配的论文: Alice generates a data delkey based on Bob’s public key Pk2 and her own private key Sk1, and sends it to the server
+2025-06-05 10:07:56,359 - reference_manager - WARNING - 未找到匹配的论文: “Slowmist blockchain security incident database,”
+2025-06-05 10:07:56,362 - reference_manager - WARNING - 未找到匹配的论文: Add system dependencies. The dependency information of the Go language is saved in the go.mod file. Enter the program folder and enter the go mod tidy command to add dependencies to the system
+2025-06-05 10:07:56,363 - reference_manager - WARNING - 未找到匹配的论文: “How can i access gpt-4, gpt-4 turbo, gpt-4o, and gpt-4o mini?”
+2025-06-05 10:07:56,363 - reference_manager - INFO - 论文参考处理完成: processed=42, success=0, failed=1, skipped=41
+2025-06-05 10:07:56,365 - reference_manager - WARNING - 未找到匹配的论文: “Codereval: A benchmark of pragmatic code generation with generative pre-trained models,”
+2025-06-05 10:07:56,366 - reference_manager - WARNING - 未找到匹配的论文: “Defi protocol financial losses analysis,”
+2025-06-05 10:07:56,367 - reference_manager - WARNING - 未找到匹配的论文: “On the immutable nature of blockchain deployments and security implications,”
+2025-06-05 10:07:56,368 - reference_manager - WARNING - 未找到匹配的论文: “Tree-sitter, a parser generator tool and an incremental parsing library.”
+2025-06-05 10:07:56,369 - reference_manager - WARNING - 未找到匹配的论文: “Chatgpt: Optimizing language models for dialogue
+2025-06-05 10:07:56,370 - reference_manager - WARNING - 未找到匹配的论文: “Analysis of smart contract security incidents and financial impact,”
+2025-06-05 10:07:56,370 - reference_manager - WARNING - 未找到匹配的论文: “Deepseek-r1,”
+2025-06-05 10:07:56,370 - reference_manager - INFO - 论文参考处理完成: processed=71, success=0, failed=0, skipped=71
+2025-06-05 10:07:56,370 - reference_manager - INFO - 参考处理完成: processed=222, success=0, failed=1, skipped=221
+2025-06-05 10:07:56,370 - reference_manager - INFO - 参考处理摘要:
+2025-06-05 10:07:56,370 - reference_manager - INFO - - 总处理参考: 222
+2025-06-05 10:07:56,370 - reference_manager - INFO - - 成功创建: 0
+2025-06-05 10:07:56,371 - reference_manager - INFO - - 创建失败: 1
+2025-06-05 10:07:56,371 - reference_manager - INFO - - 跳过: 221
+2025-06-05 10:21:07,075 - reference_manager - INFO - 参考管理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 10:21:07,076 - reference_manager - INFO - 已加载 8 个现有论文映射
+2025-06-05 10:21:07,076 - reference_manager - INFO - 在 ./cache/references 目录中找到 5 个参考文件
+2025-06-05 10:21:07,091 - reference_manager - INFO - 处理论文 'Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair' (ID: b231cb3d-12fd-45dd-b6dd-ffb0c7d70980) 的参考关系，共 48 个参考
+2025-06-05 10:21:07,093 - reference_manager - WARNING - 未找到匹配的论文: Research on Smart Contract Verification and Generation Method Based on BPMN
+2025-06-05 10:21:07,094 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts for SMEs and Large Companies
+2025-06-05 10:21:07,094 - reference_manager - INFO - 处理论文 'Poster: FedBlockParadox -- A Framework for Simulating and Securing Decentralized Federated Learning' (ID: 4d31c53f-396e-418a-838c-c1e9899368df) 的参考关系，共 15 个参考
+2025-06-05 10:21:07,095 - reference_manager - WARNING - 未找到匹配的论文: A Comprehensive Survey of Upgradeable Smart Contract Patterns
+2025-06-05 10:21:07,097 - reference_manager - WARNING - 未找到匹配的论文: A Federated Learning Platform as a Service for Advancing Stroke Management in European Clinical Centers
+2025-06-05 10:21:07,099 - reference_manager - WARNING - 未找到匹配的论文: TABS: Transforming automatically BPMN models into blockchain smart contracts
+2025-06-05 10:21:07,100 - reference_manager - WARNING - 未找到匹配的论文: Evaluating the Impact of Privacy-Preserving Federated Learning on CAN Intrusion Detection
+2025-06-05 10:21:07,100 - reference_manager - INFO - 处理论文 'A Preference-Driven Methodology for High-Quality Solidity Code Generation' (ID: 7fff1d1e-d1be-4149-93a7-3650ff95c788) 的参考关系，共 71 个参考
+2025-06-05 10:21:07,101 - reference_manager - WARNING - 未找到匹配的论文: Aroc: An Automatic Repair Framework for On-Chain Smart Contracts
+2025-06-05 10:21:07,103 - reference_manager - WARNING - 未找到匹配的论文: A blockchain-based framework for federated learning with privacy preservation in power load forecasting
+2025-06-05 10:21:07,105 - reference_manager - WARNING - 未找到匹配的论文: Smart Contract Security in Decentralized Finance: Enhancing Vulnerability Detection with Reinforcement Learning
+2025-06-05 10:21:07,105 - reference_manager - INFO - 处理论文 'When Blockchain Meets Crawlers: Real-time Market Analytics in Solana NFT Markets' (ID: 9bc8b304-c79e-476f-8c4e-102dccf5ff4f) 的参考关系，共 46 个参考
+2025-06-05 10:21:07,105 - reference_manager - WARNING - 未找到匹配的论文: Supporting Long-term Transactions in Smart Contracts
+2025-06-05 10:21:07,107 - reference_manager - WARNING - 未找到匹配的论文: A Decentralized Federated Learning Based on Node Selection and Knowledge Distillation
+2025-06-05 10:21:07,108 - reference_manager - WARNING - 未找到匹配的论文: Unearthing Gas-Wasting Code Smells in Smart Contracts With Large Language Models
+2025-06-05 10:21:07,108 - reference_manager - INFO - 处理论文 'Decentralized COVID-19 Health System Leveraging Blockchain' (ID: a65792d6-83c8-46b0-b4ef-fc81cd0902c3) 的参考关系，共 42 个参考
+2025-06-05 10:21:07,109 - reference_manager - WARNING - 未找到匹配的论文: Malicious Code Detection in Smart Contracts via Opcode Vectorization
+2025-06-05 10:21:07,110 - reference_manager - WARNING - 未找到匹配的论文: Flexible Execution of Multi-Party Business Processes on Blockchain
+2025-06-05 10:21:07,112 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Secure and Private Federated Learning Using Blockchain: Theory and Application in Resource-Constrained Computing
+2025-06-05 10:21:07,113 - reference_manager - WARNING - 未找到匹配的论文: Generation of Optimized Solidity Code for Machine Learning Models using LLMs
+2025-06-05 10:21:07,119 - reference_manager - WARNING - 未找到匹配的论文: Enhancing Smart Contract Vulnerability Detection in DApps Leveraging Fine-Tuned LLM
+2025-06-05 10:21:07,121 - reference_manager - WARNING - 未找到匹配的论文: SolSaviour: A Defending Framework for Deployed Defective Smart Contracts
+2025-06-05 10:21:07,122 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-empowered Federated Learning: Challenges, Solutions, and Future Directions
+2025-06-05 10:21:07,123 - reference_manager - WARNING - 未找到匹配的论文: SolEval: Benchmarking Large Language Models for Repository-level Solidity Code Generation
+2025-06-05 10:21:07,125 - reference_manager - WARNING - 未找到匹配的论文: SmartBugBert: BERT-Enhanced Vulnerability Detection for Smart Contract Bytecode
+2025-06-05 10:21:07,126 - reference_manager - WARNING - 未找到匹配的论文: From BPMN to smart contracts on blockchains: Transforming BPMN to DE-HSM multi-modal model
+2025-06-05 10:21:07,127 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-enabled Federated Learning: A Survey
+2025-06-05 10:21:07,127 - reference_manager - WARNING - 未找到匹配的论文: DeepSeek-V3 Technical Report
+2025-06-05 10:21:07,128 - reference_manager - WARNING - 未找到匹配的论文: SoK: Security Analysis of Blockchain-based Cryptocurrency
+2025-06-05 10:21:07,129 - reference_manager - WARNING - 未找到匹配的论文: Decentralized collaborative business process execution using blockchain
+2025-06-05 10:21:07,130 - reference_manager - WARNING - 未找到匹配的论文: Biscotti: A Blockchain System for Private and Secure Federated Learning
+2025-06-05 10:21:07,133 - reference_manager - WARNING - 未找到匹配的论文: What You See Is What You Get: Attention-based Self-guided Automatic Unit Test Generation
+2025-06-05 10:21:07,134 - reference_manager - WARNING - 未找到匹配的论文: SCALM: Detecting Bad Practices in Smart Contracts Through LLMs
+2025-06-05 10:21:07,135 - reference_manager - WARNING - 未找到匹配的论文: A Tool for Moving Blockchain Computations Off-Chain
+2025-06-05 10:21:07,136 - reference_manager - WARNING - 未找到匹配的论文: Federated Learning Meets Blockchain in Edge Computing: Opportunities and Challenges
+2025-06-05 10:21:07,138 - reference_manager - WARNING - 未找到匹配的论文: Benchmarking Large Language Models for Ethereum Smart Contract Development
+2025-06-05 10:21:07,138 - reference_manager - WARNING - 未找到匹配的论文: Detecting Malicious Accounts in Web3 through Transaction Graph
+2025-06-05 10:21:07,140 - reference_manager - WARNING - 未找到匹配的论文: Blockchain smart contracts: Applications, challenges, and future trends
+2025-06-05 10:21:07,141 - reference_manager - WARNING - 未找到匹配的论文: When Federated Learning Meets Blockchain: A New Distributed Learning Paradigm
+2025-06-05 10:21:07,142 - reference_manager - WARNING - 未找到匹配的论文: CodeDPO: Aligning Code Models with Self Generated and Verified Source Code
+2025-06-05 10:21:07,143 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts in the Real World: A Statistical Exploration of External Data Dependencies
+2025-06-05 10:21:07,145 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain and smart contract development: Techniques, tools, and open challenges
+2025-06-05 10:21:07,146 - reference_manager - WARNING - 未找到匹配的论文: A Blockchain-Based Decentralized Federated Learning Framework with Committee Consensus
+2025-06-05 10:21:07,147 - reference_manager - WARNING - 未找到匹配的论文: ThinkRepair: Self-Directed Automated Program Repair
+2025-06-05 10:21:07,149 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-enabled Smart Contracts and the Internet of Things: Advancing the research agenda through a narrative review
+2025-06-05 10:21:07,150 - reference_manager - WARNING - 未找到匹配的论文: Using FSMs to Find Patterns for Off-Chain Computing: Finding Patterns for Off-Chain Computing with FSMs
+2025-06-05 10:21:07,152 - reference_manager - WARNING - 未找到匹配的论文: Decentralized Privacy Using Blockchain-Enabled Federated Learning in Fog Computing
+2025-06-05 10:21:07,153 - reference_manager - WARNING - 未找到匹配的论文: Rectifier: Code Translation with Corrector via LLMs
+2025-06-05 10:21:07,155 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attacks Detection and Traceability Mechanism Based on Beacon Packets in Connected Automobile Vehicles
+2025-06-05 10:21:07,156 - reference_manager - WARNING - 未找到匹配的论文: EVMPatch: Timely and Automated Patching of Ethereum Smart Contracts
+2025-06-05 10:21:07,157 - reference_manager - WARNING - 未找到匹配的论文: Communication-Efficient Learning of Deep Networks from Decentralized Data
+2025-06-05 10:21:07,158 - reference_manager - WARNING - 未找到匹配的论文: Evaluating Large Language Models in Class-Level Code Generation
+2025-06-05 10:21:07,159 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attack Detection in VANETs: An LSTM-Based BiGAN Approach
+2025-06-05 10:21:07,160 - reference_manager - WARNING - 未找到匹配的论文: A Survey of Smart Contract Formal Specification and Verification
+2025-06-05 10:21:07,161 - reference_manager - WARNING - 未找到匹配的论文: Vulnerabilities in Federated Learning
+2025-06-05 10:21:07,162 - reference_manager - WARNING - 未找到匹配的论文: EvoCodeBench: An Evolving Code Generation Benchmark Aligned with Real-World Code Repositories
+2025-06-05 10:21:07,164 - reference_manager - WARNING - 未找到匹配的论文: Tackling Sybil Attacks in Intelligent connected vehicles: A Review of Machine Learning and Deep Learning Techniques
+2025-06-05 10:21:07,165 - reference_manager - WARNING - 未找到匹配的论文: Using Blockchain to Improve Collaborative Business Process Management: Systematic Literature Review
+2025-06-05 10:21:07,166 - reference_manager - WARNING - 未找到匹配的论文: Learning Multiple Layers of Features from Tiny Images
+2025-06-05 10:21:07,168 - reference_manager - WARNING - 未找到匹配的论文: LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code
+2025-06-05 10:21:07,170 - reference_manager - WARNING - 未找到匹配的论文: Ultra-Short-Term Continuous Time Series Prediction of Blockchain-Based Cryptocurrency Using LSTM in the Big Data Era
+2025-06-05 10:21:07,171 - reference_manager - WARNING - 未找到匹配的论文: Controlled flexibility in blockchain-based collaborative business processes
+2025-06-05 10:21:07,171 - reference_manager - INFO - 论文参考处理完成: processed=15, success=0, failed=0, skipped=15
+2025-06-05 10:21:07,173 - reference_manager - WARNING - 未找到匹配的论文: OpenCodeInterpreter: Integrating Code Generation with Execution and Refinement
+2025-06-05 10:21:07,174 - reference_manager - WARNING - 未找到匹配的论文: Research on Anti-crawler and Anti-Anti-crawler Technology
+2025-06-05 10:21:07,175 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Blockchain Interoperability: Past, Present, and Future Trends
+2025-06-05 10:21:07,177 - reference_manager - WARNING - 未找到匹配的论文: DeepSeek-Coder: When the Large Language Model Meets Programming - The Rise of Code Intelligence
+2025-06-05 10:21:07,178 - reference_manager - WARNING - 未找到匹配的论文: AuthROS: Secure Data Sharing Among Robot Operating Systems based on Ethereum
+2025-06-05 10:21:07,179 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain cyber security
+2025-06-05 10:21:07,180 - reference_manager - WARNING - 未找到匹配的论文: LLM Maybe LongLM: Self-Extend LLM Context Window Without Tuning
+2025-06-05 10:21:07,182 - reference_manager - WARNING - 未找到匹配的论文: MES-FPMIPv6: MIH-Enabled and enhanced secure Fast Proxy Mobile IPv6 handover protocol for 5G networks*^
+2025-06-05 10:21:07,184 - reference_manager - WARNING - 未找到匹配的论文: Engineering trustable choreography-based systems using blockchain
+2025-06-05 10:21:07,186 - reference_manager - WARNING - 未找到匹配的论文: A^3-CodGen: A Repository-Level Code Generation Framework for Code Reuse with Local-Aware, Global-Aware, and Third-Party-Library-Aware
+2025-06-05 10:21:07,187 - reference_manager - WARNING - 未找到匹配的论文: Can Solana be the Solution to the Blockchain Scalability Problem?
+2025-06-05 10:21:07,188 - reference_manager - WARNING - 未找到匹配的论文: A Review on Scalability of Blockchain
+2025-06-05 10:21:07,189 - reference_manager - WARNING - 未找到匹配的论文: Magicoder: Empowering Code Generation with OSS-Instruct
+2025-06-05 10:21:07,190 - reference_manager - WARNING - 未找到匹配的论文: Automated driver management for Selenium WebDriver
+2025-06-05 10:21:07,192 - reference_manager - WARNING - 未找到匹配的论文: A Three-Layered Approach for Designing Smart Contracts in Collaborative Processes
+2025-06-05 10:21:07,194 - reference_manager - WARNING - 未找到匹配的论文: CodeScope: An Execution-based Multilingual Multitask Multidimensional Benchmark for Evaluating LLMs on Code Understanding and Generation
+2025-06-05 10:21:07,195 - reference_manager - WARNING - 未找到匹配的论文: Blockchain and Tokenized Securities: The Potential for Green Finance
+2025-06-05 10:21:07,196 - reference_manager - WARNING - 未找到匹配的论文: Process-Based Composition of Permissioned and Permissionless Blockchain Smart Contracts
+2025-06-05 10:21:07,197 - reference_manager - WARNING - 未找到匹配的论文: Qwen Technical Report
+2025-06-05 10:21:07,199 - reference_manager - WARNING - 未找到匹配的论文: A comprehensive review of deterministic models and applications for mean-variance portfolio optimization
+2025-06-05 10:21:07,201 - reference_manager - WARNING - 未找到匹配的论文: Blockchain Support for Collaborative Business Processes
+2025-06-05 10:21:07,202 - reference_manager - WARNING - 未找到匹配的论文: When ChatGPT Meets Smart Contract Vulnerability Detection: How Far Are We?
+2025-06-05 10:21:07,203 - reference_manager - WARNING - 未找到匹配的论文: PathMarker: protecting web contents against inside crawlers
+2025-06-05 10:21:07,204 - reference_manager - WARNING - 未找到匹配的论文: Modeling and execution of blockchain-aware business processes
+2025-06-05 10:21:07,205 - reference_manager - WARNING - 未找到匹配的论文: Empirical Review of Smart Contract and DeFi Security: Vulnerability Detection and Automated Repair
+2025-06-05 10:21:07,208 - reference_manager - WARNING - 未找到匹配的论文: Blockchain in global supply chains and cross border trade: a critical synthesis of the state-of-the-art, challenges and opportunities
+2025-06-05 10:21:07,209 - reference_manager - WARNING - 未找到匹配的论文: VeriSolid: Correct-by-Design Smart Contracts for Ethereum
+2025-06-05 10:21:07,209 - reference_manager - WARNING - 未找到匹配的论文: Code Llama: Open Foundation Models for Code
+2025-06-05 10:21:07,210 - reference_manager - WARNING - 未找到匹配的论文: An Android Vulnerability Detection System
+2025-06-05 10:21:07,211 - reference_manager - WARNING - 未找到匹配的论文: Caterpillar: A business process execution engine on the Ethereum blockchain
+2025-06-05 10:21:07,212 - reference_manager - WARNING - 未找到匹配的论文: Instruction Tuning for Large Language Models: A Survey
+2025-06-05 10:21:07,214 - reference_manager - WARNING - 未找到匹配的论文: System-level attacks against android by exploiting asynchronous programming
+2025-06-05 10:21:07,215 - reference_manager - WARNING - 未找到匹配的论文: Tool Demonstration: FSolidM for Designing Secure Ethereum Smart Contracts
+2025-06-05 10:21:07,217 - reference_manager - WARNING - 未找到匹配的论文: Direct Preference Optimization: Your Language Model is Secretly a Reward Model
+2025-06-05 10:21:07,218 - reference_manager - WARNING - 未找到匹配的论文: MedRec: Using Blockchain for Medical Data Access and Permission Management
+2025-06-05 10:21:07,219 - reference_manager - WARNING - 未找到匹配的论文: Designing Secure Ethereum Smart Contracts: A Finite State Machine Based Approach
+2025-06-05 10:21:07,221 - reference_manager - WARNING - 未找到匹配的论文: Structured Chain-of-Thought Prompting for Code Generation
+2025-06-05 10:21:07,222 - reference_manager - WARNING - 未找到匹配的论文: Half-Baked Cookies: Hardening Cookie-Based Authentication for the Modern Web
+2025-06-05 10:21:07,223 - reference_manager - WARNING - 未找到匹配的论文: Blockchains for Business Process Management - Challenges and Opportunities
+2025-06-05 10:21:07,224 - reference_manager - WARNING - 未找到匹配的论文: AChecker: Statically Detecting Smart Contract Access Control Vulnerabilities
+2025-06-05 10:21:07,226 - reference_manager - WARNING - 未找到匹配的论文: Survey on JavaScript security policies and their enforcement mechanisms in a web browser
+2025-06-05 10:21:07,227 - reference_manager - WARNING - 未找到匹配的论文: What’s So Different about Blockchain? — Blockchain is a Probabilistic State Machine
+2025-06-05 10:21:07,228 - reference_manager - WARNING - 未找到匹配的论文: Self-Collaboration Code Generation via ChatGPT
+2025-06-05 10:21:07,230 - reference_manager - WARNING - 未找到匹配的论文: One-time cookies: Preventing session hijacking attacks with stateless authentication tokens
+2025-06-05 10:21:07,231 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical finite state machines with multiple concurrency models
+2025-06-05 10:21:07,232 - reference_manager - WARNING - 未找到匹配的论文: Teaching Large Language Models to Self-Debug
+2025-06-05 10:21:07,234 - reference_manager - WARNING - 未找到匹配的论文: Censorship by Proxy: The First Amendment, Internet Intermediaries, and the Problem of the Weakest Link
+2025-06-05 10:21:07,235 - reference_manager - WARNING - 未找到匹配的论文: Discrete event systems: Modeling and performance analysis
+2025-06-05 10:21:07,237 - reference_manager - WARNING - 未找到匹配的论文: Automated Program Repair via Conversation: Fixing 162 out of 337 Bugs for $0.42 Each using ChatGPT
+2025-06-05 10:21:07,238 - reference_manager - WARNING - 未找到匹配的论文: Blockchain-Enabled Fintech Innovation: A Case of Reengineering Stock Trading Services
+2025-06-05 10:21:07,239 - reference_manager - WARNING - 未找到匹配的论文: Long-term blockchain transactions spanning multiplicity of smart contract methods
+2025-06-05 10:21:07,241 - reference_manager - WARNING - 未找到匹配的论文: A survey on smart contract vulnerabilities: Data sources, detection and repair
+2025-06-05 10:21:07,241 - reference_manager - WARNING - 未找到匹配的论文: What is a blockchain
+2025-06-05 10:21:07,242 - reference_manager - WARNING - 未找到匹配的论文: Automating Smart Contract Generation on Blockchains Using Multi-modal Modeling
+2025-06-05 10:21:07,243 - reference_manager - WARNING - 未找到匹配的论文: Self-Planning Code Generation with Large Language Models
+2025-06-05 10:21:07,244 - reference_manager - WARNING - 未找到匹配的论文: On Discovering Vulnerabilities in Android Applications
+2025-06-05 10:21:07,245 - reference_manager - WARNING - 未找到匹配的论文: Upgradability of smart contracts: a review
+2025-06-05 10:21:07,246 - reference_manager - WARNING - 未找到匹配的论文: Large Language Models Can Be Easily Distracted by Irrelevant Context
+2025-06-05 10:21:07,248 - reference_manager - WARNING - 未找到匹配的论文: The business blockchain: promise, practice, and application of the next Internet technology
+2025-06-05 10:21:07,249 - reference_manager - WARNING - 未找到匹配的论文: Survey of Model-Driven Engineering Techniques for Blockchain-Based Applications
+2025-06-05 10:21:07,251 - reference_manager - WARNING - 未找到匹配的论文: CLAM: Selective Clarification for Ambiguous Questions with Generative Language Models
+2025-06-05 10:21:07,251 - reference_manager - WARNING - 未找到匹配的论文: Introduction to Modern Time Series Analysis
+2025-06-05 10:21:07,253 - reference_manager - WARNING - 未找到匹配的论文: Upgradeability Concept for Collaborative Blockchain-Based Business Process Execution Framework
+2025-06-05 10:21:07,255 - reference_manager - WARNING - 未找到匹配的论文: Incorporating domain knowledge through task augmentation for front-end JavaScript code generation
+2025-06-05 10:21:07,256 - reference_manager - WARNING - 未找到匹配的论文: SCLA: Automated Smart Contract Summarization via LLMs and Semantic Augmentation
+2025-06-05 10:21:07,257 - reference_manager - WARNING - 未找到匹配的论文: Lorikeet: A Model-Driven Engineering Tool for Blockchain-Based Business Process Execution and Asset Management
+2025-06-05 10:21:07,259 - reference_manager - WARNING - 未找到匹配的论文: PanGu-Coder: Program Synthesis with Function-Level Language Modeling
+2025-06-05 10:21:07,259 - reference_manager - WARNING - 未找到匹配的论文: kriptovaliutu˛
+2025-06-05 10:21:07,260 - reference_manager - WARNING - 未找到匹配的论文: A NEXT GENERATION SMART CONTRACT & DECENTRALIZED APPLICATION PLATFORM
+2025-06-05 10:21:07,261 - reference_manager - WARNING - 未找到匹配的论文: Repository-Level Prompt Generation for Large Language Models of Code
+2025-06-05 10:21:07,262 - reference_manager - WARNING - 未找到匹配的论文: Characterizing discussion trend on blockchain development by mining stack overflow
+2025-06-05 10:21:07,263 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical State Machines
+2025-06-05 10:21:07,265 - reference_manager - WARNING - 未找到匹配的论文: Security Analysis of DeFi: Vulnerabilities, Attacks and Advances
+2025-06-05 10:21:07,266 - reference_manager - WARNING - 未找到匹配的论文: matches any number of decimal points or digits. The decimal point needs to be escaped ( \.
+2025-06-05 10:21:07,267 - reference_manager - WARNING - 未找到匹配的论文: Transforming BPMN into BPEL: Why and How
+2025-06-05 10:21:07,268 - reference_manager - WARNING - 未找到匹配的论文: InCoder: A Generative Model for Code Infilling and Synthesis
+2025-06-05 10:21:07,270 - reference_manager - WARNING - 未找到匹配的论文: The ‘tmp_name’ expression matches strings shaped like ‘"collection_name": "Some Collection Name"’ and extracts ‘Some Collection Name’ by capturing the group
+2025-06-05 10:21:07,271 - reference_manager - WARNING - 未找到匹配的论文: Theories of Programming Languages: Communicating Sequential Processes
+2025-06-05 10:21:07,273 - reference_manager - WARNING - 未找到匹配的论文: CodeGen: An Open Large Language Model for Code with Multi-Turn Program Synthesis
+2025-06-05 10:21:07,274 - reference_manager - WARNING - 未找到匹配的论文: Hybrid analysis of smart contracts and malicious behaviors in ethereum
+2025-06-05 10:21:07,275 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Introduction - Flowable Open-Source Documentation
+2025-06-05 10:21:07,276 - reference_manager - WARNING - 未找到匹配的论文: Competition-level code generation with AlphaCode
+2025-06-05 10:21:07,279 - reference_manager - WARNING - 未找到匹配的论文: ‘tmp_volume’ : The entire expression matches strings of the form ‘"volume":12345,’ , where the numeric portion can be any positive integer or floating-point number
+2025-06-05 10:21:07,280 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Symbols — A complete guide with examples
+2025-06-05 10:21:07,282 - reference_manager - WARNING - 未找到匹配的论文: Characterizing and Detecting Gas-Inefficient Patterns in Smart Contracts
+2025-06-05 10:21:07,284 - reference_manager - WARNING - 未找到匹配的论文: The ‘tmp_collectionid’ expression matches strings of the form ‘"collection_id":"ABCD123"’ , excluding closing quotes
+2025-06-05 10:21:07,285 - reference_manager - WARNING - 未找到匹配的论文: Process Orchestration for end-to-end automation
+2025-06-05 10:21:07,287 - reference_manager - WARNING - 未找到匹配的论文: CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation
+2025-06-05 10:21:07,288 - reference_manager - WARNING - 未找到匹配的论文: ‘\"collection_name\":\s*\"’ : matches the literal string ‘"collection_name":’ followed by any number of whitespace characters ( ‘\s*’ )
+2025-06-05 10:21:07,290 - reference_manager - WARNING - 未找到匹配的论文: Business Process Model and Notation (BPMN), Version 2.0.2
+2025-06-05 10:21:07,291 - reference_manager - WARNING - 未找到匹配的论文: Evaluating Large Language Models Trained on Code
+2025-06-05 10:21:07,292 - reference_manager - WARNING - 未找到匹配的论文: Manuscript submitted to ACM
+2025-06-05 10:21:07,292 - reference_manager - INFO - 论文参考处理完成: processed=48, success=0, failed=0, skipped=48
+2025-06-05 10:21:07,292 - reference_manager - WARNING - 未找到匹配的论文: SoK: Decentralized Finance (DeFi)
+2025-06-05 10:21:07,293 - reference_manager - WARNING - 未找到匹配的论文: matches the literal comma
+2025-06-05 10:21:07,294 - reference_manager - WARNING - 未找到匹配的论文: The Eye of Horus: Spotting and Analyzing Attacks on Ethereum Smart Contracts
+2025-06-05 10:21:07,295 - reference_manager - WARNING - 未找到匹配的论文: ElementClickInterceptedException
+2025-06-05 10:21:07,296 - reference_manager - WARNING - 未找到匹配的论文: The Decentralized Financial Crisis
+2025-06-05 10:21:07,298 - reference_manager - WARNING - 未找到匹配的论文: matches any number of letters (upper or lower case) and numbers
+2025-06-05 10:21:07,299 - reference_manager - WARNING - 未找到匹配的论文: PyTorch: An Imperative Style, High-Performance Deep Learning Library
+2025-06-05 10:21:07,299 - reference_manager - INFO - 论文参考处理完成: processed=46, success=0, failed=0, skipped=46
+2025-06-05 10:21:07,301 - reference_manager - WARNING - 未找到匹配的论文: Empirical Review of Automated Analysis Tools on 47,587 Ethereum Smart Contracts
+2025-06-05 10:21:07,301 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Ethereum Systems Security
+2025-06-05 10:21:07,302 - reference_manager - WARNING - 未找到匹配的论文: Replication
+2025-06-05 10:21:07,303 - reference_manager - WARNING - 未找到匹配的论文: Slither: A Static Analysis Framework for Smart Contracts
+2025-06-05 10:21:07,304 - reference_manager - WARNING - 未找到匹配的论文: A Survey of Attacks on Ethereum Smart Contracts (SoK)
+2025-06-05 10:21:07,305 - reference_manager - WARNING - 未找到匹配的论文: Under-optimized smart contracts devour your money
+2025-06-05 10:21:07,306 - reference_manager - WARNING - 未找到匹配的论文: GASOL: Gas Analysis and Optimization for Ethereum Smart Contracts
+2025-06-05 10:21:07,307 - reference_manager - WARNING - 未找到匹配的论文: The PageRank Citation Ranking : Bringing Order to the Web
+2025-06-05 10:21:07,307 - reference_manager - WARNING - 未找到匹配的论文: SolTG: A CHC-Based Solidity Test Case Generator
+2025-06-05 10:21:07,310 - reference_manager - WARNING - 未找到匹配的论文: xCodeEval: A Large Scale Multilingual Multitask Benchmark for Code Understanding, Generation, Translation and Retrieval
+2025-06-05 10:21:07,310 - reference_manager - WARNING - 未找到匹配的论文: “Hugging face,”
+2025-06-05 10:21:07,311 - reference_manager - WARNING - 未找到匹配的论文: Using Coq to Enforce the Checks-Effects-Interactions Pattern in DeepSEA Smart Contracts (Short Paper)
+2025-06-05 10:21:07,312 - reference_manager - WARNING - 未找到匹配的论文: “Trl: Transformer reinforcement learning,”
+2025-06-05 10:21:07,313 - reference_manager - WARNING - 未找到匹配的论文: “Blockchain immutable nature and smart contract vulnerabilities,”
+2025-06-05 10:21:07,315 - reference_manager - WARNING - 未找到匹配的论文: “Slowmist blockchain security incident database,”
+2025-06-05 10:21:07,316 - reference_manager - WARNING - 未找到匹配的论文: “How can i access gpt-4, gpt-4 turbo, gpt-4o, and gpt-4o mini?”
+2025-06-05 10:21:07,318 - reference_manager - WARNING - 未找到匹配的论文: “Codereval: A benchmark of pragmatic code generation with generative pre-trained models,”
+2025-06-05 10:21:07,319 - reference_manager - WARNING - 未找到匹配的论文: “Defi protocol financial losses analysis,”
+2025-06-05 10:21:07,320 - reference_manager - WARNING - 未找到匹配的论文: “On the immutable nature of blockchain deployments and security implications,”
+2025-06-05 10:21:07,321 - reference_manager - WARNING - 未找到匹配的论文: “Tree-sitter, a parser generator tool and an incremental parsing library.”
+2025-06-05 10:21:07,322 - reference_manager - WARNING - 未找到匹配的论文: “Chatgpt: Optimizing language models for dialogue
+2025-06-05 10:21:07,323 - reference_manager - WARNING - 未找到匹配的论文: “Analysis of smart contract security incidents and financial impact,”
+2025-06-05 10:21:07,323 - reference_manager - WARNING - 未找到匹配的论文: “Deepseek-r1,”
+2025-06-05 10:21:07,323 - reference_manager - INFO - 论文参考处理完成: processed=71, success=0, failed=0, skipped=71
+2025-06-05 10:21:07,573 - reference_manager - INFO - 成功创建参考关系: a65792d6-83c8-46b0-b4ef-fc81cd0902c3 -> dd09560e-19f1-4c59-aaf6-e733fcfd0bd7
+2025-06-05 10:21:07,574 - reference_manager - WARNING - 未找到匹配的论文: Enhancing Smart Contract Vulnerability Detection in DApps Leveraging Fine-Tuned LLM
+2025-06-05 10:21:07,575 - reference_manager - WARNING - 未找到匹配的论文: SmartBugBert: BERT-Enhanced Vulnerability Detection for Smart Contract Bytecode
+2025-06-05 10:21:07,576 - reference_manager - WARNING - 未找到匹配的论文: SoK: Security Analysis of Blockchain-based Cryptocurrency
+2025-06-05 10:21:07,577 - reference_manager - WARNING - 未找到匹配的论文: SCALM: Detecting Bad Practices in Smart Contracts Through LLMs
+2025-06-05 10:21:07,583 - reference_manager - WARNING - 未找到匹配的论文: Guardians of the Ledger: Protecting Decentralized Exchanges from State Derailment Defects
+2025-06-05 10:21:07,586 - reference_manager - WARNING - 未找到匹配的论文: Detecting Malicious Accounts in Web3 through Transaction Graph
+2025-06-05 10:21:07,587 - reference_manager - WARNING - 未找到匹配的论文: COBRA: Interaction-Aware Bytecode-Level Vulnerability Detector for Smart Contracts
+2025-06-05 10:21:07,588 - reference_manager - WARNING - 未找到匹配的论文: Toward Web3 Applications: Easing the Access and Transition
+2025-06-05 10:21:07,589 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts in the Real World: A Statistical Exploration of External Data Dependencies
+2025-06-05 10:21:07,591 - reference_manager - WARNING - 未找到匹配的论文: GasTrace: Detecting Sandwich Attack Malicious Accounts in Ethereum
+2025-06-05 10:21:07,592 - reference_manager - WARNING - 未找到匹配的论文: DeFiTail: DeFi Protocol Inspection through Cross-Contract Execution Analysis
+2025-06-05 10:21:07,594 - reference_manager - WARNING - 未找到匹配的论文: StateGuard: Detecting State Derailment Defects in Decentralized Exchange Smart Contract
+2025-06-05 10:21:07,596 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attacks Detection and Traceability Mechanism Based on Beacon Packets in Connected Automobile Vehicles
+2025-06-05 10:21:07,598 - reference_manager - WARNING - 未找到匹配的论文: Characterizing the Solana NFT Ecosystem
+2025-06-05 10:21:07,599 - reference_manager - WARNING - 未找到匹配的论文: Unveiling Wash Trading in Popular NFT Markets
+2025-06-05 10:21:07,600 - reference_manager - WARNING - 未找到匹配的论文: Sybil Attack Detection in VANETs: An LSTM-Based BiGAN Approach
+2025-06-05 10:21:07,602 - reference_manager - WARNING - 未找到匹配的论文: Distributed Ledger Technology Review and Decentralized Applications Development Guidelines
+2025-06-05 10:21:07,604 - reference_manager - WARNING - 未找到匹配的论文: Hyperledger Fabric Blockchain: Chaincode Performance Analysis
+2025-06-05 10:21:07,605 - reference_manager - WARNING - 未找到匹配的论文: Hyperledger fabric: a distributed operating system for permissioned blockchains
+2025-06-05 10:21:07,606 - reference_manager - WARNING - 未找到匹配的论文: An Android Vulnerability Detection System
+2025-06-05 10:21:07,608 - reference_manager - WARNING - 未找到匹配的论文: System-level attacks against android by exploiting asynchronous programming
+2025-06-05 10:21:07,609 - reference_manager - WARNING - 未找到匹配的论文: A Temporal Blockchain: A Formal Analysis
+2025-06-05 10:21:07,613 - reference_manager - WARNING - 未找到匹配的论文: Channel coding and decoding in a relay system operated with physical-layer network coding
+2025-06-05 10:21:07,615 - reference_manager - WARNING - 未找到匹配的论文: Cryptanalysis of the Hash Functions MD4 and RIPEMD
+2025-06-05 10:21:07,616 - reference_manager - WARNING - 未找到匹配的论文: US Secure Hash Algorithm 1 (SHA1)
+2025-06-05 10:21:07,617 - reference_manager - WARNING - 未找到匹配的论文: Practical Byzantine fault tolerance
+2025-06-05 10:21:07,618 - reference_manager - WARNING - 未找到匹配的论文: Divertible Protocols and Atomic Proxy Cryptography
+2025-06-05 10:21:07,619 - reference_manager - WARNING - 未找到匹配的论文: The Byzantine Generals Problem
+2025-06-05 10:21:07,620 - reference_manager - WARNING - 未找到匹配的论文: SerdeSniffer: Enhancing Java Deserialization Vulnerability Detection with Function Summaries
+2025-06-05 10:21:07,622 - reference_manager - WARNING - 未找到匹配的论文: Hybrid analysis of smart contracts and malicious behaviors in ethereum
+2025-06-05 10:21:07,624 - reference_manager - WARNING - 未找到匹配的论文: On Discovering Vulnerabilities in Android Applications
+2025-06-05 10:21:07,627 - reference_manager - WARNING - 未找到匹配的论文: Cryptographic access control scheme for cloud storage based on proxy re-encryption
+2025-06-05 10:21:07,628 - reference_manager - WARNING - 未找到匹配的论文: Delegated proof-of-stake (dpos)
+2025-06-05 10:21:07,629 - reference_manager - WARNING - 未找到匹配的论文: Adoption of Electronic Health Record Systems among U . S . Non-Federal Acute Care Hospitals : 2008-2015
+2025-06-05 10:21:07,630 - reference_manager - WARNING - 未找到匹配的论文: Trusted Platform Module
+2025-06-05 10:21:07,631 - reference_manager - WARNING - 未找到匹配的论文: Bitcoin: A Peer-to-Peer Electronic Cash System
+2025-06-05 10:21:07,632 - reference_manager - WARNING - 未找到匹配的论文: The md5 message-digest algorithm. Technical report
+2025-06-05 10:21:07,633 - reference_manager - WARNING - 未找到匹配的论文: SCLA: Automated Smart Contract Summarization via LLMs and Semantic Augmentation
+2025-06-05 10:21:07,634 - reference_manager - WARNING - 未找到匹配的论文: Alice first encrypts the ciphertext data with her own private key Sk1
+2025-06-05 10:21:07,636 - reference_manager - WARNING - 未找到匹配的论文: Alice generates a data delkey based on Bob’s public key Pk2 and her own private key Sk1, and sends it to the server
+2025-06-05 10:21:07,639 - reference_manager - WARNING - 未找到匹配的论文: Add system dependencies. The dependency information of the Go language is saved in the go.mod file. Enter the program folder and enter the go mod tidy command to add dependencies to the system
+2025-06-05 10:21:07,639 - reference_manager - INFO - 论文参考处理完成: processed=42, success=1, failed=0, skipped=41
+2025-06-05 10:21:07,639 - reference_manager - INFO - 参考处理完成: processed=222, success=1, failed=0, skipped=221
+2025-06-05 10:21:07,639 - reference_manager - INFO - 参考处理摘要:
+2025-06-05 10:21:07,639 - reference_manager - INFO - - 总处理参考: 222
+2025-06-05 10:21:07,639 - reference_manager - INFO - - 成功创建: 1
+2025-06-05 10:21:07,639 - reference_manager - INFO - - 创建失败: 0
+2025-06-05 10:21:07,640 - reference_manager - INFO - - 跳过: 221
+2025-06-05 14:27:13,144 - reference_manager - INFO - 参考管理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 14:27:13,144 - reference_manager - INFO - 已加载 3 个现有论文映射
+2025-06-05 14:27:13,145 - reference_manager - INFO - 在 ./cache/references 目录中找到 1 个参考文件
+2025-06-05 14:27:13,164 - reference_manager - INFO - 处理论文 'Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair' (ID: 234757aa-89e0-43b3-957b-b3f9770910c1) 的参考关系，共 48 个参考
+2025-06-05 14:27:13,324 - reference_manager - INFO - 成功创建参考关系: 234757aa-89e0-43b3-957b-b3f9770910c1 -> 4bf1f013-b274-4d33-bf63-13976304b4be
+2025-06-05 14:27:13,325 - reference_manager - WARNING - 未找到匹配的论文: Smart Contracts for SMEs and Large Companies
+2025-06-05 14:27:13,325 - reference_manager - WARNING - 未找到匹配的论文: A Comprehensive Survey of Upgradeable Smart Contract Patterns
+2025-06-05 14:27:13,326 - reference_manager - WARNING - 未找到匹配的论文: TABS: Transforming automatically BPMN models into blockchain smart contracts
+2025-06-05 14:27:13,326 - reference_manager - WARNING - 未找到匹配的论文: Aroc: An Automatic Repair Framework for On-Chain Smart Contracts
+2025-06-05 14:27:13,327 - reference_manager - WARNING - 未找到匹配的论文: Supporting Long-term Transactions in Smart Contracts
+2025-06-05 14:27:13,327 - reference_manager - WARNING - 未找到匹配的论文: Flexible Execution of Multi-Party Business Processes on Blockchain
+2025-06-05 14:27:13,327 - reference_manager - WARNING - 未找到匹配的论文: SolSaviour: A Defending Framework for Deployed Defective Smart Contracts
+2025-06-05 14:27:13,328 - reference_manager - WARNING - 未找到匹配的论文: From BPMN to smart contracts on blockchains: Transforming BPMN to DE-HSM multi-modal model
+2025-06-05 14:27:13,328 - reference_manager - WARNING - 未找到匹配的论文: Decentralized collaborative business process execution using blockchain
+2025-06-05 14:27:13,329 - reference_manager - WARNING - 未找到匹配的论文: A Tool for Moving Blockchain Computations Off-Chain
+2025-06-05 14:27:13,329 - reference_manager - WARNING - 未找到匹配的论文: Blockchain smart contracts: Applications, challenges, and future trends
+2025-06-05 14:27:13,330 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain and smart contract development: Techniques, tools, and open challenges
+2025-06-05 14:27:13,331 - reference_manager - WARNING - 未找到匹配的论文: Using FSMs to Find Patterns for Off-Chain Computing: Finding Patterns for Off-Chain Computing with FSMs
+2025-06-05 14:27:13,331 - reference_manager - WARNING - 未找到匹配的论文: EVMPatch: Timely and Automated Patching of Ethereum Smart Contracts
+2025-06-05 14:27:13,332 - reference_manager - WARNING - 未找到匹配的论文: A Survey of Smart Contract Formal Specification and Verification
+2025-06-05 14:27:13,332 - reference_manager - WARNING - 未找到匹配的论文: Using Blockchain to Improve Collaborative Business Process Management: Systematic Literature Review
+2025-06-05 14:27:13,333 - reference_manager - WARNING - 未找到匹配的论文: Controlled flexibility in blockchain-based collaborative business processes
+2025-06-05 14:27:13,333 - reference_manager - WARNING - 未找到匹配的论文: A Survey on Blockchain Interoperability: Past, Present, and Future Trends
+2025-06-05 14:27:13,334 - reference_manager - WARNING - 未找到匹配的论文: A systematic literature review of blockchain cyber security
+2025-06-05 14:27:13,334 - reference_manager - WARNING - 未找到匹配的论文: Engineering trustable choreography-based systems using blockchain
+2025-06-05 14:27:13,335 - reference_manager - WARNING - 未找到匹配的论文: A Review on Scalability of Blockchain
+2025-06-05 14:27:13,335 - reference_manager - WARNING - 未找到匹配的论文: A Three-Layered Approach for Designing Smart Contracts in Collaborative Processes
+2025-06-05 14:27:13,337 - reference_manager - WARNING - 未找到匹配的论文: Process-Based Composition of Permissioned and Permissionless Blockchain Smart Contracts
+2025-06-05 14:27:13,339 - reference_manager - WARNING - 未找到匹配的论文: Blockchain Support for Collaborative Business Processes
+2025-06-05 14:27:13,339 - reference_manager - WARNING - 未找到匹配的论文: Modeling and execution of blockchain-aware business processes
+2025-06-05 14:27:13,340 - reference_manager - WARNING - 未找到匹配的论文: VeriSolid: Correct-by-Design Smart Contracts for Ethereum
+2025-06-05 14:27:13,341 - reference_manager - WARNING - 未找到匹配的论文: Caterpillar: A business process execution engine on the Ethereum blockchain
+2025-06-05 14:27:13,343 - reference_manager - WARNING - 未找到匹配的论文: Tool Demonstration: FSolidM for Designing Secure Ethereum Smart Contracts
+2025-06-05 14:27:13,346 - reference_manager - WARNING - 未找到匹配的论文: Designing Secure Ethereum Smart Contracts: A Finite State Machine Based Approach
+2025-06-05 14:27:13,347 - reference_manager - WARNING - 未找到匹配的论文: Blockchains for Business Process Management - Challenges and Opportunities
+2025-06-05 14:27:13,347 - reference_manager - WARNING - 未找到匹配的论文: What’s So Different about Blockchain? — Blockchain is a Probabilistic State Machine
+2025-06-05 14:27:13,348 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical finite state machines with multiple concurrency models
+2025-06-05 14:27:13,348 - reference_manager - WARNING - 未找到匹配的论文: Discrete event systems: Modeling and performance analysis
+2025-06-05 14:27:13,348 - reference_manager - WARNING - 未找到匹配的论文: Long-term blockchain transactions spanning multiplicity of smart contract methods
+2025-06-05 14:27:13,349 - reference_manager - WARNING - 未找到匹配的论文: Automating Smart Contract Generation on Blockchains Using Multi-modal Modeling
+2025-06-05 14:27:13,349 - reference_manager - WARNING - 未找到匹配的论文: Upgradability of smart contracts: a review
+2025-06-05 14:27:13,350 - reference_manager - WARNING - 未找到匹配的论文: Survey of Model-Driven Engineering Techniques for Blockchain-Based Applications
+2025-06-05 14:27:13,350 - reference_manager - WARNING - 未找到匹配的论文: Upgradeability Concept for Collaborative Blockchain-Based Business Process Execution Framework
+2025-06-05 14:27:13,352 - reference_manager - WARNING - 未找到匹配的论文: Lorikeet: A Model-Driven Engineering Tool for Blockchain-Based Business Process Execution and Asset Management
+2025-06-05 14:27:13,353 - reference_manager - WARNING - 未找到匹配的论文: A NEXT GENERATION SMART CONTRACT & DECENTRALIZED APPLICATION PLATFORM
+2025-06-05 14:27:13,353 - reference_manager - WARNING - 未找到匹配的论文: Hierarchical State Machines
+2025-06-05 14:27:13,354 - reference_manager - WARNING - 未找到匹配的论文: Transforming BPMN into BPEL: Why and How
+2025-06-05 14:27:13,354 - reference_manager - WARNING - 未找到匹配的论文: Theories of Programming Languages: Communicating Sequential Processes
+2025-06-05 14:27:13,355 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Introduction - Flowable Open-Source Documentation
+2025-06-05 14:27:13,355 - reference_manager - WARNING - 未找到匹配的论文: BPMN 2.0 Symbols — A complete guide with examples
+2025-06-05 14:27:13,356 - reference_manager - WARNING - 未找到匹配的论文: Process Orchestration for end-to-end automation
+2025-06-05 14:27:13,357 - reference_manager - WARNING - 未找到匹配的论文: Business Process Model and Notation (BPMN), Version 2.0.2
+2025-06-05 14:27:13,357 - reference_manager - INFO - 论文参考处理完成: processed=48, success=1, failed=0, skipped=47
+2025-06-05 14:27:13,358 - reference_manager - INFO - 参考处理完成: processed=48, success=1, failed=0, skipped=47
+2025-06-05 14:27:13,358 - reference_manager - INFO - 参考处理摘要:
+2025-06-05 14:27:13,358 - reference_manager - INFO - - 总处理参考: 48
+2025-06-05 14:27:13,358 - reference_manager - INFO - - 成功创建: 1
+2025-06-05 14:27:13,358 - reference_manager - INFO - - 创建失败: 0
+2025-06-05 14:27:13,358 - reference_manager - INFO - - 跳过: 47

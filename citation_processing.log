@@ -1,0 +1,89 @@
+2025-06-05 10:45:48,154 - citation_processor - INFO - 已加载8个论文标题-ID映射
+2025-06-05 10:45:49,034 - citation_processor - ERROR - 获取论文列表失败: 404, 错误信息: 404 page not found
+
+2025-06-05 10:45:49,035 - citation_processor - INFO - 没有发现有引用关系的论文
+2025-06-05 13:35:18,551 - citation_processor - INFO - 引用关系处理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 13:35:18,551 - citation_processor - INFO - 已加载 8 个现有论文映射
+2025-06-05 13:35:18,551 - citation_processor - INFO - 在 ./cache/citations 目录中找到 1 个引用文件
+2025-06-05 13:35:18,630 - citation_processor - INFO - 处理论文 'Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair' (ID: b231cb3d-12fd-45dd-b6dd-ffb0c7d70980) 的引用关系，共 3 个引用
+2025-06-05 13:35:18,769 - citation_processor - ERROR - 创建引用关系失败: 404 - 404 page not found
+
+2025-06-05 13:35:18,770 - citation_processor - WARNING - 未找到匹配的论文: Smart Contracts for SMEs and Large Companies
+2025-06-05 13:35:18,771 - citation_processor - WARNING - 未找到匹配的论文: Generation of Smart Contracts by Business Analyst with TABS+R Tool
+2025-06-05 13:35:18,771 - citation_processor - INFO - 论文引用处理完成: processed=3, success=0, failed=1, skipped=2
+2025-06-05 13:35:18,771 - citation_processor - INFO - 引用处理完成: processed=3, success=0, failed=1, skipped=2
+2025-06-05 13:35:18,771 - citation_processor - INFO - 引用处理摘要:
+2025-06-05 13:35:18,771 - citation_processor - INFO - - 总处理引用: 3
+2025-06-05 13:35:18,771 - citation_processor - INFO - - 成功创建: 0
+2025-06-05 13:35:18,771 - citation_processor - INFO - - 创建失败: 1
+2025-06-05 13:35:18,771 - citation_processor - INFO - - 跳过: 2
+2025-06-05 13:35:56,323 - citation_processor - INFO - 引用关系处理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 13:35:56,324 - citation_processor - INFO - 已加载 8 个现有论文映射
+2025-06-05 13:35:56,324 - citation_processor - INFO - 在 ./cache/citations 目录中找到 1 个引用文件
+2025-06-05 13:35:56,339 - citation_processor - INFO - 处理论文 'Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair' (ID: b231cb3d-12fd-45dd-b6dd-ffb0c7d70980) 的引用关系，共 3 个引用
+2025-06-05 13:35:56,377 - citation_processor - ERROR - 创建引用关系失败: 500 - {"details":"source paper not exists: paper not found: b231cb3d-12fd-45dd-b6dd-ffb0c7d70980","error":"Failed to add citation"}
+2025-06-05 13:35:56,378 - citation_processor - WARNING - 未找到匹配的论文: Smart Contracts for SMEs and Large Companies
+2025-06-05 13:35:56,379 - citation_processor - WARNING - 未找到匹配的论文: Generation of Smart Contracts by Business Analyst with TABS+R Tool
+2025-06-05 13:35:56,379 - citation_processor - INFO - 论文引用处理完成: processed=3, success=0, failed=1, skipped=2
+2025-06-05 13:35:56,379 - citation_processor - INFO - 引用处理完成: processed=3, success=0, failed=1, skipped=2
+2025-06-05 13:35:56,379 - citation_processor - INFO - 引用处理摘要:
+2025-06-05 13:35:56,379 - citation_processor - INFO - - 总处理引用: 3
+2025-06-05 13:35:56,379 - citation_processor - INFO - - 成功创建: 0
+2025-06-05 13:35:56,379 - citation_processor - INFO - - 创建失败: 1
+2025-06-05 13:35:56,379 - citation_processor - INFO - - 跳过: 2
+2025-06-05 13:39:12,519 - citation_processor - INFO - 引用关系处理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 13:39:12,519 - citation_processor - INFO - 已加载 8 个现有论文映射
+2025-06-05 13:39:12,519 - citation_processor - INFO - 在 ./cache/citations 目录中找到 1 个引用文件
+2025-06-05 13:39:12,536 - citation_processor - INFO - 处理论文 'Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair' (ID: faf12a70-f042-4247-bcf5-17da1415689e) 的引用关系，共 3 个引用
+2025-06-05 13:39:13,180 - citation_processor - INFO - 成功创建引用关系: faf12a70-f042-4247-bcf5-17da1415689e -> d4cbea24-c2df-44ce-8043-15e3c0971941
+2025-06-05 13:39:13,183 - citation_processor - WARNING - 未找到匹配的论文: Smart Contracts for SMEs and Large Companies
+2025-06-05 13:39:13,186 - citation_processor - WARNING - 未找到匹配的论文: Generation of Smart Contracts by Business Analyst with TABS+R Tool
+2025-06-05 13:39:13,187 - citation_processor - INFO - 论文引用处理完成: processed=3, success=1, failed=0, skipped=2
+2025-06-05 13:39:13,187 - citation_processor - INFO - 引用处理完成: processed=3, success=1, failed=0, skipped=2
+2025-06-05 13:39:13,188 - citation_processor - INFO - 引用处理摘要:
+2025-06-05 13:39:13,188 - citation_processor - INFO - - 总处理引用: 3
+2025-06-05 13:39:13,188 - citation_processor - INFO - - 成功创建: 1
+2025-06-05 13:39:13,188 - citation_processor - INFO - - 创建失败: 0
+2025-06-05 13:39:13,188 - citation_processor - INFO - - 跳过: 2
+2025-06-05 13:59:50,219 - citation_processor - INFO - 引用关系处理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 13:59:50,219 - citation_processor - INFO - 已加载 8 个现有论文映射
+2025-06-05 13:59:50,220 - citation_processor - INFO - 在 ./cache/citations 目录中找到 1 个引用文件
+2025-06-05 13:59:50,235 - citation_processor - INFO - 处理论文 'Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair' (ID: faf12a70-f042-4247-bcf5-17da1415689e) 的引用关系，共 3 个引用
+2025-06-05 13:59:50,389 - citation_processor - INFO - 引用关系已存在: faf12a70-f042-4247-bcf5-17da1415689e -> d4cbea24-c2df-44ce-8043-15e3c0971941
+2025-06-05 13:59:50,464 - citation_processor - INFO - 成功创建引用关系: faf12a70-f042-4247-bcf5-17da1415689e -> dd1fd40d-a7d7-434c-bccc-c8ee1261d360
+2025-06-05 13:59:50,465 - citation_processor - WARNING - 未找到匹配的论文: Generation of Smart Contracts by Business Analyst with TABS+R Tool
+2025-06-05 13:59:50,465 - citation_processor - INFO - 论文引用处理完成: processed=3, success=2, failed=0, skipped=1
+2025-06-05 13:59:50,466 - citation_processor - INFO - 引用处理完成: processed=3, success=2, failed=0, skipped=1
+2025-06-05 13:59:50,466 - citation_processor - INFO - 引用处理摘要:
+2025-06-05 13:59:50,466 - citation_processor - INFO - - 总处理引用: 3
+2025-06-05 13:59:50,466 - citation_processor - INFO - - 成功创建: 2
+2025-06-05 13:59:50,466 - citation_processor - INFO - - 创建失败: 0
+2025-06-05 13:59:50,466 - citation_processor - INFO - - 跳过: 1
+2025-06-05 14:19:44,531 - citation_processor - INFO - 引用关系处理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 14:19:44,532 - citation_processor - INFO - 已加载 8 个现有论文映射
+2025-06-05 14:19:44,533 - citation_processor - INFO - 在 ./cache/citations 目录中找到 1 个引用文件
+2025-06-05 14:19:44,557 - citation_processor - INFO - 处理论文 'Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair' (ID: faf12a70-f042-4247-bcf5-17da1415689e) 的引用关系，共 3 个引用
+2025-06-05 14:19:44,779 - citation_processor - INFO - 成功创建引用关系: faf12a70-f042-4247-bcf5-17da1415689e -> d4cbea24-c2df-44ce-8043-15e3c0971941
+2025-06-05 14:19:44,816 - citation_processor - INFO - 成功创建引用关系: faf12a70-f042-4247-bcf5-17da1415689e -> dd1fd40d-a7d7-434c-bccc-c8ee1261d360
+2025-06-05 14:19:44,848 - citation_processor - INFO - 成功创建引用关系: faf12a70-f042-4247-bcf5-17da1415689e -> a65792d6-83c8-46b0-b4ef-fc81cd0902c3
+2025-06-05 14:19:44,848 - citation_processor - INFO - 论文引用处理完成: processed=3, success=3, failed=0, skipped=0
+2025-06-05 14:19:44,848 - citation_processor - INFO - 引用处理完成: processed=3, success=3, failed=0, skipped=0
+2025-06-05 14:19:44,848 - citation_processor - INFO - 引用处理摘要:
+2025-06-05 14:19:44,849 - citation_processor - INFO - - 总处理引用: 3
+2025-06-05 14:19:44,849 - citation_processor - INFO - - 成功创建: 3
+2025-06-05 14:19:44,849 - citation_processor - INFO - - 创建失败: 0
+2025-06-05 14:19:44,849 - citation_processor - INFO - - 跳过: 0
+2025-06-05 14:28:13,371 - citation_processor - INFO - 引用关系处理器初始化，API URL: http://localhost:8080/neo4j/v1
+2025-06-05 14:28:13,372 - citation_processor - INFO - 已加载 3 个现有论文映射
+2025-06-05 14:28:13,372 - citation_processor - INFO - 在 ./cache/citations 目录中找到 1 个引用文件
+2025-06-05 14:28:13,386 - citation_processor - INFO - 处理论文 'Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair' (ID: 234757aa-89e0-43b3-957b-b3f9770910c1) 的引用关系，共 3 个引用
+2025-06-05 14:28:13,508 - citation_processor - INFO - 成功创建引用关系: 234757aa-89e0-43b3-957b-b3f9770910c1 -> f9e82be0-b56a-483b-a65d-04e576b30b66
+2025-06-05 14:28:13,511 - citation_processor - WARNING - 未找到匹配的论文: Smart Contracts for SMEs and Large Companies
+2025-06-05 14:28:13,511 - citation_processor - WARNING - 未找到匹配的论文: Generation of Smart Contracts by Business Analyst with TABS+R Tool
+2025-06-05 14:28:13,511 - citation_processor - INFO - 论文引用处理完成: processed=3, success=1, failed=0, skipped=2
+2025-06-05 14:28:13,512 - citation_processor - INFO - 引用处理完成: processed=3, success=1, failed=0, skipped=2
+2025-06-05 14:28:13,512 - citation_processor - INFO - 引用处理摘要:
+2025-06-05 14:28:13,512 - citation_processor - INFO - - 总处理引用: 3
+2025-06-05 14:28:13,512 - citation_processor - INFO - - 成功创建: 1
+2025-06-05 14:28:13,512 - citation_processor - INFO - - 创建失败: 0
+2025-06-05 14:28:13,512 - citation_processor - INFO - - 跳过: 2

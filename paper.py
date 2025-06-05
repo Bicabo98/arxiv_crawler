@@ -794,7 +794,7 @@ class PaperExporter:
             
             # 将此论文的ID和标题添加到papers_with_references列表，供后续处理
             papers_with_references.append({
-                "id": paper_uuid,
+                "id": paper_id,
                 "title": paper.title,
                 "arxiv_id": arxiv_id if 'arxiv_id' in locals() else None
             })

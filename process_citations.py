@@ -9,6 +9,7 @@ import time
 import urllib3
 import argparse
 import logging
+import traceback
 from pathlib import Path
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -34,48 +35,75 @@ logger = logging.getLogger('citation_processor')
 class CitationProcessor:
     """引用关系处理器 - 基于标题匹配"""
     
-    def __init__(self, api_base_url="http://localhost:8080/api/v1", data_dir="./data", 
-                 max_workers=5, similarity_threshold=0.85):
+    def __init__(self, api_base_url="http://localhost:8080/neo4j/v1", max_workers=5, similarity_threshold=0.85):
         """
         初始化引用关系处理器
         
-        参数:
-            api_base_url: API基础URL
-            data_dir: 数据目录，包含标题映射文件
-            max_workers: 最大工作线程数
-            similarity_threshold: 标题匹配的相似度阈值
+        Args:
+            api_base_url (str): API基础URL
+            max_workers (int): 最大工作线程数
+            similarity_threshold (float): 标题匹配相似度阈值
         """
         self.api_base_url = api_base_url
-        self.data_dir = Path(data_dir)
+        self.http = urllib3.PoolManager()
+        self.title_mapping = {}
         self.max_workers = max_workers
         self.similarity_threshold = similarity_threshold
-        self.http = urllib3.PoolManager()
-        self.paper_title_map = {}  # 标题到ID的映射
-        
-        # 确保数据目录存在
-        if not self.data_dir.exists():
-            logger.warning(f"数据目录不存在: {self.data_dir}，创建该目录")
-            self.data_dir.mkdir(exist_ok=True, parents=True)
+        logger.info(f"引用关系处理器初始化，API URL: {api_base_url}")
     
-    def load_title_mapping(self):
-        """加载论文标题到ID的映射"""
-        mapping_file = self.data_dir / "paper_title_mapping.json"
-        if not mapping_file.exists():
-            logger.error(f"标题映射文件不存在: {mapping_file}")
-            return False
+    def save_title_mapping(self):
+        """保存论文标题到ID的映射"""
+        # 创建映射存储目录
+        mapping_dir = Path("./data")
+        mapping_dir.mkdir(exist_ok=True, parents=True)
         
-        try:
-            with open(mapping_file, 'r', encoding='utf-8') as f:
-                self.paper_title_map = json.load(f)
+        # 保存到文件
+        mapping_file = mapping_dir / "paper_title_mapping.json"
+        
+        # 保存映射
+        with open(mapping_file, 'w', encoding='utf-8') as f:
+            json.dump(self.title_mapping, f, ensure_ascii=False, indent=2)
             
-            logger.info(f"已加载{len(self.paper_title_map)}个论文标题-ID映射")
-            return True
-        except Exception as e:
-            logger.error(f"加载标题映射失败: {str(e)}")
+        logger.info(f"已保存 {len(self.title_mapping)} 个论文标题-ID映射")
+        return self.title_mapping
+
+    def load_title_mapping(self):
+        """重新加载论文标题到ID的映射"""  
+        
+        mapping_file = Path("./data/paper_title_mapping.json")
+        if mapping_file.exists():
+            try:
+                with open(mapping_file, 'r', encoding='utf-8') as f:
+                    self.title_mapping = json.load(f)
+                logger.info(f"已加载 {len(self.title_mapping)} 个现有论文映射")
+                return True
+            except Exception as e:
+                logger.error(f"加载标题映射时出错: {str(e)}")
+                return False
+        else:
+            logger.warning(f"标题映射文件未找到: {mapping_file}")
             return False
+    
+    def add_paper_mapping(self, title, paper_id):
+        """添加单个论文标题到ID的映射"""
+        
+        if title and paper_id:
+            self.title_mapping[title.lower().strip()] = paper_id
+    
+    def add_multiple_mappings(self, mappings):
+        """添加多个论文标题到ID的映射"""
+        
+        self.title_mapping.update(mappings)
     
     def normalize_title(self, title):
-        """标准化论文标题，提高匹配率"""
+        """规范化论文标题以提高匹配率
+        
+        Args:
+            title (str): 原始标题
+            
+        Returns:
+            str: 规范化标题
+        """
         if not title:
             return ""
         
@@ -85,33 +113,36 @@ class CitationProcessor:
         # 移除特殊字符
         title = re.sub(r'[^\w\s]', ' ', title)
         
-        # 替换多个空格为单个空格
+        # 将多个空格替换为单个空格
         title = re.sub(r'\s+', ' ', title)
         
-        # 去除首尾空格
+        # 移除前导和尾随空格
         title = title.strip()
         
         return title
     
     def find_best_title_match(self, reference_title):
-        """
-        使用模糊匹配找到最佳的标题匹配
-        返回匹配到的论文ID或None
+        """使用模糊匹配找到最佳标题匹配
+        
+        Args:
+            reference_title (str): 参考论文标题
+            
+        Returns:
+            str: 匹配的论文ID或None
         """
         normalized_ref_title = self.normalize_title(reference_title)
         if not normalized_ref_title:
             return None
-        
-        # 精确匹配
-        if normalized_ref_title in self.paper_title_map:
+
+        if normalized_ref_title in self.title_mapping:
             logger.debug(f"精确匹配成功: {normalized_ref_title}")
-            return self.paper_title_map[normalized_ref_title]
+            return self.title_mapping[normalized_ref_title]
         
         # 模糊匹配
         best_ratio = 0
         best_match_id = None
         
-        for title, paper_id in self.paper_title_map.items():
+        for title, paper_id in self.title_mapping.items():
             normalized_title = self.normalize_title(title)
             
             # 计算相似度
@@ -126,153 +157,67 @@ class CitationProcessor:
         
         return best_match_id
     
-    def get_papers_with_references(self):
-        """获取所有带引用关系的论文"""
+    def scan_citation_files(self, citation_dir="./cache/citations"):
+        """扫描引用文件目录获取所有引用文件
+        
+        Args:
+            citation_dir (str): 引用文件目录
+            
+        Returns:
+            list: 引用文件路径列表
+        """
+        citation_files = []
+        citation_dir_path = Path(citation_dir)
+        
+        if not citation_dir_path.exists():
+            logger.warning(f"引用目录未找到: {citation_dir}")
+            return citation_files
+        
+        # 遍历目录中的所有JSON文件
+        for cite_file in citation_dir_path.glob("*.json"):
+            citation_files.append(cite_file)
+        
+        logger.info(f"在 {citation_dir} 目录中找到 {len(citation_files)} 个引用文件")
+        return citation_files
+    
+    def parse_citation_file(self, citation_file):
+        """解析引用文件，提取源论文和它的引用列表
+        
+        Args:
+            citation_file (Path): 引用文件路径
+            
+        Returns:
+            tuple: (源论文标题, 源论文UUID/ID, 引用列表)
+        """
         try:
-            # 从API获取所有论文列表 - 添加一个额外参数避免400错误
-            response = self.http.request(
-                'GET',
-                f"{self.api_base_url}/papers?limit=10000&keyword=",  # 添加空的keyword参数
-                headers={'Content-Type': 'application/json'}
-            )
+            with open(citation_file, 'r', encoding='utf-8') as f:
+                cite_data = json.load(f)
             
-            if response.status != 200:
-                logger.error(f"获取论文列表失败: {response.status}, 错误信息: {response.data.decode('utf-8')}")
-                return []
+            source_title = cite_data.get("title", "")
+            source_id = cite_data.get("uuid", "")
+            citations = cite_data.get("citations", [])
             
-            # 解析响应
-            data = json.loads(response.data.decode('utf-8'))
-            papers = data.get('papers', [])
-            logger.info(f"从API获取到{len(papers)}篇论文")
-            
-            # 过滤出有引用关系的论文
-            papers_with_refs = []
-            for paper in papers:
-                paper_id = paper.get('id')
-                title = paper.get('title')
-                
-                # 获取该论文的详情（包括引用信息）
-                try:
-                    detail_response = self.http.request(
-                        'GET',
-                        f"{self.api_base_url}/papers/{paper_id}",
-                        headers={'Content-Type': 'application/json'}
-                    )
-                    
-                    if detail_response.status == 200:
-                        detail_data = json.loads(detail_response.data.decode('utf-8'))
-                        if 'references' in detail_data and detail_data['references']:
-                            references = detail_data['references']
-                            papers_with_refs.append((paper_id, title, references))
-                    else:
-                        logger.warning(f"获取论文详情失败: {paper_id}, 错误信息: {detail_response.data.decode('utf-8')}")
-                except Exception as e:
-                    logger.error(f"获取论文详情时出错: {str(e)}")
-            
-            logger.info(f"找到{len(papers_with_refs)}篇有引用关系的论文")
-            return papers_with_refs
-            
+            return source_title, source_id, citations
         except Exception as e:
-            logger.error(f"获取论文列表时出错: {str(e)}")
-            return []
+            logger.error(f"解析引用文件 {citation_file} 时出错: {str(e)}")
+            return None, None, []
     
-    def process_references(self):
-        """处理所有论文的引用关系"""
-        # 先加载标题映射
-        if not self.load_title_mapping():
-            logger.error("加载标题映射失败，无法继续处理")
-            return
+    def create_citation_relationship(self, source_paper_id, target_paper_id, context=""):
+        """创建单个引用关系
         
-        # 获取有引用关系的论文
-        papers_with_refs = self.get_papers_with_references()
-        if not papers_with_refs:
-            logger.info("没有发现有引用关系的论文")
-            return
-        
-        total_processed = 0
-        total_success = 0
-        total_failed = 0
-        total_skipped = 0
-        
-        # 使用进度条跟踪处理进度
-        with tqdm(total=len(papers_with_refs), desc="处理引用关系") as pbar:
-            # 使用线程池并行处理
-            with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-                # 提交所有任务
-                future_to_paper = {executor.submit(self.process_paper_references, paper_id, title, references): 
-                                (paper_id, title) for paper_id, title, references in papers_with_refs}
-                
-                # 处理结果
-                for future in as_completed(future_to_paper):
-                    paper_id, title = future_to_paper[future]
-                    try:
-                        processed, success, failed, skipped = future.result()
-                        total_processed += processed
-                        total_success += success
-                        total_failed += failed
-                        total_skipped += skipped
-                        pbar.update(1)
-                    except Exception as e:
-                        logger.error(f"处理论文时出错 {title} (ID: {paper_id}): {str(e)}")
-                        pbar.update(1)
-        
-        logger.info(f"处理完成: 总共处理了{total_processed}个引用关系, 成功: {total_success}, 失败: {total_failed}, 跳过: {total_skipped}")
-    
-    def process_paper_references(self, paper_id, paper_title, references):
-        """处理单个论文的引用关系"""
-        try:
-            logger.info(f"处理论文 '{paper_title}' (ID: {paper_id}) 的引用关系, 共{len(references)}个引用")
+        Args:
+            source_paper_id (str): 源论文ID
+            target_paper_id (str): 目标论文ID
+            context (str): 引用上下文
             
-            processed = 0
-            success = 0
-            failed = 0
-            skipped = 0
-            
-            # 处理每个引用关系
-            for reference_title in references:
-                processed += 1
-                
-                # 检查引用数据完整性
-                if not reference_title:
-                    logger.warning(f"跳过空标题的引用")
-                    skipped += 1
-                    continue
-                
-                # 找到最佳匹配的论文ID
-                target_paper_id = self.find_best_title_match(reference_title)
-                
-                # 如果没找到匹配的论文，跳过
-                if not target_paper_id:
-                    logger.warning(f"未找到匹配的目标论文: {reference_title}")
-                    skipped += 1
-                    continue
-                
-                # 避免自引用
-                if target_paper_id == paper_id:
-                    logger.warning(f"跳过自引用: {paper_title}")
-                    skipped += 1
-                    continue
-                
-                # 创建引用关系
-                result = self.create_citation(paper_id, target_paper_id, reference_title)
-                if result:
-                    success += 1
-                else:
-                    failed += 1
-            
-            return processed, success, failed, skipped
-            
-        except Exception as e:
-            logger.error(f"处理论文引用关系时出错: {str(e)}")
-            return 0, 0, 0, 0
-    
-    def create_citation(self, source_paper_id, target_paper_id, reference_title):
-        """创建引用关系"""
+        Returns:
+            bool: 引用关系是否成功创建
+        """
         try:
             # 构造引用数据
             citation_data = {
                 "target_paper_id": target_paper_id,
-                "context": "common field: \"Academic Research\""
+                "context": context or "common field: \"Academic Research\""
             }
             
             # 发送API请求
@@ -284,15 +229,15 @@ class CitationProcessor:
                 full_url,
                 body=encoded_data,
                 headers={'Content-Type': 'application/json'},
-                timeout=10.0  # 设置超时时间
+                timeout=10.0  
             )
             
             # 检查响应
             if citation_response.status in [200, 201]:
-                logger.info(f"成功创建引用关系: {source_paper_id} -> {target_paper_id} ({reference_title})")
+                logger.info(f"成功创建引用关系: {source_paper_id} -> {target_paper_id}")
                 return True
             elif citation_response.status == 409:  # 引用关系已存在
-                logger.info(f"引用关系已存在: {source_paper_id} -> {target_paper_id} ({reference_title})")
+                logger.info(f"引用关系已存在: {source_paper_id} -> {target_paper_id}")
                 return True
             else:
                 response_text = citation_response.data.decode('utf-8')
@@ -302,36 +247,225 @@ class CitationProcessor:
         except Exception as e:
             logger.error(f"创建引用关系时出错: {str(e)}")
             return False
+    
+    def process_paper_citations(self, source_title, source_id, citations):
+        """处理单个论文的引用关系
+        
+        Args:
+            source_title (str): 源论文标题
+            source_id (str): 源论文ID
+            citations (list): 引用论文列表
+            
+        Returns:
+            tuple: (processed, success, failed, skipped)
+        """
+        logger.info(f"处理论文 '{source_title}' (ID: {source_id}) 的引用关系，共 {len(citations)} 个引用")
+        
+        processed = 0
+        success = 0
+        failed = 0
+        skipped = 0
+        
+        # 如果没有源论文ID，尝试通过标题查找
+        if not source_id and source_title:
+            source_id = self.find_best_title_match(source_title)
+            if not source_id:
+                logger.error(f"无法找到源论文 '{source_title}' 的ID，跳过处理其引用关系")
+                return 0, 0, 0, len(citations)
+        
+        if not source_id:
+            logger.error("源论文ID为空，跳过处理其引用关系")
+            return 0, 0, 0, len(citations)
+        
+        for cite in citations:
+            processed += 1
+            
+            # 获取引用论文标题
+            cite_title = cite.get("title", "")
+            
+            # 跳过空标题
+            if not cite_title:
+                logger.warning("跳过空引用标题")
+                skipped += 1
+                continue
+            
+            # 尝试获取引用论文ID
+            target_paper_id = None
+            
+            # 如果有外部ID，直接使用
+            external_id = cite.get("external_id", "")
+            if external_id:
+                # 如果有外部ID，需要在数据库中查找对应的内部ID
+                # 这里简化处理，如果有标题映射就使用它
+                target_paper_id = self.find_best_title_match(cite_title)
+            else:
+                # 通过标题匹配查找ID
+                target_paper_id = self.find_best_title_match(cite_title)
+            
+            # 如果没有找到匹配项，跳过
+            if not target_paper_id:
+                logger.warning(f"未找到匹配的论文: {cite_title}")
+                skipped += 1
+                continue
+            
+            # 避免自引用
+            if target_paper_id == source_id:
+                logger.warning(f"跳过自引用: {source_title}")
+                skipped += 1
+                continue
+            
+            # 创建引用关系
+            context = f"common field: \"{cite.get('publication', 'Academic Research')}\""
+            if self.create_citation_relationship(source_id, target_paper_id, context):
+                success += 1
+            else:
+                failed += 1
+        
+        logger.info(f"论文引用处理完成: processed={processed}, success={success}, failed={failed}, skipped={skipped}")
+        return processed, success, failed, skipped
+    
+    def process_citations(self, citation_dir="./cache/citations"):
+        """处理所有论文的引用关系
+        
+        Args:
+            citation_dir (str): 引用文件目录
+            
+        Returns:
+            tuple: (total_processed, total_success, total_failed, total_skipped)
+        """
+        # 加载标题映射
+        if not self.load_title_mapping():
+            logger.error("加载标题映射失败，无法处理引用关系")
+            return 0, 0, 0, 0
+        
+        # 获取引用文件
+        citation_files = self.scan_citation_files(citation_dir)
+        if not citation_files:
+            logger.info("未找到引用文件")
+            return 0, 0, 0, 0
+        
+        total_processed = 0
+        total_success = 0
+        total_failed = 0
+        total_skipped = 0
+        
+        # 使用进度条跟踪处理进度
+        with tqdm(total=len(citation_files), desc="处理引用关系") as pbar:
+            # 使用线程池并行处理
+            with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+                # 提交所有任务
+                future_to_paper = {}
+                for cite_file in citation_files:
+                    source_title, source_id, citations = self.parse_citation_file(cite_file)
+                    if source_title and citations:
+                        future = executor.submit(self.process_paper_citations, source_title, source_id, citations)
+                        future_to_paper[future] = (source_title, source_id)
+                
+                # 处理结果
+                for future in as_completed(future_to_paper):
+                    source_title, source_id = future_to_paper[future]
+                    try:
+                        processed, success, failed, skipped = future.result()
+                        total_processed += processed
+                        total_success += success
+                        total_failed += failed
+                        total_skipped += skipped
+                        pbar.update(1)
+                    except Exception as e:
+                        logger.error(f"处理论文 {source_title} (ID: {source_id}) 时出错: {str(e)}")
+                        pbar.update(1)
+        
+        logger.info(f"引用处理完成: processed={total_processed}, success={total_success}, failed={total_failed}, skipped={total_skipped}")
+        return total_processed, total_success, total_failed, total_skipped
+
+    def generate_title_mapping_from_api(self):
+        """从API生成标题映射
+        
+        Returns:
+            bool: 是否成功生成映射
+        """
+        try:
+            # 请求所有论文
+            full_url = f"{self.api_base_url}/papers?limit=1000"
+            
+            response = self.http.request(
+                'GET',
+                full_url,
+                timeout=30.0
+            )
+            
+            if response.status != 200:
+                logger.error(f"获取论文列表失败: {response.status}")
+                return False
+            
+            data = json.loads(response.data.decode('utf-8'))
+            papers = data.get("papers", [])
+            
+            if not papers:
+                logger.warning("API未返回任何论文")
+                return False
+            
+            # 构建标题到ID的映射
+            for paper in papers:
+                title = paper.get("title", "")
+                paper_id = paper.get("id", "")
+                if title and paper_id:
+                    self.add_paper_mapping(title, paper_id)
+            
+            # 保存映射
+            self.save_title_mapping()
+            logger.info(f"从API生成了 {len(self.title_mapping)} 个标题映射")
+            return True
+            
+        except Exception as e:
+            logger.error(f"从API生成标题映射时出错: {str(e)}")
+            traceback.print_exc()
+            return False
 
 
 def main():
-    """主函数"""
-    parser = argparse.ArgumentParser(description='处理论文引用关系')
-    parser.add_argument('--api-url', default='http://localhost:8080/api/v1', help='API基础URL')
-    parser.add_argument('--data-dir', default='./data', help='数据目录')
+    """主函数，处理命令行参数并执行引用关系处理"""
+    parser = argparse.ArgumentParser(description='引用管理器 - 基于标题匹配处理论文引用关系')
+    parser.add_argument('--api-url', default='http://localhost:8080/neo4j/v1', help='API基础URL')
+    parser.add_argument('--citation-dir', default='./cache/citations', help='引用文件目录')
     parser.add_argument('--workers', type=int, default=5, help='最大工作线程数')
-    parser.add_argument('--similarity', type=float, default=0.85, help='标题匹配的相似度阈值')
+    parser.add_argument('--similarity', type=float, default=0.85, help='标题匹配相似度阈值 (0-1)')
     parser.add_argument('--interval', type=int, default=0, help='处理间隔（秒），0表示只运行一次')
+    parser.add_argument('--generate-mapping', action='store_true', help='从API生成标题映射')
     args = parser.parse_args()
     
+    # 创建引用管理器
     processor = CitationProcessor(
         api_base_url=args.api_url,
-        data_dir=args.data_dir,
         max_workers=args.workers,
         similarity_threshold=args.similarity
     )
     
+    # 如果需要，生成标题映射
+    if args.generate_mapping:
+        logger.info("从API生成标题映射...")
+        if processor.generate_title_mapping_from_api():
+            logger.info("标题映射生成成功")
+        else:
+            logger.error("标题映射生成失败")
+    
     if args.interval > 0:
-        logger.info(f"启动引用关系处理服务，间隔: {args.interval}秒")
+        logger.info(f"启动引用处理服务，间隔: {args.interval} 秒")
         try:
             while True:
-                processor.process_references()
-                logger.info(f"等待{args.interval}秒后继续处理...")
+                processor.process_citations(args.citation_dir)
+                logger.info(f"等待 {args.interval} 秒后进行下一次处理周期...")
                 time.sleep(args.interval)
         except KeyboardInterrupt:
             logger.info("服务被用户中断")
     else:
-        processor.process_references()
+        # 一次性运行模式
+        total_processed, total_success, total_failed, total_skipped = processor.process_citations(args.citation_dir)
+        logger.info(f"引用处理摘要:")
+        logger.info(f"- 总处理引用: {total_processed}")
+        logger.info(f"- 成功创建: {total_success}")
+        logger.info(f"- 创建失败: {total_failed}")
+        logger.info(f"- 跳过: {total_skipped}")
 
 
 if __name__ == "__main__":

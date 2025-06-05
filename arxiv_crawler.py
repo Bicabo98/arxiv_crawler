@@ -428,8 +428,8 @@ if __name__ == "__main__":
     date_from = today - timedelta(days=1)
 
     scraper = ArxivScraper(
-        date_from=date_from.strftime("%Y-%m-%d"),
-        #date_from=today.strftime("%Y-%m-%d"),
+        #date_from=date_from.strftime("%Y-%m-%d"),
+        date_from=today.strftime("%Y-%m-%d"),
         date_until=today.strftime("%Y-%m-%d"),
     )
     asyncio.run(scraper.fetch_all())
